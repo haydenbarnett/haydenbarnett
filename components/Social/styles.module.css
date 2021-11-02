@@ -1,0 +1,25 @@
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  & a {
+    display: inline-flex;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-200);
+    user-select: none;
+    outline: 0;
+    box-shadow: 0 0.25rem 0.5rem -0.125rem rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease border, 0.2s ease box-shadow;
+
+    &:hover {
+      border-color: var(--primary-300);
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0.25rem 0.5rem -0.125rem rgba(0, 0, 0, 0.1),
+        0 0 0 0.25rem rgba(0, 0, 0, 0.05);
+    }
+  }
+}

@@ -8,6 +8,15 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
+    outline: 0;
+
+    &:focus-visible {
+      & .profile {
+        & div {
+          box-shadow: 0 0 0 0.25rem var(--primary-200);
+        }
+      }
+    }
   }
 }
 
@@ -16,6 +25,11 @@
   justify-content: center;
   margin-bottom: 0.75rem;
   user-select: none;
+
+  & div {
+    border-radius: 50%;
+    transition: 0.2s ease border, 0.2s ease box-shadow;
+  }
 }
 
 .logo {

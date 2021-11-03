@@ -1,19 +1,21 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Header, Social } from "../components";
+import { Header, Introduction, Social, Squiggle } from "../components";
 import styles from "./styles.module.css";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.wrapper}>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <div className={styles.wrapper}>
         <Header />
+        <Introduction />
         <Social />
+        <Squiggle />
       </div>
-    </div>
+    </>
   );
 };
 

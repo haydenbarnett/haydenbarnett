@@ -48,3 +48,41 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+#squiggle-svg {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+#squiggle-shape {
+  fill: var(--primary-100);
+}
+
+#squiggle-path {
+  fill: none;
+  stroke: var(--primary-100);
+  stroke-width: 45;
+  stroke-linecap: round;
+  clip-path: url(#squiggle-clip);
+
+  stroke-dasharray: 848 848;
+  stroke-dashoffset: 848;
+
+  animation-delay: 0.5s;
+  animation-duration: 1.5s;
+  animation-name: drawSquiggle;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drawSquiggle {
+  from {
+    stroke-dashoffset: 848;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

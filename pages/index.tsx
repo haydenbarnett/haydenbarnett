@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Header, Introduction, Social, Squiggle } from "../components";
-import styles from "./styles.module.css";
 
 const Home: NextPage = () => {
   return (
@@ -9,7 +8,7 @@ const Home: NextPage = () => {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.wrapper}>
+      <div className="wrapper">
         <Header />
         <Introduction />
         <Social />

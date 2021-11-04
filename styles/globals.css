@@ -40,20 +40,23 @@ body {
   overflow-y: scroll;
 }
 
-#__next {
-  height: 100%;
-}
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-#squiggle-svg {
-  width: 700px;
-  max-width: 100%;
-  margin: 0 auto;
-  display: block;
+#__next {
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 10;
 }
 
 #squiggle-shape {

@@ -5,10 +5,10 @@ export const Squiggle: FC = () => (
   <div className={styles.container}>
     <svg
       version="1.1"
-      id="squiggle-svg"
       x="0px"
       y="0px"
       viewBox="0 0 461.2 206.4"
+      className={styles.squiggle}
     >
       <defs>
         <clipPath id="squiggle-clip">

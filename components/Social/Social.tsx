@@ -4,15 +4,15 @@ import styles from "./styles.module.css";
 
 export const Social: FC = () => (
   <div className={styles.social}>
+    <a href="https://github.com/haydenbarnett" target="_blank" rel="noreferrer">
+      <Image src="/icons/github.svg" width="16" height="16" alt="GitHub" />
+    </a>
     <a
       href="https://dribbble.com/haydenbarnett"
       target="_blank"
       rel="noreferrer"
     >
       <Image src="/icons/dribbble.svg" width="16" height="16" alt="Dribbble" />
-    </a>
-    <a href="https://github.com/haydenbarnett" target="_blank" rel="noreferrer">
-      <Image src="/icons/github.svg" width="16" height="16" alt="GitHub" />
     </a>
     <a
       href="https://www.linkedin.com/in/haydenbarnett"

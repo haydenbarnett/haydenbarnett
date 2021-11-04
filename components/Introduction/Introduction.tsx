@@ -14,7 +14,7 @@ export const Introduction: FC = () => (
       >
         Corellium
       </a>{" "}
-      <span className={styles.divider}>/</span> Creative Director of{" "}
+      <span className={styles.divider}>/</span> Director at{" "}
       <a
         className={styles.link}
         href="https://surge.studio/"

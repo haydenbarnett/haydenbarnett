@@ -15,7 +15,7 @@
     transition: 0.2s ease border, 0.2s ease box-shadow;
 
     &:hover {
-      border-color: var(--primary-300);
+      border-color: var(--primary-500);
     }
 
     &:focus-visible {

@@ -42,7 +42,7 @@
   border-radius: 0.25rem;
   z-index: 1;
   outline: 0;
-  transition: 0.2s ease color, 0.2s ease box-shadow;
+  transition: 0.6s ease color, 0.6s ease box-shadow;
 
   &:after {
     content: "";
@@ -54,8 +54,8 @@
     bottom: -0.25rem;
     z-index: -1;
     background-color: var(--primary-200);
-    transition: 0.2s ease background-color, 0.2s ease opacity,
-      0.2s ease transform;
+    transition: 0.6s ease background-color, 0.6s ease opacity,
+      0.6s ease transform;
   }
 
   &:visited {

@@ -3,6 +3,7 @@
   justify-content: center;
   margin-top: 2rem;
   margin-bottom: 3.75rem;
+  transition: 0.6s ease opacity;
 
   & a {
     display: inline-flex;
@@ -33,7 +34,7 @@
 
   & div {
     border-radius: 50%;
-    transition: 0.2s ease border, 0.2s ease box-shadow;
+    transition: 0.6s ease border, 0.6s ease box-shadow;
   }
 }
 

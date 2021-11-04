@@ -49,16 +49,6 @@ a {
   height: 100%;
 }
 
-.wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  z-index: 10;
-}
-
 #squiggle-shape {
   fill: var(--primary-100);
 }

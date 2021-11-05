@@ -6,6 +6,10 @@
   justify-content: center;
   height: 100%;
   z-index: 10;
+
+  @media (max-height: 536px) {
+    justify-content: flex-start;
+  }
 }
 
 .content {

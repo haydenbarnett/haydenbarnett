@@ -1,7 +1,6 @@
-# Hayden Barnett
+### Hayden Barnett
 
-My personal website. Powered by React, Next.js, Typescript. Hosted with Vercel.
+# Frontend engineer & digital designer
 
-## Setup
-
-Install dependencies and run `yarn dev` and then open [http://localhost:3000](http://localhost:3000)
+- Engineer at [Corellium](https://www.corellium.com/)
+- Director at [Surge](https://surge.studio/).

@@ -5,7 +5,7 @@ import { Layout } from "@components";
 
 function App({ Component, pageProps }: AppProps) {
   const description =
-    "Hayden Barnett is a front-end developer & digital designer currently working at Tyro in Sydney, Australia.";
+    "Hayden Barnett is a frontend engineer & digital designer currently working at Corellium and living in Sydney, Australia.";
 
   return (
     <>

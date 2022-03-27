@@ -13,15 +13,6 @@ export const Introduction: FC = () => (
         rel="noreferrer"
       >
         Corellium
-      </a>{" "}
-      <span className={styles.divider}>/</span> Director at{" "}
-      <a
-        className={styles.link}
-        href="https://surge.studio/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Surge
       </a>
     </p>
     <p className={styles.location}>Sydney, Australia</p>

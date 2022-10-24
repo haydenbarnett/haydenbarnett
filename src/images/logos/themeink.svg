@@ -1,0 +1,42 @@
+<svg
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  preserveAspectRatio="xMidYMid"
+  style="margin:auto;background:transparent;display:block;shape-rendering:auto"
+  width="32px"
+  height="32px"
+>
+  <defs>
+    <path
+      id="ink-logo-path"
+      d="M50,0l29.3,29.3c16.2,16.2,16.2,42.4,0,58.6s-42.4,16.2-58.6,0s-16.2-42.4,0-58.6c0,0,0,0,0,0L50,0z"
+    />
+  </defs>
+  <clipPath id="ink-logo-mask">
+    <use xlink:href="#ink-logo-path" style="overflow:visible" />
+  </clipPath>
+  <g clip-path="url(#ink-logo-mask)">
+    <rect x="0" y="0" width="100" height="100" fill="#8000E0" />
+    <rect
+      x="-100"
+      y="-250"
+      width="300"
+      height="300"
+      rx="90"
+      ry="90"
+      fill="#3F1271"
+      opacity="1"
+      transform="rotate(66.0087 50 -100)"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        dur="4s"
+        repeatCount="indefinite"
+        values="0 50 -100;90 50 -100"
+        keyTimes="0;1"
+      />
+    </rect>
+  </g>
+</svg>

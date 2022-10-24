@@ -1,0 +1,22 @@
+<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3 12h26v8h-9v12h-8V20H3v-8z" fill="#fff" />
+  <path
+    d="M0 8v16c0 4.4 3.6 8 8 8h4V20H3v-8h26v8h-9v12h4c4.4 0 8-3.6 8-8V8c0-4.4-3.6-8-8-8H8C3.6 0 0 3.6 0 8z"
+    fill="url(#paint0_radial)"
+  />
+  <defs>
+    <radialGradient
+      id="paint0_radial"
+      cx="0"
+      cy="0"
+      r="1"
+      gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(23.947 .004) scale(35.7124)"
+    >
+      <stop stop-color="#DA58FB" />
+      <stop offset=".427" stop-color="#7D4FF6" />
+      <stop offset=".656" stop-color="#7D4FF6" />
+      <stop offset=".984" stop-color="#38CDFE" />
+    </radialGradient>
+  </defs>
+</svg>

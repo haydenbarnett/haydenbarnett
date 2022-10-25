@@ -1,4 +1,7 @@
-export const MoonIcon = (props) => {
+import { IconProps } from '@/types/icons';
+import { FC } from 'react';
+
+export const MoonIcon: FC<IconProps> = (props) => {
   return (
     <svg
       fill="none"

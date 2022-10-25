@@ -1,4 +1,7 @@
-export const HomeIcon = (props) => {
+import { IconProps } from '@/types/icons';
+import { FC } from 'react';
+
+export const HomeIcon: FC<IconProps> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

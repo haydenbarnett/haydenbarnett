@@ -1,4 +1,7 @@
-export const ChevronDownIcon = (props) => {
+import { IconProps } from '@/types/icons';
+import { FC } from 'react';
+
+export const ChevronDownIcon: FC<IconProps> = (props) => {
   return (
     <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
       <path

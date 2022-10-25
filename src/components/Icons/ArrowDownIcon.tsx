@@ -1,4 +1,7 @@
-export const ArrowDownIcon = (props) => {
+import { IconProps } from '@/types/icons';
+import { FC } from 'react';
+
+export const ArrowDownIcon: FC<IconProps> = (props) => {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path

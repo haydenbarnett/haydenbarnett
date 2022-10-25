@@ -1,4 +1,7 @@
-export const CloseIcon = (props) => {
+import { IconProps } from '@/types/icons';
+import { FC } from 'react';
+
+export const CloseIcon: FC<IconProps> = (props) => {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path

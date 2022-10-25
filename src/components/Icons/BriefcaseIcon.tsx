@@ -1,4 +1,7 @@
-export const BriefcaseIcon = (props) => {
+import { IconProps } from '@/types/icons';
+import { FC } from 'react';
+
+export const BriefcaseIcon: FC<IconProps> = (props) => {
   return (
     <svg
       fill="none"

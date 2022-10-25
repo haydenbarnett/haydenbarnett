@@ -1,4 +1,7 @@
-export const ArrowLeftIcon = (props) => {
+import { IconProps } from '@/types/icons';
+import { FC } from 'react';
+
+export const ArrowLeftIcon: FC<IconProps> = (props) => {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path

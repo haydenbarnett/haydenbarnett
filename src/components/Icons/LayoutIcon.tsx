@@ -1,4 +1,7 @@
-export const LayoutIcon = (props) => {
+import { IconProps } from '@/types/icons';
+import { FC } from 'react';
+
+export const LayoutIcon: FC<IconProps> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

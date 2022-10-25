@@ -1,4 +1,7 @@
-export const MailIcon = (props) => {
+import { IconProps } from '@/types/icons';
+import { FC } from 'react';
+
+export const MailIcon: FC<IconProps> = (props) => {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
       <path

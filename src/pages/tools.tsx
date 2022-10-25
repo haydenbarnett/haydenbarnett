@@ -10,15 +10,20 @@ import {
 } from '@/components';
 import { author, tools } from '@/data';
 
-function ToolsSection({ children, ...props }) {
+type ToolsSectionProps = {
+  title?: string;
+  children?: ReactNode;
+};
+
+const ToolsSection: FC<ToolsSectionProps> = ({ children, title }) => {
   return (
-    <Section {...props}>
+    <Section title={title}>
       <ul role="list" className="space-y-4">
         {children}
       </ul>
     </Section>
   );
-}
+};
 
 type ToolProps = {
   title?: string;
@@ -48,8 +53,8 @@ const Tools: FC = () => {
         <div className="space-y-20">
           {tools.map((category) => (
             <ToolsSection title={category.name} key={category.name}>
-              {category.tools.map((tool) => (
-                <Tool title={tool.name} />
+              {category.tools.map((tool, index) => (
+                <Tool key={index} title={tool.name} />
               ))}
             </ToolsSection>
           ))}

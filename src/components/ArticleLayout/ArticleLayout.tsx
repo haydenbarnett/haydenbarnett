@@ -67,8 +67,8 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
               </header>
               {role?.tags?.length && (
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {role.tags.map((instance) => (
-                    <Tag>{instance}</Tag>
+                  {role.tags.map((instance, index) => (
+                    <Tag key={index}>{instance}</Tag>
                   ))}
                 </div>
               )}

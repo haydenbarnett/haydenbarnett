@@ -50,7 +50,7 @@ const Home: FC<HomeProps> = ({ documents }) => {
         <div className="rounded-2xl bg-gray-50 px-6 pb-20 pt-24 dark:bg-gray-800/50">
           <div className="mx-auto max-w-[620px] text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
-              👋 Hi, I'm {author.name}
+              👋 Hi, I&apos;m {author.name}
             </h1>
             <p className="mt-6 text-base text-gray-600 dark:text-gray-400">
               Senior frontend engineer focused on high quality UI/UX with over

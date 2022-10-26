@@ -15,19 +15,18 @@ export type ProjectDataProps = {
 export const projects: ProjectDataProps[] = [
   {
     name: 'Temploid',
-    description:
-      "I'm currently learning three.js and game development. Will be publishing output here.",
+    description: 'Online video game publisher featuring three.js experiments.',
     logo: temploidLogo,
   },
   {
     name: 'Theme.ink',
     description:
-      'Aiming to create a suite of tools to assist in the design and development process.',
+      'A suite of tools to assist in the design and development process.',
     logo: themeinkLogo,
   },
   {
     name: 'Imagepup',
-    description: 'This is going to be a vanilla image editor but puppy themed.',
+    description: 'A puppy themed vanilla image editor.',
     logo: imagepupLogo,
   },
   {
@@ -39,7 +38,7 @@ export const projects: ProjectDataProps[] = [
   {
     name: 'Ben Wotton',
     description:
-      'Website for a friend of mine, a Senior Digital Compositor working in the film industry.',
+      'Portfolio website for Ben, a Senior Digital Compositor working in the film industry.',
     link: { href: 'https://benwotton.com', label: 'benwotton.com' },
   },
   {
@@ -60,7 +59,7 @@ export const projects: ProjectDataProps[] = [
   {
     name: 'Stormhyde',
     description:
-      'Free software created for animators for use with Autodesk Maya.',
+      'Free software and resources created for animators for use with Autodesk Maya.',
     link: {
       href: 'https://www.stormhyde.com',
       label: 'stormhyde.com',
@@ -69,7 +68,7 @@ export const projects: ProjectDataProps[] = [
   {
     name: 'Barnetts Deniliquin',
     description:
-      "For my dad's business in the town of Deniliquin. He never sent me the logo so I made one up.",
+      'The long standing family company with a history of sound and careful planning, expansion and contract delivery.',
     link: {
       href: 'https://barnettsdeniliquin.com',
       label: 'barnettsdeniliquin.com',

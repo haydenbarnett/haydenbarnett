@@ -24,6 +24,24 @@ export const Card: FC<CardProps> = ({
   );
 };
 
+type CardLogoPanel = {
+  children?: ReactNode;
+  className?: string;
+};
+
+export const CardLogoPanel: FC<CardLogoPanel> = ({ children, className }) => {
+  return (
+    <div
+      className={clsx(
+        className,
+        'relative z-10 mb-4 flex h-32 w-full items-center justify-center rounded-lg ring-1 ring-gray-300 dark:ring-gray-800'
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
 type CardLink = {
   children?: ReactNode;
   href: string;
@@ -34,7 +52,7 @@ type CardLink = {
 export const CardLink: FC<CardLink> = ({ children, href, ...props }) => {
   return (
     <>
-      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-gray-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-gray-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 ring-1 ring-gray-300 transition group-hover:scale-100 group-hover:opacity-100 dark:ring-gray-800 sm:-inset-x-6 sm:rounded-2xl" />
       <Link href={href} {...props}>
         <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -89,7 +107,7 @@ export const CardCta: FC<CardCtaProps> = ({ children }) => {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-500"
+      className="relative z-10 mt-4 flex items-center text-sm text-gray-500 transition group-hover:text-gray-800 dark:group-hover:text-gray-200"
     >
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
@@ -99,14 +117,12 @@ export const CardCta: FC<CardCtaProps> = ({ children }) => {
 
 type CardEyebrowProps = {
   as?: any;
-  decorate?: boolean;
   className?: string;
   children?: ReactNode;
 };
 
 export const CardEyebrow: FC<CardEyebrowProps> = ({
   as: Component = 'p',
-  decorate = false,
   className,
   children,
   ...props
@@ -115,19 +131,10 @@ export const CardEyebrow: FC<CardEyebrowProps> = ({
     <Component
       className={clsx(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm text-gray-400 dark:text-gray-500',
-        decorate && 'pl-3.5'
+        'relative z-10 mb-3 flex items-center text-sm text-gray-400 dark:text-gray-500'
       )}
       {...props}
     >
-      {decorate && (
-        <span
-          className="absolute inset-y-0 left-0 flex items-center"
-          aria-hidden="true"
-        >
-          <span className="h-4 w-0.5 rounded-full bg-gray-200 dark:bg-gray-500" />
-        </span>
-      )}
       {children}
     </Component>
   );

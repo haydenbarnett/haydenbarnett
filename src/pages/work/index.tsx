@@ -9,12 +9,14 @@ import {
   SimpleLayout,
   ArrowDownIcon,
   Button,
+  CardLogoPanel,
 } from '@/components';
 import { getAllEntries } from '@/utils/entries';
 import { findDocument, formatDateRange } from '@/utils/formatting';
 import { author, resume, roles, RoleProps } from '@/data';
 import { FC } from 'react';
 import { DocumentProps } from '@/types/documents';
+import Image from 'next/future/image';
 
 type RoleRowProps = {
   role: RoleProps;
@@ -29,24 +31,22 @@ const RoleRow: FC<RoleRowProps> = ({ role, slug, href }) => {
   const websiteCta = href ? <CardCta>Visit website</CardCta> : null;
 
   return (
-    <article className="md:grid md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3">
-        <CardTitle
-          href={slug ? `/work/${slug}` : href}
-          target={href && !slug ? '_blank' : undefined}
-        >
-          {roleTitle}
-        </CardTitle>
-        <CardEyebrow as="time" className="md:hidden" decorate>
-          {dateRange}
-        </CardEyebrow>
-        <CardDescription>{description}</CardDescription>
-        {slug ? <CardCta>View case study</CardCta> : websiteCta}
-      </Card>
-      <CardEyebrow as="time" className="mt-1 hidden md:block">
-        {dateRange}
-      </CardEyebrow>
-    </article>
+    <Card>
+      <CardLogoPanel>
+        {role?.logo && (
+          <Image src={role.logo} alt="" className="h-12 w-12" unoptimized />
+        )}
+      </CardLogoPanel>
+      <CardTitle
+        href={slug ? `/work/${slug}` : href}
+        target={href && !slug ? '_blank' : undefined}
+      >
+        {roleTitle}
+      </CardTitle>
+      <CardEyebrow>{dateRange}</CardEyebrow>
+      <CardDescription>{description}</CardDescription>
+      {slug ? <CardCta>View case study</CardCta> : websiteCta}
+    </Card>
   );
 };
 
@@ -62,7 +62,7 @@ const WorkPage: FC<WorkPageProps> = ({ documents }) => {
         <meta name="description" content="" />
       </Head>
       <SimpleLayout title="Work" intro="">
-        <div className="flex flex-col gap-16">
+        <div className="grid grid-cols-2 flex-col gap-16">
           {roles.map((role, index) => {
             const document = findDocument(documents, role);
             const slug = document?.slug;
@@ -77,12 +77,12 @@ const WorkPage: FC<WorkPageProps> = ({ documents }) => {
               />
             );
           })}
-          <div className="flex justify-center">
-            <Button href={resume} target="_blank" variant="primary">
-              Download Résumé
-              <ArrowDownIcon className="h-4 w-4 stroke-current opacity-50 transition" />
-            </Button>
-          </div>
+        </div>
+        <div className="mt-16 flex justify-center">
+          <Button href={resume} target="_blank">
+            Download Résumé
+            <ArrowDownIcon className="h-4 w-4 stroke-current opacity-50 transition" />
+          </Button>
         </div>
       </SimpleLayout>
     </>

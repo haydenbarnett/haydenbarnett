@@ -39,14 +39,14 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
                 type="button"
                 onClick={() => router.back()}
                 aria-label="Go back"
-                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white ring-1 ring-gray-900/5 transition dark:border dark:border-gray-700/50 dark:bg-gray-800 dark:ring-0 dark:ring-white/10 dark:hover:border-gray-700 dark:hover:ring-white/20 lg:absolute lg:left-0 lg:mb-0 lg:mt-0"
+                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-gray-300 transition hover:ring-gray-400 dark:ring-gray-800 dark:hover:ring-gray-700 lg:absolute lg:left-0 lg:mb-0 lg:mt-0"
               >
-                <ArrowLeftIcon className="h-4 w-4 stroke-gray-500 transition group-hover:stroke-gray-700 dark:stroke-gray-500 dark:group-hover:stroke-gray-400" />
+                <ArrowLeftIcon className="h-4 w-4 stroke-gray-500 transition group-hover:stroke-gray-800 dark:group-hover:stroke-gray-300" />
               </button>
             ) : (
               <Link href="/work">
-                <div className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white ring-1 ring-gray-900/5 transition dark:border dark:border-gray-700/50 dark:bg-gray-800 dark:ring-0 dark:ring-white/10 dark:hover:border-gray-700 dark:hover:ring-white/20 lg:absolute lg:left-0 lg:mb-0 lg:mt-0">
-                  <ArrowLeftIcon className="h-4 w-4 stroke-gray-500 transition group-hover:stroke-gray-700 dark:stroke-gray-500 dark:group-hover:stroke-gray-400" />
+                <div className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-gray-300 transition hover:ring-gray-400 dark:ring-gray-800 dark:hover:ring-gray-700 lg:absolute lg:left-0 lg:mb-0 lg:mt-0">
+                  <ArrowLeftIcon className="h-4 w-4 stroke-gray-500 transition group-hover:stroke-gray-800 dark:group-hover:stroke-gray-300" />
                 </div>
               </Link>
             )}
@@ -54,7 +54,7 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
               <header className="flex flex-col">
                 <time
                   dateTime={dateRange}
-                  className="flex items-center text-base text-gray-400 dark:text-gray-500"
+                  className="flex items-center text-base text-gray-500"
                 >
                   <span>{dateRange}</span>
                 </time>
@@ -66,7 +66,7 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
                 </p>
               </header>
               {role?.tags?.length && (
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-1.5">
                   {role.tags.map((instance, index) => (
                     <Tag key={index}>{instance}</Tag>
                   ))}

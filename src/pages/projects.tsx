@@ -31,7 +31,7 @@ const Projects: FC = () => {
 
             return (
               <Card as="li" key={project.name}>
-                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white ring-1 ring-gray-900/5 dark:border dark:border-gray-700/50 dark:bg-gray-800 dark:ring-0">
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-gray-300 dark:ring-gray-800">
                   {logo ? (
                     <Image src={logo} alt="" className="h-8 w-8" unoptimized />
                   ) : link?.href ? (
@@ -59,7 +59,7 @@ const Projects: FC = () => {
                   )}
                 </h2>
                 <CardDescription>{project.description}</CardDescription>
-                <p className="relative z-10 mt-6 flex text-sm font-medium text-gray-400 transition group-hover:text-blue-500 dark:text-gray-200">
+                <p className="relative z-10 mt-6 flex text-sm text-gray-500 transition group-hover:text-gray-900 dark:group-hover:text-gray-200">
                   {!!project.link?.href && (
                     <LinkIcon className="h-6 w-6 flex-none" />
                   )}

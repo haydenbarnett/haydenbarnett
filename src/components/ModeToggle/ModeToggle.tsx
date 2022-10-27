@@ -26,11 +26,11 @@ export const ModeToggle = () => {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group rounded-full bg-white/90 px-3 py-2 ring-1 ring-gray-900/5 backdrop-blur transition dark:bg-gray-800/50 dark:ring-white/10 dark:hover:ring-white/20"
+      className="group rounded-full px-3 py-2 ring-1 ring-gray-300 transition hover:ring-gray-400 dark:ring-gray-800 dark:hover:ring-gray-700"
       onClick={toggleMode}
     >
-      <SunIcon className="h-6 w-6 text-gray-500 transition group-hover:text-blue-700 dark:hidden" />
-      <MoonIcon className="hidden h-6 w-6 text-gray-500 transition group-hover:text-blue-400 dark:block" />
+      <SunIcon className="h-6 w-6 text-gray-500 transition group-hover:text-gray-800 dark:hidden" />
+      <MoonIcon className="hidden h-6 w-6 text-gray-500 transition group-hover:text-gray-200 dark:block" />
     </button>
   );
 };

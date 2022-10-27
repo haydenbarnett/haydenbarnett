@@ -15,15 +15,15 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
 
   const row = (
     <>
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-gray-900/5 dark:border dark:border-gray-700/50 dark:bg-gray-800 dark:ring-0">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-gray-300 dark:bg-gray-800/50 dark:text-white dark:ring-gray-800">
         {logo ? (
           <Image src={logo} alt="" className="h-6 w-6" unoptimized />
         ) : link?.href ? (
           <Image
             src={`${link.href}/favicon.ico`}
             alt=""
-            width={32}
-            height={32}
+            width={24}
+            height={24}
             unoptimized
           />
         ) : null}
@@ -32,7 +32,7 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
         <span className="w-full flex-none text-sm font-medium text-gray-900 dark:text-gray-100">
           {name}
         </span>
-        <span className="text-xs text-gray-500 transition group-hover:text-blue-500 dark:text-gray-400">
+        <span className="text-xs text-gray-500 transition group-hover:text-gray-800 dark:group-hover:text-gray-200">
           {link?.label ?? 'Coming soon'}
         </span>
       </div>
@@ -52,8 +52,8 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
 
 export const ProjectsPreview: FC = () => {
   return (
-    <div className="rounded-2xl border border-gray-100 p-6 dark:border-gray-700/40">
-      <h2 className="flex text-sm font-semibold text-gray-900 dark:text-gray-100">
+    <div className="rounded-2xl border border-gray-300 p-6 dark:border-gray-800">
+      <h2 className="flex text-sm font-semibold text-gray-800 dark:text-gray-200">
         <RocketLaunchIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Personal Projects</span>
       </h2>
@@ -64,7 +64,7 @@ export const ProjectsPreview: FC = () => {
           </li>
         ))}
       </ol>
-      <Button href="/projects" variant="secondary" className="mt-6 w-full">
+      <Button href="/projects" className="mt-6 w-full">
         View all
       </Button>
     </div>

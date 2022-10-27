@@ -11,7 +11,7 @@ export const Tag: FC<TagProps> = ({ children, className }) => {
     <span
       className={clsx(
         className,
-        'flex-grow-0 rounded-full bg-gray-100 px-2 py-1 text-xs font-medium leading-none text-gray-600 dark:bg-gray-800 dark:text-gray-500'
+        'flex-grow-0 rounded-full px-2 py-1 text-xs leading-none text-gray-500 ring-1 ring-gray-300 dark:ring-gray-800'
       )}
     >
       {children}

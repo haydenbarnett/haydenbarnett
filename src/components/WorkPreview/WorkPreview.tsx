@@ -15,7 +15,7 @@ const WorkRow: FC<WorkRowProps> = ({ role }) => {
 
   return (
     <>
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-gray-900/5 dark:border dark:border-gray-700/50 dark:bg-gray-800 dark:text-white dark:ring-0">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-gray-300 dark:bg-gray-800/50 dark:text-white dark:ring-gray-800">
         {logo && <Image src={logo} alt="" className="h-6 w-6" unoptimized />}
       </div>
       <div className="flex flex-auto flex-wrap gap-x-2">
@@ -23,7 +23,7 @@ const WorkRow: FC<WorkRowProps> = ({ role }) => {
           <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
             {company}
           </span>
-          <span className="text-xs text-gray-400 dark:text-gray-500">
+          <span className="text-xs text-gray-500">
             <time>{formatDateRange(role)}</time>
           </span>
         </div>
@@ -37,8 +37,8 @@ const WorkRow: FC<WorkRowProps> = ({ role }) => {
 
 export const WorkPreview: FC = () => {
   return (
-    <div className="rounded-2xl border border-gray-100 p-6 dark:border-gray-700/40">
-      <h2 className="flex text-sm font-semibold text-gray-900 dark:text-gray-100">
+    <div className="rounded-2xl border border-gray-300 p-6 dark:border-gray-800">
+      <h2 className="flex text-sm font-semibold text-gray-800 dark:text-gray-200">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
@@ -49,7 +49,7 @@ export const WorkPreview: FC = () => {
           </li>
         ))}
       </ol>
-      <Button href={resume} variant="secondary" className="mt-6 w-full">
+      <Button href={resume} className="mt-6 w-full">
         Download Résumé
         <ArrowDownIcon className="h-4 w-4 stroke-current opacity-50 transition" />
       </Button>

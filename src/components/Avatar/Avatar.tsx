@@ -15,14 +15,17 @@ export const Avatar: FC<AvatarProps> = ({ className, ...props }) => {
     <Link
       href="/"
       aria-label="Home"
-      className={clsx(className, 'pointer-events-auto rounded-full')}
+      className={clsx(
+        className,
+        'pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-gray-300 dark:ring-gray-800'
+      )}
       {...props}
     >
       <Image
         src={avatarImage}
-        height="40"
-        width="40"
-        className="rounded-full bg-white dark:bg-gray-900"
+        height="32"
+        width="32"
+        className="rounded-full"
         alt=""
         priority
       />

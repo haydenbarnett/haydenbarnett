@@ -1,5 +1,5 @@
 import Head from 'next/head';
-
+import Image from 'next/image';
 import {
   Card,
   CardCta,
@@ -16,7 +16,6 @@ import { findDocument, formatDateRange } from '@/utils/formatting';
 import { author, resume, roles, RoleProps } from '@/data';
 import { FC } from 'react';
 import { DocumentProps } from '@/types/documents';
-import Image from 'next/future/image';
 
 type RoleRowProps = {
   role: RoleProps;
@@ -58,7 +57,7 @@ const WorkPage: FC<WorkPageProps> = ({ documents }) => {
   return (
     <>
       <Head>
-        <title>Work - {author.name}</title>
+        <title>{`Work - ${author.name}`}</title>
         <meta name="description" content="" />
       </Head>
       <SimpleLayout title="Work" intro="">

@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import Head from 'next/head';
 
 import {
@@ -15,7 +15,7 @@ const Projects: FC = () => {
   return (
     <>
       <Head>
-        <title>Projects - {author.name}</title>
+        <title>{`Projects - ${author.name}`}</title>
         <meta
           name="description"
           content="Things I've made either to help others or just for fun."
@@ -59,7 +59,7 @@ const Projects: FC = () => {
                   )}
                 </h2>
                 <CardDescription>{project.description}</CardDescription>
-                <p className="relative z-10 mt-6 flex text-sm text-gray-500 transition group-hover:text-gray-900 dark:group-hover:text-gray-200">
+                <p className="relative z-10 mt-6 flex text-sm font-medium text-gray-500 transition group-hover:text-gray-900 dark:group-hover:text-gray-200">
                   {!!project.link?.href && (
                     <LinkIcon className="h-6 w-6 flex-none" />
                   )}

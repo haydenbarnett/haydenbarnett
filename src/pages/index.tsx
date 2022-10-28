@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import Head from 'next/head';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 import {
   Container,
@@ -53,14 +53,14 @@ const Home: FC<HomeProps> = ({ documents }) => {
   return (
     <div className="flex flex-col gap-32 md:gap-48">
       <Head>
-        <title>{author.name} - Frontend Engineer</title>
+        <title>{`${author.name} - Frontend Engineer`}</title>
         <meta
           name="description"
           content={`I'm ${author.name}, a frontend engineer and digital designer currently working at Corellium and living in Sydney, Australia.`}
         />
       </Head>
       <Container className="mt-12 md:mt-32">
-        <div className="rounded-2xl border border-gray-300 px-6 pb-20 pt-24 dark:border-gray-800">
+        <div className="rounded-2xl px-6 pb-20 pt-24 ring-1 ring-gray-300 dark:ring-gray-800">
           <div className="mx-auto max-w-[620px] text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-200 sm:text-5xl">
               <span className="inline-flex flex-col items-center gap-4 sm:flex-row">

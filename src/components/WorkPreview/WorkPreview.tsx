@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 import { ArrowDownIcon, BriefcaseIcon } from '../Icons';
 import { Button } from '../Button';
@@ -37,7 +37,7 @@ const WorkRow: FC<WorkRowProps> = ({ role }) => {
 
 export const WorkPreview: FC = () => {
   return (
-    <div className="rounded-2xl border border-gray-300 p-6 dark:border-gray-800">
+    <div className="rounded-2xl p-6 ring-1 ring-gray-300 dark:ring-gray-800">
       <h2 className="flex text-sm font-semibold text-gray-800 dark:text-gray-200">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>

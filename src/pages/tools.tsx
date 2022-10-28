@@ -46,7 +46,7 @@ const Tools: FC = () => {
   return (
     <>
       <Head>
-        <title>Tools - {author.name}</title>
+        <title>{`Tools - ${author.name}`}</title>
         <meta name="description" content="Things I use &amp; recommend." />
       </Head>
       <SimpleLayout title="Apps, solutions &amp; services that I use.">

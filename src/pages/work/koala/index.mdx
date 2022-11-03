@@ -1,0 +1,19 @@
+import { ArticleLayout } from '@/components';
+import Image from 'next/image';
+
+import logo from './images/koala.svg';
+
+export const meta = {
+  logo,
+  company: 'Koala',
+  role: 'Senior UX Engineer',
+  href: 'https://koala.com/en-au',
+  description:
+    'Joined at an exciting time right before the company underwent a rebrand, a launch into a new market and a complete digital transformation.',
+  start: '2020',
+  end: '2021',
+};
+
+export default (props) => <ArticleLayout meta={meta} {...props} />;
+
+export const getStaticProps = async () => ({ notFound: true });

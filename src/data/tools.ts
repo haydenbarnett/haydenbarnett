@@ -19,7 +19,7 @@ export const tools: ToolsDataProps[] = [
         name: 'JavaScript / TypeScript',
       },
       {
-        name: 'React / Next.js',
+        name: 'React / Next',
       },
       {
         name: 'Vue / Nuxt',

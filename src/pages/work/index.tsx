@@ -12,39 +12,41 @@ import {
   CardLogoPanel,
 } from '@/components';
 import { getAllEntries } from '@/utils/entries';
-import { findDocument, formatDateRange } from '@/utils/formatting';
-import { author, resume, roles, RoleProps } from '@/data';
+import { formatDateRange } from '@/utils/formatting';
+import { author, resume } from '@/data';
 import { FC } from 'react';
 import { DocumentProps } from '@/types/documents';
 
-type RoleRowProps = {
-  role: RoleProps;
+type DocumentRowProps = {
+  document: DocumentProps;
   slug?: string;
   href?: string;
 };
 
-const RoleRow: FC<RoleRowProps> = ({ role, slug, href }) => {
-  const { company, title, description } = role;
-  const roleTitle = `${company} ${title && '•'} ${title}`;
-  const dateRange = formatDateRange(role);
-  const websiteCta = href ? <CardCta>Visit website</CardCta> : null;
+const DocumentRow: FC<DocumentRowProps> = ({ document }) => {
+  const { logo, slug, href, company, role, description, tags } = document;
+  const title = `${company} ${role && '•'} ${role}`;
+  const dateRange = formatDateRange(document);
+  const hasCaseStudy = slug && tags?.length;
+  const link = hasCaseStudy ? `/work/${slug}` : href;
+  const target = hasCaseStudy ? undefined : href ? '_blank' : undefined;
+  const cta = hasCaseStudy ? (
+    <CardCta>View case study</CardCta>
+  ) : href ? (
+    <CardCta>Visit website</CardCta>
+  ) : null;
 
   return (
     <Card>
       <CardLogoPanel>
-        {role?.logo && (
-          <Image src={role.logo} alt="" className="h-12 w-12" unoptimized />
-        )}
+        {logo && <Image src={logo} alt="" className="h-12 w-12" unoptimized />}
       </CardLogoPanel>
-      <CardTitle
-        href={slug ? `/work/${slug}` : href}
-        target={href && !slug ? '_blank' : undefined}
-      >
-        {roleTitle}
+      <CardTitle href={link} target={target}>
+        {title}
       </CardTitle>
       <CardEyebrow>{dateRange}</CardEyebrow>
       <CardDescription>{description}</CardDescription>
-      {slug ? <CardCta>View case study</CardCta> : websiteCta}
+      {cta}
     </Card>
   );
 };
@@ -62,19 +64,10 @@ const WorkPage: FC<WorkPageProps> = ({ documents }) => {
       </Head>
       <SimpleLayout title="Work" intro="">
         <div className="grid grid-cols-2 flex-col gap-16">
-          {roles.map((role, index) => {
-            const document = findDocument(documents, role);
-            const slug = document?.slug;
-            const href = role.href;
+          {documents.map((document, index) => {
+            const { slug } = document;
 
-            return (
-              <RoleRow
-                key={slug ?? index}
-                role={role}
-                slug={slug}
-                href={href}
-              />
-            );
+            return <DocumentRow key={slug ?? index} document={document} />;
           })}
         </div>
         <div className="mt-16 flex justify-center">

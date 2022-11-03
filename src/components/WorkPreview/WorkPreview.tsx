@@ -4,14 +4,15 @@ import Image from 'next/image';
 import { ArrowDownIcon, BriefcaseIcon } from '../Icons';
 import { Button } from '../Button';
 import { formatDateRange } from '@/utils/formatting';
-import { roles, RoleProps, resume } from '../../data';
+import { resume } from '../../data';
+import { DocumentProps } from '@/types/documents';
 
 type WorkRowProps = {
-  role: RoleProps;
+  document: DocumentProps;
 };
 
-const WorkRow: FC<WorkRowProps> = ({ role }) => {
-  const { logo, company, title } = role;
+const WorkRow: FC<WorkRowProps> = ({ document }) => {
+  const { logo, company, role } = document;
 
   return (
     <>
@@ -24,18 +25,20 @@ const WorkRow: FC<WorkRowProps> = ({ role }) => {
             {company}
           </span>
           <span className="text-xs text-gray-500">
-            <time>{formatDateRange(role)}</time>
+            <time>{formatDateRange(document)}</time>
           </span>
         </div>
-        <span className="text-xs text-gray-500 dark:text-gray-400">
-          {title}
-        </span>
+        <span className="text-xs text-gray-500 dark:text-gray-400">{role}</span>
       </div>
     </>
   );
 };
 
-export const WorkPreview: FC = () => {
+type WorkPreviewProps = {
+  documents?: DocumentProps[];
+};
+
+export const WorkPreview: FC<WorkPreviewProps> = ({ documents }) => {
   return (
     <div className="rounded-2xl p-6 ring-1 ring-gray-300 dark:ring-gray-800">
       <h2 className="flex text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -43,9 +46,9 @@ export const WorkPreview: FC = () => {
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        {roles.slice(0, 5).map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <WorkRow role={role} />
+        {documents?.slice(0, 5).map((document, index) => (
+          <li key={index} className="flex gap-4">
+            <WorkRow document={document} />
           </li>
         ))}
       </ol>

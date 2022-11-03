@@ -21,24 +21,20 @@ import { author, social } from '@/data';
 import { DocumentProps } from '@/types/documents';
 
 import wave from '@/images/wave.png';
-import { findRole } from '@/utils/formatting';
 
 type CaseStudyPreviewProps = {
   document: DocumentProps;
 };
 
 const CaseStudyPreview: FC<CaseStudyPreviewProps> = ({ document }) => {
-  const { slug, title, description } = document;
-  const role = findRole(document);
+  const { logo, slug, company, description } = document;
 
   return (
     <Card>
       <CardLogoPanel>
-        {role?.logo && (
-          <Image src={role.logo} alt="" className="h-12 w-12" unoptimized />
-        )}
+        {logo && <Image src={logo} alt="" className="h-12 w-12" unoptimized />}
       </CardLogoPanel>
-      <CardTitle href={`/work/${slug}`}>{title}</CardTitle>
+      <CardTitle href={`/work/${slug}`}>{company}</CardTitle>
       <CardDescription>{description}</CardDescription>
       <CardCta>View case study</CardCta>
     </Card>
@@ -89,12 +85,12 @@ const Home: FC<HomeProps> = ({ documents }) => {
               </p>
             </div>
             <div className="mt-8 flex justify-center gap-6">
-              {social.map((item) => (
+              {social.map(({ href, label, icon }) => (
                 <SocialLink
-                  key={item.href}
-                  href={item.href}
-                  aria-label={item.label}
-                  icon={item.icon}
+                  key={href}
+                  href={href}
+                  aria-label={label}
+                  icon={icon}
                 />
               ))}
             </div>
@@ -109,17 +105,20 @@ const Home: FC<HomeProps> = ({ documents }) => {
           <Button href="/work">View all</Button>
         </div>
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
-          {documents?.map((document: DocumentProps) => (
-            <div className="col-span-1" key={document.slug}>
-              <CaseStudyPreview document={document} />
-            </div>
-          ))}
+          {documents
+            ?.filter((document) => document.tags?.length)
+            .slice(0, 2)
+            .map((document: DocumentProps) => (
+              <div className="col-span-1" key={document.slug}>
+                <CaseStudyPreview document={document} />
+              </div>
+            ))}
         </div>
       </Container>
       <Container>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-48">
           <div className="col-span-1">
-            <WorkPreview />
+            <WorkPreview documents={documents} />
           </div>
           <div className="col-span-1">
             <ProjectsPreview />

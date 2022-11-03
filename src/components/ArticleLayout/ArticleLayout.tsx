@@ -3,16 +3,18 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { Container } from '@/components/Container';
-import { Prose } from '@/components/Prose';
-import { findRole, formatDateRange } from '@/utils/formatting';
+import { Container } from '../Container';
+import { Prose } from '../Prose';
 import { ArrowLeftIcon } from '../Icons';
 import { Tag } from '../Tag';
-import { author } from '../../data';
+import { formatDateRange } from '@/utils/formatting';
+import { DocumentProps } from '@/types/documents';
+import { author } from '@/data';
+import Image from 'next/image';
 
 type ArticleLayoutProps = {
   children?: ReactNode;
-  meta?: any;
+  meta: DocumentProps;
   previousPathname?: string;
 };
 
@@ -22,14 +24,14 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
   previousPathname,
 }) => {
   let router = useRouter();
-  const role = findRole(meta);
-  const dateRange = formatDateRange(role);
+  const dateRange = formatDateRange(meta);
+  const { company, description, logo, tags } = meta;
 
   return (
     <>
       <Head>
-        <title>{`${meta.title} - ${author.name}`}</title>
-        <meta name="description" content={meta.description} />
+        <title>{`${company} - ${author.name}`}</title>
+        <meta name="description" content={description} />
       </Head>
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
@@ -58,16 +60,24 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
                 >
                   <span>{dateRange}</span>
                 </time>
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
-                  {meta.title}
+                <h1 className="mt-12 flex items-center gap-5 text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
+                  {logo && (
+                    <Image
+                      src={logo}
+                      alt=""
+                      className="h-12 w-12"
+                      unoptimized
+                    />
+                  )}
+                  <span>{company}</span>
                 </h1>
-                <p className="mt-6 text-base text-gray-600 dark:text-gray-400">
-                  {meta.description}
+                <p className="mt-12 text-base text-gray-600 dark:text-gray-400">
+                  {description}
                 </p>
               </header>
-              {role?.tags?.length && (
+              {tags?.length && (
                 <div className="mt-4 flex flex-wrap gap-1.5">
-                  {role.tags.map((instance, index) => (
+                  {tags.map((instance, index) => (
                     <Tag key={index}>{instance}</Tag>
                   ))}
                 </div>

@@ -1,0 +1,19 @@
+import { ArticleLayout } from '@/components';
+import Image from 'next/image';
+
+import logo from './images/nexba.svg';
+
+export const meta = {
+  logo,
+  company: 'Nexba Beverages',
+  role: 'Frontend Developer',
+  href: 'https://www.nexba.com/',
+  description:
+    'Design and web development internship working on the Nexba eCommerce website.',
+  start: '2013',
+  end: '2013',
+};
+
+export default (props) => <ArticleLayout meta={meta} {...props} />;
+
+export const getStaticProps = async () => ({ notFound: true });

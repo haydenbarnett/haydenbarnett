@@ -21,7 +21,5 @@ export const getAllEntries = async (directory = 'work') => {
     entryFilenames.map((filename) => importEntry(filename, directory))
   );
 
-  return entries.sort(
-    (a, z) => new Date(z.date).getTime() - new Date(a.date).getTime()
-  );
+  return entries.sort((a, z) => parseInt(z.start) - parseInt(a.start));
 };

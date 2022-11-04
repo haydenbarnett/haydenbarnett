@@ -5,22 +5,18 @@ import Image from 'next/image';
 import {
   Container,
   Button,
+  Introduction,
   WorkPreview,
-  SocialLink,
   Card,
   CardCta,
   CardDescription,
   CardTitle,
   ProjectsPreview,
-  BriefcaseIcon,
-  HomeIcon,
   CardLogoPanel,
 } from '@/components';
 import { getAllEntries } from '@/utils/entries';
-import { author, social } from '@/data';
+import { author } from '@/data';
 import { DocumentProps } from '@/types/documents';
-
-import wave from '@/images/wave.png';
 
 type CaseStudyPreviewProps = {
   document: DocumentProps;
@@ -46,57 +42,18 @@ type HomeProps = {
 };
 
 const Home: FC<HomeProps> = ({ documents }) => {
+  const { name, company, location } = author;
+
   return (
     <div className="flex flex-col gap-32 md:gap-48">
       <Head>
-        <title>{`${author.name} - Frontend Engineer`}</title>
+        <title>{`${name} - Frontend Engineer`}</title>
         <meta
           name="description"
-          content={`I'm ${author.name}, a frontend engineer and digital designer currently working at Corellium and living in Sydney, Australia.`}
+          content={`I'm ${name}, a frontend engineer and digital designer currently working at ${company} and living in ${location}.`}
         />
       </Head>
-      <Container className="mt-12 md:mt-32">
-        <div className="rounded-2xl px-6 pb-20 pt-24 ring-1 ring-neutral-300 dark:ring-neutral-800">
-          <div className="mx-auto max-w-[620px] text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-5xl">
-              <span className="inline-flex flex-col items-center gap-4 sm:flex-row">
-                <Image
-                  src={wave}
-                  alt=""
-                  className="inline-flex h-10 w-10 select-none sm:h-14 sm:w-14"
-                  priority
-                />
-                <span>Hi, I&apos;m {author.name}</span>
-              </span>
-            </h1>
-            <p className="mt-4 text-base text-neutral-600 dark:text-neutral-400">
-              Senior frontend engineer focused on high quality UI/UX with over
-              10 years of experience building accessible and performant
-              interfaces and design systems.
-            </p>
-            <div className="mt-6 flex flex-row flex-wrap items-center justify-center gap-6">
-              <p className="flex flex-wrap items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-neutral-800 dark:text-neutral-300">
-                <BriefcaseIcon className="h-5 w-5" />
-                Working at Corellium
-              </p>
-              <p className="flex flex-wrap items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-neutral-800 dark:text-neutral-300">
-                <HomeIcon className="h-5 w-5" />
-                <span>Living in Sydney, Australia</span>
-              </p>
-            </div>
-            <div className="mt-8 flex justify-center gap-6">
-              {social.map(({ href, label, icon }) => (
-                <SocialLink
-                  key={href}
-                  href={href}
-                  aria-label={label}
-                  icon={icon}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </Container>
+      <Introduction className="mt-12 md:mt-32" />
       <Container>
         <div className="mb-16 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
           <h2 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-3xl">

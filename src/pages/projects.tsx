@@ -31,7 +31,7 @@ const Projects: FC = () => {
 
             return (
               <Card as="li" key={project.name}>
-                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-gray-300 dark:ring-gray-800">
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-neutral-300 dark:bg-neutral-800 dark:ring-neutral-800">
                   {logo ? (
                     <Image src={logo} alt="" className="h-8 w-8" unoptimized />
                   ) : link?.href ? (
@@ -44,7 +44,7 @@ const Projects: FC = () => {
                     />
                   ) : null}
                 </div>
-                <h2 className="mt-6 text-base font-semibold text-gray-800 dark:text-gray-100">
+                <h2 className="mt-6 text-base font-semibold text-neutral-800 dark:text-neutral-100">
                   {!!project.link?.href ? (
                     <CardLink href={project.link.href} target="_blank">
                       {project.name}
@@ -52,14 +52,14 @@ const Projects: FC = () => {
                   ) : (
                     <>
                       {project.name}{' '}
-                      <span className="font-medium text-gray-400 dark:text-gray-300">
+                      <span className="font-medium text-neutral-400 dark:text-neutral-300">
                         (WIP)
                       </span>
                     </>
                   )}
                 </h2>
                 <CardDescription>{project.description}</CardDescription>
-                <p className="relative z-10 mt-6 flex text-sm font-medium text-gray-500 transition group-hover:text-gray-900 dark:group-hover:text-gray-200">
+                <p className="relative z-10 mt-6 flex text-sm font-medium text-neutral-500 transition group-hover:text-neutral-900 dark:group-hover:text-neutral-200">
                   {!!project.link?.href && (
                     <LinkIcon className="h-6 w-6 flex-none" />
                   )}

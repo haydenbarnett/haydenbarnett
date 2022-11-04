@@ -22,8 +22,8 @@ const NavItem: FC<NavItemProps> = ({ href, target, children }) => {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-gray-800 dark:text-gray-200'
-            : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
+            ? 'text-neutral-800 dark:text-neutral-200'
+            : 'text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200'
         )}
       >
         {children}
@@ -39,7 +39,7 @@ type DesktopNavigationProps = {
 export const DesktopNavigation: FC<DesktopNavigationProps> = (props) => {
   return (
     <nav {...props}>
-      <ul className="flex text-sm font-medium text-gray-800 dark:text-gray-200">
+      <ul className="flex text-sm font-medium text-neutral-800 dark:text-neutral-200">
         {navigation.map((item) => (
           <NavItem key={item.href} href={item.href} target={item.target}>
             {item.label}

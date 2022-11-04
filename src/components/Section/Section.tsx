@@ -14,7 +14,7 @@ export const Section: FC<SectionProps> = ({ title, children }) => {
       <div className="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4">
         <h2
           id={id}
-          className="text-sm font-semibold text-gray-800 dark:text-gray-100"
+          className="text-sm font-semibold text-neutral-800 dark:text-neutral-100"
         >
           {title}
         </h2>

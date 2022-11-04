@@ -17,12 +17,12 @@ export const SimpleLayout: FC<SimpleLayoutProps> = ({
       {(title || intro) && (
         <header className="max-w-[620px]">
           {title && (
-            <h1 className="text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-200 sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-5xl">
               {title}
             </h1>
           )}
           {intro && (
-            <p className="mt-6 text-base text-gray-600 dark:text-gray-400">
+            <p className="mt-6 text-base text-neutral-600 dark:text-neutral-400">
               {intro}
             </p>
           )}

@@ -41,14 +41,14 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
                 type="button"
                 onClick={() => router.back()}
                 aria-label="Go back"
-                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-gray-300 transition hover:ring-gray-400 dark:ring-gray-800 dark:hover:ring-gray-700 lg:absolute lg:left-0 lg:mb-0 lg:mt-0"
+                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-neutral-300 transition hover:ring-neutral-400 dark:ring-neutral-800 dark:hover:ring-neutral-700 lg:absolute lg:left-0 lg:mb-0 lg:mt-0"
               >
-                <ArrowLeftIcon className="h-4 w-4 stroke-gray-500 transition group-hover:stroke-gray-800 dark:group-hover:stroke-gray-300" />
+                <ArrowLeftIcon className="h-4 w-4 stroke-neutral-500 transition group-hover:stroke-neutral-800 dark:group-hover:stroke-neutral-300" />
               </button>
             ) : (
               <Link href="/work">
-                <div className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-gray-300 transition hover:ring-gray-400 dark:ring-gray-800 dark:hover:ring-gray-700 lg:absolute lg:left-0 lg:mb-0 lg:mt-0">
-                  <ArrowLeftIcon className="h-4 w-4 stroke-gray-500 transition group-hover:stroke-gray-800 dark:group-hover:stroke-gray-300" />
+                <div className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-neutral-300 transition hover:ring-neutral-400 dark:ring-neutral-800 dark:hover:ring-neutral-700 lg:absolute lg:left-0 lg:mb-0 lg:mt-0">
+                  <ArrowLeftIcon className="h-4 w-4 stroke-neutral-500 transition group-hover:stroke-neutral-800 dark:group-hover:stroke-neutral-300" />
                 </div>
               </Link>
             )}
@@ -56,27 +56,29 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
               <header className="flex flex-col">
                 <time
                   dateTime={dateRange}
-                  className="flex items-center text-base text-gray-500"
+                  className="flex items-center text-base text-neutral-500"
                 >
                   <span>{dateRange}</span>
                 </time>
-                <h1 className="mt-12 flex items-center gap-5 text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
+                <h1 className="mt-12 flex items-center gap-5 text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-5xl">
                   {logo && (
-                    <Image
-                      src={logo}
-                      alt=""
-                      className="h-12 w-12"
-                      unoptimized
-                    />
+                    <div className="relative mt-1 flex h-16 w-16 flex-none items-center justify-center rounded-full ring-1 ring-neutral-300 dark:bg-neutral-800 dark:text-white dark:ring-neutral-800">
+                      <Image
+                        src={logo}
+                        alt=""
+                        className="h-10 w-10"
+                        unoptimized
+                      />
+                    </div>
                   )}
                   <span>{company}</span>
                 </h1>
-                <p className="mt-12 text-base text-gray-600 dark:text-gray-400">
+                <p className="mt-6 text-lg text-neutral-600 dark:text-neutral-200">
                   {description}
                 </p>
               </header>
               {tags?.length && (
-                <div className="mt-4 flex flex-wrap gap-1.5">
+                <div className="mt-12 flex flex-wrap gap-1.5">
                   {tags.map((instance, index) => (
                     <Tag key={index}>{instance}</Tag>
                   ))}

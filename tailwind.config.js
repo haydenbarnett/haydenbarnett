@@ -1,8 +1,9 @@
+const tailwindTypography = require('@tailwindcss/typography');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
-  plugins: [require('@tailwindcss/typography')],
   theme: {
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
@@ -318,5 +319,40 @@ module.exports = {
         },
       },
     }),
+    extend: {
+      colors: {
+        gold: {
+          100: '#ffffff',
+          200: '#ffffd5',
+          300: '#ffffac',
+          400: '#d1b464',
+          500: '#5d4a1f',
+          600: '#3b2b1b',
+        },
+      },
+      backgroundImage: (theme) => ({
+        'gradient-gold-light': `conic-gradient(transparent, 
+          ${theme('colors.gold.300')}, 
+          ${theme('colors.gold.200')}, 
+          ${theme('colors.gold.100')}, 
+          ${theme('colors.gold.200')}, transparent 40%)`,
+        'gradient-gold-dark': `conic-gradient(transparent, 
+          ${theme('colors.gold.500')}, 
+          ${theme('colors.gold.400')},
+          ${theme('colors.gold.300')},
+          ${theme('colors.gold.200')}, 
+          ${theme('colors.gold.100')}, 
+          ${theme('colors.gold.300')}, transparent 40%)`,
+      }),
+      animation: {
+        rotate: 'rotate 4s linear infinite;',
+      },
+      keyframes: {
+        rotate: {
+          '100%': { transform: 'rotate(1turn)' },
+        },
+      },
+    },
   },
+  plugins: [tailwindTypography],
 };

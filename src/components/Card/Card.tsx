@@ -55,7 +55,9 @@ export const CardLink: FC<CardLink> = ({ children, href, ...props }) => {
       <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 ring-1 ring-neutral-300 transition group-hover:scale-100 group-hover:opacity-100 dark:ring-neutral-800 sm:-inset-x-6 sm:rounded-2xl" />
       <Link href={href} {...props}>
         <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
-        <span className="relative z-10">{children}</span>
+        <span className="relative z-10 flex items-center gap-2">
+          {children}
+        </span>
       </Link>
     </>
   );
@@ -75,7 +77,7 @@ export const CardTitle: FC<CardTitleProps> = ({
   children,
 }) => {
   return (
-    <Component className="flex gap-2 text-base font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
+    <Component className="flex items-center gap-2 text-base font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
       {href ? (
         <CardLink href={href} target={target} className="flex gap-2">
           {children}

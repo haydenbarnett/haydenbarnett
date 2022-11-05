@@ -13,7 +13,6 @@ export * from './ModeToggle';
 export * from './ProjectsPreview';
 export * from './Prose';
 export * from './WorkPreview';
-export * from './Section';
 export * from './SimpleLayout';
 export * from './SocialLink';
 export * from './Tag';

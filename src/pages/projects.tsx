@@ -18,10 +18,10 @@ const Projects: FC = () => {
         <title>{`Projects - ${author.name}`}</title>
         <meta
           name="description"
-          content="Things I've made either to help others or just for fun."
+          content="Things I've made to help others or just for fun."
         />
       </Head>
-      <SimpleLayout title="Things I've made either to help others or just for fun.">
+      <SimpleLayout title="Things I've made to help others or just for fun.">
         <ul
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
@@ -50,12 +50,7 @@ const Projects: FC = () => {
                       {project.name}
                     </CardLink>
                   ) : (
-                    <>
-                      {project.name}{' '}
-                      <span className="font-medium text-neutral-400 dark:text-neutral-300">
-                        (WIP)
-                      </span>
-                    </>
+                    <>{project.name}</>
                   )}
                 </h2>
                 <CardDescription>{project.description}</CardDescription>

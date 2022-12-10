@@ -15,18 +15,17 @@ export type ProjectDataProps = {
 export const projects: ProjectDataProps[] = [
   {
     name: 'Temploid',
-    description: 'Online video game publisher featuring three.js experiments.',
+    description: 'Coming soon.',
     logo: temploidLogo,
   },
   {
     name: 'Theme.ink',
-    description:
-      'A suite of tools to assist in the design and development process.',
+    description: 'Coming soon.',
     logo: themeinkLogo,
   },
   {
     name: 'Imagepup',
-    description: 'A puppy themed vanilla image editor.',
+    description: 'Coming soon.',
     logo: imagepupLogo,
   },
   {

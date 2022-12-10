@@ -41,10 +41,10 @@ const Tools: FC = () => {
         <title>{`Tools - ${author.name}`}</title>
         <meta
           name="description"
-          content="Apps, solutions &amp; services that I use."
+          content="Tools, apps, solutions &amp; services."
         />
       </Head>
-      <SimpleLayout title="Apps, solutions &amp; services that I use.">
+      <SimpleLayout title="Tools, apps, solutions &amp; services.">
         <div className="divide-y divide-neutral-300 dark:divide-neutral-800">
           {tools.map((category) => (
             <ToolsSection title={category.name} key={category.name}>

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import Image from 'next/image';
 
-import { ArrowDownIcon, BriefcaseIcon } from '../Icons';
+import { BriefcaseIcon } from '../Icons';
 import { Button } from '../Button';
 import { formatDateRange } from '@/utils/formatting';
 import { resume } from '../../data';
@@ -56,7 +56,6 @@ export const WorkPreview: FC<WorkPreviewProps> = ({ documents }) => {
       </ol>
       <Button href={resume} className="mt-6 w-full">
         Download Résumé
-        <ArrowDownIcon className="h-4 w-4 stroke-current opacity-50 transition" />
       </Button>
     </div>
   );

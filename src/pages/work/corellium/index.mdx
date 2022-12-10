@@ -1,21 +1,15 @@
-import { ArticleLayout } from '@/components';
 import Image from 'next/image';
+import { ArticleLayout } from '@/components';
 
 import logo from './images/corellium.svg';
-import hypervisor from './images/hypervisor.png';
-import magic from './images/magic.png';
-import ambassador from './images/ambassador.png';
-import stargate from './images/stargate.png';
-import atlas from './images/atlas.png';
-import gray from './images/gray.png';
-import colour from './images/colour.png';
-import components from './images/components.png';
+import preview from './images/preview.jpg';
 
 export const meta = {
   logo,
+  preview,
   company: 'Corellium',
   description:
-    'Working with the newly formed frontend team on a range of greenfield projects while also evolving and maintaining the existing core app.',
+    'Corellium are pioneers of a unique Arm-based device virtualisation platform, working to advance security and development work on mobile, IoT, and beyond.',
   role: 'Senior Frontend Engineer',
   href: 'https://corellium.com/',
   start: '2021',
@@ -29,7 +23,7 @@ export const meta = {
     'TypeScript',
     'Tailwind',
     'Storybook',
-    'Next.js',
+    'Next',
     'Stripe',
     'Segment',
     'GTM',
@@ -38,10 +32,6 @@ export const meta = {
 };
 
 export default (props) => <ArticleLayout meta={meta} {...props} />;
-
-<Image src={hypervisor} alt="" />
-
-Corellium are pioneers of a unique Arm-based device virtualisation platform, working to advance security and development work on mobile, IoT, and beyond.
 
 I'm still working at Corellium, and currently focusing on rolling out new features to our core app. While I've only been there for one year, my time has been packed full of shipping new projects and rolling out new features.
 
@@ -53,44 +43,30 @@ Our goals were to create a system to allow us to quickly build new interfaces, i
 
 It was built out as a Storybook-based design system on React, Next, Typescript, CSS Modules (w/ PostCSS), Tailwind, and deployed for preview on Vercel. This stack formed the base for all future frontend projects.
 
-<Image src={magic} alt="" />
-
 ## Corellium.com
 
 Once our design system was ready we moved onto rebuilding the marketing website as our first build test. The majority of the website content is loaded from Prismic.
-
-<Image src={ambassador} alt="" />
 
 ## Trial Request Flow
 
 Next up was the trial request flow which website visitors can fill out to get their hands on Corellium. This has had many iterations and features including Stripe billing integration with 3DS, email validation, automatic geolocation lookup and of course a neat transition animation.
 
-<Image src={stargate} alt="" />
-
 ## Cloud Administration Platform
 
 Managing our customers was originally an admin-only view built into the app frontend. Another prime candidate for rebuilding with our design system.
 
-From here our team of administrators can review trial requests, existing accounts and the status of each of our clusters.
-
-<Image src={atlas} alt="" />
+From here our team of administrators can review trial requests, send trial invites, manage existing accounts and the status of each of our server deployments.
 
 ## Corellium App
 
 Outside of our greenfield projects my primary role has been to maintain the frontend of the Corellium app. We started by working in fortnightly sprints, usually prioritising bugs and the features for upcoming releases. Across hundreds of tickets I've implemented new device interaction features, administration features, enterprise features such as whitelabelling, and supported the launch of multiple Android, iPhone and IoT devices.
 
-The codebase is quite large and complex and has some areas for improvement that we're still working hard at to make it on-par with our design system and other frontend applications. One of the first big cleanup items was converting all stylesheets to make use of design tokens and bring about greater consistency, improved accessibility and introduce a more modern UI.
+The codebase is quite large and complex and has some areas for improvement that we're still working hard at to make it on-par with our design system and other frontend applications.
 
-After a review of hundreds of files I found that we were using 35 shades of gray (almost 50). Colours were in a similar state with no particular pattern to the steps or application.
+One of the first big cleanup items was converting all stylesheets to make use of design tokens and bring about greater consistency, improved accessibility and introduce a more modern UI. I manually reviewed hundreds of our CSS files and found that we were using 35 shades of gray and were missing consistency in our application of primary and secondary status colours. All colours were identified and converted into a 100's system.
 
-<Image src={gray} alt="" />
+The team is also currently in the process of converting the existing library to functional TypeScript components. We're also taking this opportunity to evolve the design and accessibility of each component.
 
-Grays were converted into a 100's system and colours received a similar treatment moving to a 4-colour system for primary, success and error.
+## Analytics
 
-<Image src={colour} alt="" />
-
-<Image src={components} alt="" />
-
-The team is also currently in the process of converting everything to TypeScript while also moving from classes to functional components.
-
-I also worked with the product and data teams to implement tracking across the website, the trial request flow, and the app using GTM, GA and Segment.
+I worked with the product, data and marketing teams to implement tracking across the website, the trial request flow, and the app using GTM, GA and Segment. Segment was used to recieve events via our custom data proxy which was setup to handle some of the data processing logic and make the event tracking a little more solution agnositic.

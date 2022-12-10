@@ -7,7 +7,6 @@ import {
   CardEyebrow,
   CardTitle,
   SimpleLayout,
-  ArrowDownIcon,
   Button,
   CardLogoPanel,
 } from '@/components';
@@ -73,7 +72,6 @@ const WorkPage: FC<WorkPageProps> = ({ documents }) => {
         <div className="mt-16 flex justify-center">
           <Button href={resume} target="_blank">
             Download Résumé
-            <ArrowDownIcon className="h-4 w-4 stroke-current opacity-50 transition" />
           </Button>
         </div>
       </SimpleLayout>

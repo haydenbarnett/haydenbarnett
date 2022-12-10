@@ -1,16 +1,16 @@
 import type { FC, ReactNode } from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+import Image from 'next/image';
 
 import { Container } from '../Container';
 import { Prose } from '../Prose';
-import { ArrowLeftIcon } from '../Icons';
+
 import { Tag } from '../Tag';
+import { Button } from '../Button';
+import { BackButton } from '../BackButton';
 import { formatDateRange } from '@/utils/formatting';
 import { DocumentProps } from '@/types/documents';
 import { author } from '@/data';
-import Image from 'next/image';
 
 type ArticleLayoutProps = {
   children?: ReactNode;
@@ -23,9 +23,8 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
   meta,
   previousPathname,
 }) => {
-  let router = useRouter();
   const dateRange = formatDateRange(meta);
-  const { company, description, logo, tags } = meta;
+  const { company, description, logo, preview, href, tags } = meta;
 
   return (
     <>
@@ -36,33 +35,23 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
-            {previousPathname ? (
-              <button
-                type="button"
-                onClick={() => router.back()}
-                aria-label="Go back"
-                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-neutral-300 transition hover:ring-neutral-400 dark:ring-neutral-800 dark:hover:ring-neutral-700 lg:absolute lg:left-0 lg:mb-0 lg:mt-0"
-              >
-                <ArrowLeftIcon className="h-4 w-4 stroke-neutral-500 transition group-hover:stroke-neutral-800 dark:group-hover:stroke-neutral-300" />
-              </button>
-            ) : (
-              <Link href="/work">
-                <div className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-neutral-300 transition hover:ring-neutral-400 dark:ring-neutral-800 dark:hover:ring-neutral-700 lg:absolute lg:left-0 lg:mb-0 lg:mt-0">
-                  <ArrowLeftIcon className="h-4 w-4 stroke-neutral-500 transition group-hover:stroke-neutral-800 dark:group-hover:stroke-neutral-300" />
-                </div>
-              </Link>
-            )}
+            <BackButton previousPathname={previousPathname} href="/work" />
             <article>
               <header className="flex flex-col">
-                <time
-                  dateTime={dateRange}
-                  className="flex items-center text-base text-neutral-500"
-                >
-                  <span>{dateRange}</span>
-                </time>
+                <div className="flex items-center justify-between">
+                  <time
+                    dateTime={dateRange}
+                    className="text-base text-neutral-500"
+                  >
+                    {dateRange}
+                  </time>
+                  <Button href={href} target="_blank">
+                    Visit website
+                  </Button>
+                </div>
                 <h1 className="mt-12 flex items-center gap-5 text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-5xl">
                   {logo && (
-                    <div className="relative mt-1 flex h-16 w-16 flex-none items-center justify-center rounded-full ring-1 ring-neutral-300 dark:bg-neutral-800 dark:text-white dark:ring-neutral-800">
+                    <div className="relative flex h-16 w-16 flex-none items-center justify-center rounded-full ring-1 ring-neutral-300 dark:bg-neutral-800 dark:text-white dark:ring-neutral-800">
                       <Image
                         src={logo}
                         alt=""
@@ -84,7 +73,10 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
                   ))}
                 </div>
               )}
-              <Prose className="mt-8">{children}</Prose>
+              <Prose className="mt-8">
+                {preview && <Image src={preview} alt="" />}
+                {children}
+              </Prose>
             </article>
           </div>
         </div>

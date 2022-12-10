@@ -89,6 +89,9 @@ export const tools: ToolsDataProps[] = [
       {
         name: 'Blender',
       },
+      {
+        name: 'Midjourney',
+      },
     ],
   },
   {

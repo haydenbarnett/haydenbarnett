@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import Image from 'next/image';
+import { BriefcaseIcon } from '@heroicons/react/20/solid';
 
-import { BriefcaseIcon } from '../Icons';
 import { Button } from '../Button';
 import { formatDateRange } from '@/utils/formatting';
 import { resume } from '../../data';
@@ -43,9 +43,9 @@ type WorkPreviewProps = {
 export const WorkPreview: FC<WorkPreviewProps> = ({ documents }) => {
   return (
     <div className="rounded-2xl p-6 ring-1 ring-neutral-300 dark:ring-neutral-800">
-      <h2 className="flex text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+      <h2 className="flex items-center gap-3 text-sm font-semibold text-neutral-800 dark:text-neutral-200">
+        <BriefcaseIcon className="h-5 w-5" />
+        Work
       </h2>
       <ol className="mt-6 space-y-4">
         {documents?.slice(0, 5).map((document, index) => (

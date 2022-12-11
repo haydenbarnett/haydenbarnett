@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { RocketLaunchIcon } from '@heroicons/react/20/solid';
 
-import { RocketLaunchIcon } from '../Icons';
 import { Button } from '../Button';
 import { ProjectDataProps, projects } from '../../data';
-import Link from 'next/link';
 
 type ProjectRowProps = {
   project: ProjectDataProps;
@@ -53,9 +53,9 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
 export const ProjectsPreview: FC = () => {
   return (
     <div className="rounded-2xl border border-neutral-300 p-6 dark:border-neutral-800">
-      <h2 className="flex text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-        <RocketLaunchIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Personal Projects</span>
+      <h2 className="flex items-center gap-3 text-sm font-semibold text-neutral-800 dark:text-neutral-200">
+        <RocketLaunchIcon className="h-5 w-5" />
+        Personal Projects
       </h2>
       <ol className="mt-6 space-y-4">
         {projects.slice(0, 5).map((project, projectIndex) => (

@@ -1,9 +1,10 @@
 import type { FC } from 'react';
+import { EnvelopeIcon } from '@heroicons/react/24/solid';
 
 import {
   DribbbleIcon,
-  MailIcon,
   GitHubIcon,
+  InstagramIcon,
   LinkedInIcon,
 } from '../components/Icons';
 
@@ -30,8 +31,13 @@ export const social: SocialDataProps[] = [
     icon: LinkedInIcon,
   },
   {
+    href: 'https://www.instagram.com/hayden_jb/',
+    label: 'Instagram',
+    icon: InstagramIcon,
+  },
+  {
     href: 'mailto:hello@haydenbarnett.com',
     label: 'Email',
-    icon: MailIcon,
+    icon: EnvelopeIcon,
   },
 ];

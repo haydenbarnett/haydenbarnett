@@ -2,14 +2,9 @@ import type { FC } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 
-import {
-  Card,
-  CardDescription,
-  CardLink,
-  SimpleLayout,
-  LinkIcon,
-} from '@/components';
+import { Card, CardDescription, CardLink, SimpleLayout } from '@/components';
 import { author, projects } from '@/data';
+import { LinkIcon } from '@heroicons/react/20/solid';
 
 const Projects: FC = () => {
   return (
@@ -54,11 +49,9 @@ const Projects: FC = () => {
                   )}
                 </h2>
                 <CardDescription>{project.description}</CardDescription>
-                <p className="relative z-10 mt-6 flex text-sm font-medium text-neutral-500 transition group-hover:text-neutral-900 dark:group-hover:text-neutral-200">
-                  {!!project.link?.href && (
-                    <LinkIcon className="h-6 w-6 flex-none" />
-                  )}
-                  <span className="ml-2">{project.link?.label}</span>
+                <p className="relative z-10 mt-6 flex items-center gap-2 text-sm font-medium text-neutral-500 transition group-hover:text-neutral-900 dark:group-hover:text-neutral-200">
+                  {!!project.link?.href && <LinkIcon className="h-4 w-4" />}
+                  {project.link?.label}
                 </p>
               </Card>
             );

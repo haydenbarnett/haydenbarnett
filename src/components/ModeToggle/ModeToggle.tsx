@@ -1,4 +1,4 @@
-import { MoonIcon, SunIcon } from '../Icons';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 
 export const ModeToggle = () => {
   const disableTransitionsTemporarily = () => {

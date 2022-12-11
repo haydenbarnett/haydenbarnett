@@ -1,8 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
-
-import { ChevronRightIcon } from '../Icons';
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 type CardProps = {
   as?: any;
@@ -107,12 +106,9 @@ type CardCtaProps = {
 
 export const CardCta: FC<CardCtaProps> = ({ children }) => {
   return (
-    <div
-      aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-neutral-500 transition group-hover:text-neutral-800 dark:group-hover:text-neutral-200"
-    >
+    <div className="relative z-10 mt-4 flex items-center gap-1 text-sm font-medium text-neutral-500 transition group-hover:text-neutral-800 dark:group-hover:text-neutral-200">
       {children}
-      <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+      <ChevronRightIcon className="h-4 w-4" />
     </div>
   );
 };

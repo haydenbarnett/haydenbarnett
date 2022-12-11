@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 import {
   Container,
@@ -32,7 +33,9 @@ const CaseStudyPreview: FC<CaseStudyPreviewProps> = ({ document }) => {
       </CardLogoPanel>
       <CardTitle href={`/work/${slug}`}>{company}</CardTitle>
       <CardDescription>{description}</CardDescription>
-      <CardCta>View case study</CardCta>
+      <CardCta>
+        View case study <ChevronRightIcon className="h-4 w-4" />
+      </CardCta>
     </Card>
   );
 };

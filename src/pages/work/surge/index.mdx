@@ -1,0 +1,19 @@
+import { ArticleLayout } from '@/components';
+import Image from 'next/image';
+
+import logo from './images/surge.svg';
+
+export const meta = {
+  logo,
+  company: 'Surge',
+  role: 'Creative Director',
+  href: 'https://surge.studio/',
+  description:
+    'Co-founded growth marketing agency. Managing creative output - development, design & copywriting and video production. Clients include CSIRO/Data61, Waddle, TutorTime, Dysrupt Labs, Jellypepper.',
+  start: '2018',
+  end: '2021',
+};
+
+export default (props) => <ArticleLayout meta={meta} {...props} />;
+
+export const getStaticProps = async () => ({ notFound: true });

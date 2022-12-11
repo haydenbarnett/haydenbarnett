@@ -15,37 +15,29 @@ const NavItem: FC<NavItemProps> = ({ href, target, children }) => {
   let isActive = useRouter().pathname === href;
 
   return (
-    <li>
-      <Link
-        href={href}
-        target={target}
-        className={clsx(
-          'relative block px-3 py-2 transition',
-          isActive
-            ? 'text-neutral-800 dark:text-neutral-200'
-            : 'text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200'
-        )}
-      >
-        {children}
-      </Link>
-    </li>
+    <Link
+      href={href}
+      target={target}
+      className={clsx(
+        'flex whitespace-nowrap px-3 py-2 transition',
+        isActive
+          ? 'text-neutral-800 dark:text-neutral-200'
+          : 'text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200'
+      )}
+    >
+      {children}
+    </Link>
   );
 };
 
-type DesktopNavigationProps = {
-  className?: string;
-};
-
-export const DesktopNavigation: FC<DesktopNavigationProps> = (props) => {
+export const DesktopNavigation: FC = () => {
   return (
-    <nav {...props}>
-      <ul className="flex text-sm font-medium text-neutral-800 dark:text-neutral-200">
-        {navigation.map((item) => (
-          <NavItem key={item.href} href={item.href} target={item.target}>
-            {item.label}
-          </NavItem>
-        ))}
-      </ul>
+    <nav className="hidden text-sm font-medium text-neutral-800 dark:text-neutral-200 md:flex">
+      {navigation.map((item) => (
+        <NavItem key={item.href} href={item.href} target={item.target}>
+          {item.label}
+        </NavItem>
+      ))}
     </nav>
   );
 };

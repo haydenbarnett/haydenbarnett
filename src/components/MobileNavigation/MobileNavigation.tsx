@@ -27,13 +27,9 @@ const MobileNavItem: FC<MobileNavItemProps> = ({ href, target, children }) => {
   );
 };
 
-type MobileNavigationProps = {
-  className?: string;
-};
-
-export const MobileNavigation: FC<MobileNavigationProps> = (props) => {
+export const MobileNavigation: FC = () => {
   return (
-    <Popover {...props}>
+    <Popover className="pointer-events-auto md:hidden">
       <Popover.Button className="group flex items-center rounded-full px-4 py-2 text-sm font-medium text-neutral-800 ring-1 ring-neutral-300 transition hover:ring-neutral-400 dark:text-neutral-200 dark:ring-neutral-800 dark:hover:ring-neutral-700">
         Menu
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-neutral-500 group-hover:stroke-neutral-700 dark:group-hover:stroke-neutral-400" />

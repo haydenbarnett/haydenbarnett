@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import clsx from 'clsx';
 
-import { navigation } from '../../data';
+import { navigation } from '@/data';
 
 type NavItemProps = {
   href: string;

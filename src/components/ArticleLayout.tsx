@@ -2,12 +2,12 @@ import type { FC, ReactNode } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import { Container } from '../Container';
-import { Prose } from '../Prose';
+import { Container } from './Container';
+import { Prose } from './Prose';
 
-import { Tag } from '../Tag';
-import { Button } from '../Button';
-import { BackButton } from '../BackButton';
+import { Tag } from './Tag';
+import { Button } from './Button';
+import { BackButton } from './BackButton';
 import { formatDateRange } from '@/utils/formatting';
 import { DocumentProps } from '@/types/documents';
 import { author } from '@/data';

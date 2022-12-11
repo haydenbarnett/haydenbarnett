@@ -2,9 +2,9 @@ import type { FC } from 'react';
 import Image from 'next/image';
 import { BriefcaseIcon } from '@heroicons/react/20/solid';
 
-import { Button } from '../Button';
+import { Button } from './Button';
 import { formatDateRange } from '@/utils/formatting';
-import { resume } from '../../data';
+import { resume } from '../data';
 import { DocumentProps } from '@/types/documents';
 
 type WorkRowProps = {

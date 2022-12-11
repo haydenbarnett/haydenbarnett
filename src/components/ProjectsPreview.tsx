@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { RocketLaunchIcon } from '@heroicons/react/20/solid';
 
-import { Button } from '../Button';
-import { ProjectDataProps, projects } from '../../data';
+import { Button } from './Button';
+import { ProjectDataProps, projects } from '../data';
 
 type ProjectRowProps = {
   project: ProjectDataProps;

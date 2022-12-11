@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 
-import { Container } from '../Container';
-import { MobileNavigation } from '../MobileNavigation';
-import { DesktopNavigation } from '../DesktopNavigation';
-import { Avatar } from '../Avatar';
-import { ModeToggle } from '../ModeToggle';
+import { Container } from './Container';
+import { MobileNavigation } from './MobileNavigation';
+import { DesktopNavigation } from './DesktopNavigation';
+import { Avatar } from './Avatar';
+import { ModeToggle } from './ModeToggle';
 
 export const Header: FC = () => {
   return (

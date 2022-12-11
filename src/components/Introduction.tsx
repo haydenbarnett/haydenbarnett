@@ -2,8 +2,8 @@ import type { FC } from 'react';
 import Image from 'next/image';
 import { BriefcaseIcon, HomeIcon } from '@heroicons/react/20/solid';
 
-import { Container } from '../Container';
-import { SocialLink } from '../SocialLink';
+import { Container } from './Container';
+import { SocialLink } from './SocialLink';
 import { author, social } from '@/data';
 import wave from '@/images/wave.png';
 

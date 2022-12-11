@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Popover, Transition } from '@headlessui/react';
 import { ChevronDownIcon, XMarkIcon } from '@heroicons/react/20/solid';
 
-import { navigation } from '../../data';
+import { navigation } from '@/data';
 
 type MobileNavItemProps = {
   href: string;

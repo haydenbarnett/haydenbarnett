@@ -7,7 +7,7 @@ export * from './Container';
 export * from './DesktopNavigation';
 export * from './Footer';
 export * from './Header';
-export * from './Icons';
+export * from './SocialIcons';
 export * from './Introduction';
 export * from './MobileNavigation';
 export * from './ModeToggle';

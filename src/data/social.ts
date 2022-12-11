@@ -6,7 +6,7 @@ import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
-} from '../components/Icons';
+} from '../components/SocialIcons';
 
 export type SocialDataProps = {
   href: string;

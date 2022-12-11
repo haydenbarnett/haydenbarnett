@@ -108,7 +108,6 @@ export const CardCta: FC<CardCtaProps> = ({ children }) => {
   return (
     <div className="relative z-10 mt-4 flex items-center gap-1 text-sm font-medium text-neutral-500 transition group-hover:text-neutral-800 dark:group-hover:text-neutral-200">
       {children}
-      <ChevronRightIcon className="h-4 w-4" />
     </div>
   );
 };

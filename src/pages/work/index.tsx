@@ -1,5 +1,8 @@
+import type { FC } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import { ChevronRightIcon, LinkIcon } from '@heroicons/react/20/solid';
+
 import {
   Card,
   CardCta,
@@ -13,7 +16,6 @@ import {
 import { getAllEntries } from '@/utils/entries';
 import { formatDateRange } from '@/utils/formatting';
 import { author, resume } from '@/data';
-import { FC } from 'react';
 import { DocumentProps } from '@/types/documents';
 
 type DocumentRowProps = {
@@ -30,9 +32,13 @@ const DocumentRow: FC<DocumentRowProps> = ({ document }) => {
   const link = hasCaseStudy ? `/work/${slug}` : href;
   const target = hasCaseStudy ? undefined : href ? '_blank' : undefined;
   const cta = hasCaseStudy ? (
-    <CardCta>View case study</CardCta>
+    <CardCta>
+      View case study <ChevronRightIcon className="h-4 w-4" />
+    </CardCta>
   ) : href ? (
-    <CardCta>Visit website</CardCta>
+    <CardCta>
+      <LinkIcon className="h-4 w-4" /> Visit website
+    </CardCta>
   ) : null;
 
   return (

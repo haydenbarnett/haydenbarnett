@@ -1,6 +1,6 @@
 import { resume } from './resume';
 
-export type NavigationDataProps = {
+type NavigationDataProps = {
   id?: string;
   href: string;
   label: string;
@@ -18,7 +18,7 @@ export const navigation: NavigationDataProps[] = [
   },
   {
     href: '/projects',
-    label: 'Projects',
+    label: 'Personal Projects',
   },
   {
     href: '/tools',

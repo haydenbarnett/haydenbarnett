@@ -24,9 +24,10 @@ export const projects: ProjectDataProps[] = [
     logo: themeinkLogo,
   },
   {
-    name: 'Imagepup',
-    description: 'Coming soon.',
     logo: imagepupLogo,
+    name: 'Imagepup',
+    description: 'My playground for AI generated imagery and associated tools.',
+    link: { href: 'https://www.imagepup.com', label: 'imagepup.com' },
   },
   {
     name: 'Anna & Hayden',

@@ -33,7 +33,7 @@ export const CardLogoPanel: FC<CardLogoPanel> = ({ children, className }) => {
     <div
       className={clsx(
         className,
-        'relative z-10 mb-4 flex h-32 w-full items-center justify-center rounded-lg ring-1 ring-neutral-300 dark:bg-neutral-800 dark:ring-neutral-800'
+        'relative z-10 mb-4 flex h-32 w-full items-center justify-center rounded-lg ring-1 ring-zinc-300 dark:bg-zinc-800 dark:ring-zinc-800'
       )}
     >
       {children}
@@ -51,7 +51,7 @@ type CardLink = {
 export const CardLink: FC<CardLink> = ({ children, href, ...props }) => {
   return (
     <>
-      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 ring-1 ring-neutral-300 transition group-hover:scale-100 group-hover:opacity-100 dark:ring-neutral-800 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 ring-1 ring-zinc-300 transition group-hover:scale-100 group-hover:opacity-100 dark:ring-zinc-800 sm:-inset-x-6 sm:rounded-2xl" />
       <Link href={href} {...props}>
         <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10 flex items-center gap-2">
@@ -76,7 +76,7 @@ export const CardTitle: FC<CardTitleProps> = ({
   children,
 }) => {
   return (
-    <Component className="flex items-center gap-2 text-base font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
+    <Component className="flex items-center gap-2 text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
       {href ? (
         <CardLink href={href} target={target} className="flex gap-2">
           {children}
@@ -94,7 +94,7 @@ type CardDescription = {
 
 export const CardDescription: FC<CardTitleProps> = ({ children }) => {
   return (
-    <p className="relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+    <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
       {children}
     </p>
   );
@@ -106,7 +106,7 @@ type CardCtaProps = {
 
 export const CardCta: FC<CardCtaProps> = ({ children }) => {
   return (
-    <div className="relative z-10 mt-4 flex items-center gap-1 text-sm font-medium text-neutral-500 transition group-hover:text-neutral-800 dark:group-hover:text-neutral-200">
+    <div className="relative z-10 mt-4 flex items-center gap-1 text-sm font-medium text-zinc-500 transition group-hover:text-zinc-800 dark:group-hover:text-zinc-200">
       {children}
     </div>
   );
@@ -128,7 +128,7 @@ export const CardEyebrow: FC<CardEyebrowProps> = ({
     <Component
       className={clsx(
         className,
-        'relative z-10 mb-3 flex items-center text-sm text-neutral-400 dark:text-neutral-500'
+        'relative z-10 mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500'
       )}
       {...props}
     >

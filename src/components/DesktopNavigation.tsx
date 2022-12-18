@@ -21,8 +21,8 @@ const NavItem: FC<NavItemProps> = ({ href, target, children }) => {
       className={clsx(
         'flex whitespace-nowrap px-3 py-2 transition',
         isActive
-          ? 'text-neutral-800 dark:text-neutral-200'
-          : 'text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200'
+          ? 'text-zinc-800 dark:text-zinc-200'
+          : 'text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200'
       )}
     >
       {children}
@@ -32,7 +32,7 @@ const NavItem: FC<NavItemProps> = ({ href, target, children }) => {
 
 export const DesktopNavigation: FC = () => {
   return (
-    <nav className="hidden text-sm font-medium text-neutral-800 dark:text-neutral-200 md:flex">
+    <nav className="hidden text-sm font-medium text-zinc-800 dark:text-zinc-200 md:flex">
       {navigation.map((item) => (
         <NavItem key={item.href} href={item.href} target={item.target}>
           {item.label}

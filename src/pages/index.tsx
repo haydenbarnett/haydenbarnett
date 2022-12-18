@@ -59,7 +59,7 @@ const Home: FC<HomeProps> = ({ documents }) => {
       <Introduction className="mt-12 md:mt-32" />
       <Container>
         <div className="mb-16 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-          <h2 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
             Read about my work
           </h2>
           <Button href="/work">View all</Button>

@@ -16,21 +16,19 @@ const WorkRow: FC<WorkRowProps> = ({ document }) => {
 
   return (
     <>
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-neutral-300 dark:bg-neutral-800 dark:text-white dark:ring-neutral-800">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-zinc-300 dark:bg-zinc-800 dark:text-white dark:ring-zinc-800">
         {logo && <Image src={logo} alt="" className="h-6 w-6" unoptimized />}
       </div>
       <div className="flex flex-auto flex-wrap gap-x-2">
         <div className="flex w-full justify-between">
-          <span className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
+          <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
             {company}
           </span>
-          <span className="text-xs text-neutral-500">
+          <span className="text-xs text-zinc-500">
             <time>{formatDateRange(document)}</time>
           </span>
         </div>
-        <span className="text-xs text-neutral-500 dark:text-neutral-400">
-          {role}
-        </span>
+        <span className="text-xs text-zinc-500 dark:text-zinc-400">{role}</span>
       </div>
     </>
   );
@@ -42,8 +40,8 @@ type WorkPreviewProps = {
 
 export const WorkPreview: FC<WorkPreviewProps> = ({ documents }) => {
   return (
-    <div className="rounded-2xl p-6 ring-1 ring-neutral-300 dark:ring-neutral-800">
-      <h2 className="flex items-center gap-3 text-sm font-semibold text-neutral-800 dark:text-neutral-200">
+    <div className="rounded-2xl p-6 ring-1 ring-zinc-300 dark:ring-zinc-800">
+      <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
         <BriefcaseIcon className="h-5 w-5" />
         Work
       </h2>

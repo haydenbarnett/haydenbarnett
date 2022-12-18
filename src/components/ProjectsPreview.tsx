@@ -15,7 +15,7 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
 
   const row = (
     <>
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-neutral-300 dark:bg-neutral-800 dark:text-white dark:ring-neutral-800">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-zinc-300 dark:bg-zinc-800 dark:text-white dark:ring-zinc-800">
         {logo ? (
           <Image src={logo} alt="" className="h-6 w-6" unoptimized />
         ) : link?.href ? (
@@ -29,10 +29,10 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
         ) : null}
       </div>
       <div className="flex flex-auto flex-wrap gap-x-2">
-        <span className="w-full flex-none text-sm font-medium text-neutral-900 dark:text-neutral-100">
+        <span className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
           {name}
         </span>
-        <span className="text-xs text-neutral-500 transition group-hover:text-neutral-800 dark:group-hover:text-neutral-200">
+        <span className="text-xs text-zinc-500 transition group-hover:text-zinc-800 dark:group-hover:text-zinc-200">
           {link?.label ?? 'Coming soon'}
         </span>
       </div>
@@ -52,8 +52,8 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
 
 export const ProjectsPreview: FC = () => {
   return (
-    <div className="rounded-2xl border border-neutral-300 p-6 dark:border-neutral-800">
-      <h2 className="flex items-center gap-3 text-sm font-semibold text-neutral-800 dark:text-neutral-200">
+    <div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-800">
+      <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
         <RocketLaunchIcon className="h-5 w-5" />
         Personal Projects
       </h2>

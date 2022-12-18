@@ -13,7 +13,7 @@ type ToolsSectionProps = {
 const ToolsSection: FC<ToolsSectionProps> = ({ children, title }) => {
   return (
     <div className="grid w-full grid-cols-1 items-start gap-y-8 py-12 md:grid-cols-4">
-      <h2 className="text-lg font-semibold text-neutral-800 dark:text-neutral-100">
+      <h2 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">
         {title}
       </h2>
       <div className="md:col-span-3">
@@ -45,7 +45,7 @@ const Tools: FC = () => {
         />
       </Head>
       <SimpleLayout title="Tools, apps, solutions &amp; services.">
-        <div className="divide-y divide-neutral-300 dark:divide-neutral-800">
+        <div className="divide-y divide-zinc-300 dark:divide-zinc-800">
           {tools.map((category) => (
             <ToolsSection title={category.name} key={category.name}>
               {category.tools.map((tool, index) => (

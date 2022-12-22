@@ -36,7 +36,7 @@ const ShortcutBar: FC = () => {
                 onSelect={async () => router.push(slug)}
                 className="-mx-2 flex cursor-pointer items-center justify-between gap-2 rounded-sm p-2 text-base text-zinc-900 aria-selected:bg-zinc-100 dark:aria-selected:bg-zinc-800"
               >
-                {role} at {company}
+                {role ? `${role} • ${company}` : company}
               </CommandBar.Item>
             ))}
           </CommandBar.Group>

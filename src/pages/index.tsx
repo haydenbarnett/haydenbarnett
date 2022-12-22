@@ -2,8 +2,8 @@ import type { FC } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
-
-import type { GetStaticProps } from 'next';
+import type { WorkPost } from 'contentlayer/generated';
+import { allWorkPosts } from 'contentlayer/generated';
 import {
   Container,
   Button,
@@ -16,21 +16,26 @@ import {
   ProjectsPreview,
   CardLogoPanel,
 } from '@/components';
-import { getAllEntries } from '@/utils/entries';
 import { author } from '@/data';
 import type { DocumentProps } from '@/types/documents';
 
-type CaseStudyPreviewProps = {
-  document: DocumentProps;
-};
-
-const CaseStudyPreview: FC<CaseStudyPreviewProps> = ({ document }) => {
+const CaseStudyPreview: FC<{
+  document: WorkPost;
+}> = ({ document }) => {
   const { logo, slug, company, description } = document;
 
   return (
     <Card>
       <CardLogoPanel>
-        {logo && <Image src={logo} alt="" className="h-12 w-12" unoptimized />}
+        {logo && (
+          <Image
+            src={logo}
+            alt=""
+            className="h-12 w-12"
+            width={48}
+            height={48}
+          />
+        )}
       </CardLogoPanel>
       <CardTitle href={`/work/${slug}`}>{company}</CardTitle>
       <CardDescription>{description}</CardDescription>
@@ -45,7 +50,7 @@ type HomeProps = {
   documents?: DocumentProps[];
 };
 
-const Home: FC<HomeProps> = ({ documents }) => {
+const Home: FC<HomeProps> = () => {
   const { name, company, location } = author;
 
   return (
@@ -66,10 +71,10 @@ const Home: FC<HomeProps> = ({ documents }) => {
           <Button href="/work">View all</Button>
         </div>
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
-          {documents
-            ?.filter((document) => document.tags?.length)
+          {allWorkPosts
+            .filter((document) => document.tags?.length)
             .slice(0, 2)
-            .map((document: DocumentProps) => (
+            .map((document) => (
               <div className="col-span-1" key={document.slug}>
                 <CaseStudyPreview document={document} />
               </div>
@@ -79,7 +84,7 @@ const Home: FC<HomeProps> = ({ documents }) => {
       <Container>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-48">
           <div className="col-span-1">
-            <WorkPreview documents={documents} />
+            <WorkPreview />
           </div>
           <div className="col-span-1">
             <ProjectsPreview />
@@ -89,13 +94,5 @@ const Home: FC<HomeProps> = ({ documents }) => {
     </div>
   );
 };
-
-export const getStaticProps: GetStaticProps = async () => ({
-  props: {
-    documents: (await getAllEntries('work'))
-      .slice(0, 5)
-      .map(({ component, ...meta }) => meta),
-  },
-});
 
 export default Home;

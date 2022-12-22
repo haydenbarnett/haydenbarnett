@@ -25,7 +25,9 @@ const ToolsSection: FC<ToolsSectionProps> = ({ children, title }) => (
 const Tool: FC<ToolsInstanceProps> = ({ logo, name, href }) => (
   <Card className="col-span-1">
     <CardTitle as="h3" href={href} target="_blank">
-      {logo && <Image src={logo} alt="" className="h-6 w-6" unoptimized />}
+      {logo && (
+        <Image src={logo} alt="" className="h-6 w-6" width={24} height={24} />
+      )}
       <span>{name}</span>
     </CardTitle>
   </Card>

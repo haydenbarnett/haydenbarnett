@@ -1,22 +1,10 @@
-import html from '../images/tools/html.svg';
-import css from '../images/tools/css.svg';
-import scss from '../images/tools/scss.svg';
-import tailwindcss from '../images/tools/tailwindcss.svg';
-import javascript from '../images/tools/javascript.svg';
-import typescript from '../images/tools/typescript.svg';
-import react from '../images/tools/react.svg';
-import next from '../images/tools/next.svg';
-import vue from '../images/tools/vue.svg';
-import nuxt from '../images/tools/nuxt.svg';
-import storybook from '../images/tools/storybook.svg';
-
 export type ToolsDataProps = {
   name: string;
   tools: ToolsInstanceProps[];
 };
 
 export type ToolsInstanceProps = {
-  logo?: any;
+  logo?: string;
   name: string;
   href?: string;
 };
@@ -26,47 +14,47 @@ export const tools: ToolsDataProps[] = [
     name: 'Development',
     tools: [
       {
-        logo: html,
+        logo: '/images/tools/html.svg',
         name: 'HTML',
       },
       {
-        logo: css,
+        logo: '/images/tools/css.svg',
         name: 'CSS',
       },
       {
-        logo: scss,
+        logo: '/images/tools/scss.svg',
         name: 'SCSS',
       },
       {
-        logo: tailwindcss,
+        logo: '/images/tools/tailwindcss.svg',
         name: 'Tailwind',
       },
       {
-        logo: javascript,
+        logo: '/images/tools/javascript.svg',
         name: 'JavaScript',
       },
       {
-        logo: typescript,
+        logo: '/images/tools/typescript.svg',
         name: 'TypeScript',
       },
       {
-        logo: react,
+        logo: '/images/tools/react.svg',
         name: 'React',
       },
       {
-        logo: next,
+        logo: '/images/tools/next.svg',
         name: 'Next',
       },
       {
-        logo: vue,
+        logo: '/images/tools/vue.svg',
         name: 'Vue',
       },
       {
-        logo: nuxt,
+        logo: '/images/tools/nuxt.svg',
         name: 'Nuxt',
       },
       {
-        logo: storybook,
+        logo: '/images/tools/storybook.svg',
         name: 'Storybook',
       },
     ],

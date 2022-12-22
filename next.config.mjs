@@ -8,6 +8,17 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  images: {
+    domains: [
+      'imagepup.com',
+      'haydenandanna.com',
+      'benwotton.com',
+      'annaphase.com',
+      'freegameassets.com',
+      'stormhyde.com',
+      'barnettsdeniliquin.com',
+    ],
+  },
 };
 
 export default withContentlayer(nextConfig);

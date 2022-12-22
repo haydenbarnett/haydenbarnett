@@ -6,8 +6,6 @@ type ProseProps = {
   className?: string;
 };
 
-export const Prose: FC<ProseProps> = ({ children, className }) => {
-  return (
-    <div className={clsx(className, 'prose dark:prose-invert')}>{children}</div>
-  );
-};
+export const Prose: FC<ProseProps> = ({ children, className }) => (
+  <div className={clsx(className, 'prose dark:prose-invert')}>{children}</div>
+);

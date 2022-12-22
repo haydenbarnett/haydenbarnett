@@ -12,7 +12,7 @@ type NavItemProps = {
 };
 
 const NavItem: FC<NavItemProps> = ({ href, target, children }) => {
-  let isActive = useRouter().pathname === href;
+  const isActive = useRouter().pathname === href;
 
   return (
     <Link
@@ -30,14 +30,12 @@ const NavItem: FC<NavItemProps> = ({ href, target, children }) => {
   );
 };
 
-export const DesktopNavigation: FC = () => {
-  return (
-    <nav className="hidden text-sm font-medium text-zinc-800 dark:text-zinc-200 md:flex">
-      {navigation.map((item) => (
-        <NavItem key={item.href} href={item.href} target={item.target}>
-          {item.label}
-        </NavItem>
-      ))}
-    </nav>
-  );
-};
+export const DesktopNavigation: FC = () => (
+  <nav className="hidden text-sm font-medium text-zinc-800 dark:text-zinc-200 md:flex">
+    {navigation.map((item) => (
+      <NavItem key={item.href} href={item.href} target={item.target}>
+        {item.label}
+      </NavItem>
+    ))}
+  </nav>
+);

@@ -1,7 +1,8 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import useTheme from '@haydenbleasel/use-theme';
+import type { FC } from 'react';
 
-export const ModeToggle = () => {
+export const ModeToggle: FC = () => {
   const [theme, setTheme] = useTheme();
   const toggleMode = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 

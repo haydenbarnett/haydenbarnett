@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
+import type { GetStaticProps } from 'next';
 import {
   Container,
   Button,
@@ -17,7 +18,7 @@ import {
 } from '@/components';
 import { getAllEntries } from '@/utils/entries';
 import { author } from '@/data';
-import { DocumentProps } from '@/types/documents';
+import type { DocumentProps } from '@/types/documents';
 
 type CaseStudyPreviewProps = {
   document: DocumentProps;
@@ -89,14 +90,12 @@ const Home: FC<HomeProps> = ({ documents }) => {
   );
 };
 
-export async function getStaticProps() {
-  return {
-    props: {
-      documents: (await getAllEntries('work'))
-        .slice(0, 5)
-        .map(({ component, ...meta }) => meta),
-    },
-  };
-}
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {
+    documents: (await getAllEntries('work'))
+      .slice(0, 5)
+      .map(({ component, ...meta }) => meta),
+  },
+});
 
 export default Home;

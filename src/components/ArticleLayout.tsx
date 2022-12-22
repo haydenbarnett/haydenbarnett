@@ -9,7 +9,7 @@ import { Tag } from './Tag';
 import { Button } from './Button';
 import { BackButton } from './BackButton';
 import { formatDateRange } from '@/utils/formatting';
-import { DocumentProps } from '@/types/documents';
+import type { DocumentProps } from '@/types/documents';
 import { author } from '@/data';
 
 type ArticleLayoutProps = {

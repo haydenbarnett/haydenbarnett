@@ -3,12 +3,10 @@ import Image from 'next/image';
 
 import thumbsup from '@/images/thumbsup.png';
 
-export const Footer: FC = () => {
-  return (
-    <footer className="my-48 flex justify-center">
-      <span className="select-none">
-        <Image src={thumbsup} height="40" width="40" alt="" />
-      </span>
-    </footer>
-  );
-};
+export const Footer: FC = () => (
+  <footer className="my-48 flex justify-center">
+    <span className="select-none">
+      <Image src={thumbsup} height="40" width="40" alt="" />
+    </span>
+  </footer>
+);

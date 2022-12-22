@@ -32,18 +32,25 @@ const DocumentRow: FC<{
     document;
   const title = [company, role].join(' • ');
   const dateRange = `${start} → ${end ?? 'Present'}`;
-  const hasCaseStudy = body.raw.length;
+  const hasCaseStudy = Boolean(body.raw.length);
   const link = hasCaseStudy ? slug : href;
-  const target = hasCaseStudy ? undefined : href ? '_blank' : undefined;
-  const cta = hasCaseStudy ? (
-    <CardCta>
-      View case study <ChevronRightIcon className="h-4 w-4" />
-    </CardCta>
-  ) : href ? (
-    <CardCta>
-      <LinkIcon className="h-4 w-4" /> Visit website
-    </CardCta>
-  ) : null;
+
+  const target = href ? '_blank' : undefined;
+  let cta = null;
+
+  if (hasCaseStudy) {
+    cta = (
+      <CardCta>
+        View case study <ChevronRightIcon className="h-4 w-4" />
+      </CardCta>
+    );
+  } else if (href) {
+    cta = (
+      <CardCta>
+        <LinkIcon className="h-4 w-4" /> Visit website
+      </CardCta>
+    );
+  }
 
   return (
     <Card>

@@ -1,5 +1,8 @@
 import type { FC } from 'react';
-import type { IconProps } from '@/types/icons';
+
+type IconProps = {
+  className?: string;
+};
 
 export const TwitterIcon: FC<IconProps> = (props) => (
   <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" {...props}>

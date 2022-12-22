@@ -17,7 +17,6 @@ import {
   CardLogoPanel,
 } from '@/components';
 import { author } from '@/data';
-import type { DocumentProps } from '@/types/documents';
 
 const CaseStudyPreview: FC<{
   document: WorkPost;
@@ -46,11 +45,7 @@ const CaseStudyPreview: FC<{
   );
 };
 
-type HomeProps = {
-  documents?: DocumentProps[];
-};
-
-const Home: FC<HomeProps> = () => {
+const Home: FC = () => {
   const { name, company, location } = author;
 
   return (

@@ -16,7 +16,6 @@ import {
   CardLogoPanel,
 } from '@/components';
 import { author, resume } from '@/data';
-import type { DocumentProps } from '@/types/documents';
 
 const sortByDate = (postA: WorkPost, postB: WorkPost) => {
   const dateA = new Date(postA.start);
@@ -75,11 +74,7 @@ const DocumentRow: FC<{
   );
 };
 
-type WorkPageProps = {
-  documents: DocumentProps[];
-};
-
-const WorkPage: FC<WorkPageProps> = () => (
+const WorkPage: FC = () => (
   <>
     <Head>
       <title>{`Work - ${author.name}`}</title>

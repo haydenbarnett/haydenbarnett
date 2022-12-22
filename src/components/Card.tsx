@@ -29,6 +29,8 @@ export const CardLogoPanel: FC<CardLogoPanelProps> = ({
 
 type CardLinkProps = LinkProps & {
   children?: ReactNode;
+  target?: string;
+  className?: string;
 };
 
 export const CardLink: FC<CardLinkProps> = ({ children, href, ...props }) => (
@@ -42,7 +44,7 @@ export const CardLink: FC<CardLinkProps> = ({ children, href, ...props }) => (
 );
 
 type CardTitleProps = {
-  as?: any;
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   children?: ReactNode;
   href?: string;
   target?: string;

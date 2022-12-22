@@ -36,7 +36,7 @@ const CaseStudyPreview: FC<{
           />
         )}
       </CardLogoPanel>
-      <CardTitle href={`/work/${slug}`}>{company}</CardTitle>
+      <CardTitle href={slug}>{company}</CardTitle>
       <CardDescription>{description}</CardDescription>
       <CardCta>
         View case study <ChevronRightIcon className="h-4 w-4" />

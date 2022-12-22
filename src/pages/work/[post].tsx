@@ -1,30 +1,23 @@
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import { Container } from './Container';
-import { Prose } from './Prose';
+import type { WorkPost } from 'contentlayer/generated';
+import { allWorkPosts } from 'contentlayer/generated';
+import type { GetStaticPaths, GetStaticProps } from 'next';
+import { Container } from '../../components/Container';
+import { Prose } from '../../components/Prose';
 
-import { Tag } from './Tag';
-import { Button } from './Button';
-import { BackButton } from './BackButton';
-import { formatDateRange } from '@/utils/formatting';
-import type { DocumentProps } from '@/types/documents';
+import { Tag } from '../../components/Tag';
+import { Button } from '../../components/Button';
+import { BackButton } from '../../components/BackButton';
 import { author } from '@/data';
+import { Mdx } from '@/components/mdx';
 
-type ArticleLayoutProps = {
-  children?: ReactNode;
-  meta: DocumentProps;
-  previousPathname?: string;
-};
-
-export const ArticleLayout: FC<ArticleLayoutProps> = ({
-  children,
-  meta,
-  previousPathname,
-}) => {
-  const dateRange = formatDateRange(meta);
-  const { company, description, logo, preview, href, tags } = meta;
+const ArticleLayout: FC<{
+  post: WorkPost;
+}> = ({ post }) => {
+  const { company, description, logo, preview, href, tags, start, end } = post;
 
   return (
     <>
@@ -35,16 +28,13 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
-            <BackButton previousPathname={previousPathname} href="/work" />
+            <BackButton href="/work" />
             <article>
               <header className="flex flex-col">
                 <div className="flex items-center justify-between">
-                  <time
-                    dateTime={dateRange}
-                    className="text-base text-zinc-500"
-                  >
-                    {dateRange}
-                  </time>
+                  <span className="text-base text-zinc-500">
+                    {start} → {end ?? 'Present'}
+                  </span>
                   <Button href={href} target="_blank">
                     Visit website
                   </Button>
@@ -56,7 +46,8 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
                         src={logo}
                         alt=""
                         className="h-10 w-10"
-                        unoptimized
+                        height={40}
+                        width={40}
                       />
                     </div>
                   )}
@@ -74,8 +65,10 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
                 </div>
               )}
               <Prose className="mt-8">
-                {preview && <Image src={preview} alt="" />}
-                {children}
+                {preview && (
+                  <Image src={preview} alt="" width={2560} height={1920} />
+                )}
+                <Mdx code={post.body.code} />
               </Prose>
             </article>
           </div>
@@ -84,3 +77,28 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
     </>
   );
 };
+
+export const getStaticProps: GetStaticProps = ({ params }) => {
+  const post = allWorkPosts.find(
+    ({ slugAsParams }) => slugAsParams === params?.post
+  );
+
+  return {
+    props: {
+      post,
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = () => {
+  const paths = allWorkPosts.map(({ slugAsParams }) => ({
+    params: { post: slugAsParams },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export default ArticleLayout;

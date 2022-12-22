@@ -7,11 +7,9 @@ import type { ProjectDataProps } from '../data';
 import { projects } from '../data';
 import { Button } from './Button';
 
-type ProjectRowProps = {
+const ProjectRow: FC<{
   project: ProjectDataProps;
-};
-
-const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
+}> = ({ project }) => {
   const { logo, link, name } = project;
 
   const row = (

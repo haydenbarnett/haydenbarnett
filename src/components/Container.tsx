@@ -1,11 +1,7 @@
-import type { CSSProperties, FC, ReactNode } from 'react';
+import type { FC, HTMLProps } from 'react';
 import clsx from 'clsx';
 
-type ContainerProps = {
-  className?: string;
-  style?: CSSProperties;
-  children?: ReactNode;
-};
+type ContainerProps = HTMLProps<HTMLDivElement>;
 
 export const Container: FC<ContainerProps> = ({
   children,

@@ -1,29 +1,17 @@
-import type { FC, ReactNode } from 'react';
+import type { FC, HTMLProps, ReactNode } from 'react';
+import type { LinkProps } from 'next/link';
 import Link from 'next/link';
 import clsx from 'clsx';
 
-type CardProps = {
-  as?: any;
-  className?: string;
-  children?: ReactNode;
-};
+type CardProps = HTMLProps<HTMLDivElement>;
 
-export const Card: FC<CardProps> = ({
-  as: Component = 'div',
-  className,
-  children,
-}) => (
-  <Component
-    className={clsx(className, 'group relative flex flex-col items-start')}
-  >
+export const Card: FC<CardProps> = ({ className, children }) => (
+  <div className={clsx(className, 'group relative flex flex-col items-start')}>
     {children}
-  </Component>
+  </div>
 );
 
-type CardLogoPanelProps = {
-  children?: ReactNode;
-  className?: string;
-};
+type CardLogoPanelProps = HTMLProps<HTMLDivElement>;
 
 export const CardLogoPanel: FC<CardLogoPanelProps> = ({
   children,
@@ -39,11 +27,8 @@ export const CardLogoPanel: FC<CardLogoPanelProps> = ({
   </div>
 );
 
-type CardLinkProps = {
+type CardLinkProps = LinkProps & {
   children?: ReactNode;
-  href: string;
-  target?: string;
-  className?: string;
 };
 
 export const CardLink: FC<CardLinkProps> = ({ children, href, ...props }) => (
@@ -80,9 +65,7 @@ export const CardTitle: FC<CardTitleProps> = ({
   </Component>
 );
 
-type CardDescriptionProps = {
-  children?: ReactNode;
-};
+type CardDescriptionProps = HTMLProps<HTMLParagraphElement>;
 
 export const CardDescription: FC<CardDescriptionProps> = ({ children }) => (
   <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
@@ -90,9 +73,7 @@ export const CardDescription: FC<CardDescriptionProps> = ({ children }) => (
   </p>
 );
 
-type CardCtaProps = {
-  children?: ReactNode;
-};
+type CardCtaProps = HTMLProps<HTMLDivElement>;
 
 export const CardCta: FC<CardCtaProps> = ({ children }) => (
   <div className="relative z-10 mt-4 flex items-center gap-1 text-sm font-medium text-zinc-500 transition group-hover:text-zinc-800 dark:group-hover:text-zinc-200">
@@ -100,19 +81,14 @@ export const CardCta: FC<CardCtaProps> = ({ children }) => (
   </div>
 );
 
-type CardEyebrowProps = {
-  as?: any;
-  className?: string;
-  children?: ReactNode;
-};
+type CardEyebrowProps = HTMLProps<HTMLParagraphElement>;
 
 export const CardEyebrow: FC<CardEyebrowProps> = ({
-  as: Component = 'p',
   className,
   children,
   ...props
 }) => (
-  <Component
+  <p
     className={clsx(
       className,
       'relative z-10 mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500'
@@ -120,5 +96,5 @@ export const CardEyebrow: FC<CardEyebrowProps> = ({
     {...props}
   >
     {children}
-  </Component>
+  </p>
 );

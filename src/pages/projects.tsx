@@ -16,12 +16,12 @@ const Projects: FC = () => (
       />
     </Head>
     <SimpleLayout title="Things I've made to help others or just for fun.">
-      <ul className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => {
           const { logo, link } = project;
 
           return (
-            <Card as="li" key={project.name}>
+            <Card key={project.name}>
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full ring-1 ring-zinc-300 dark:bg-zinc-800 dark:ring-zinc-800">
                 {logo && (
                   <Image
@@ -61,7 +61,7 @@ const Projects: FC = () => (
             </Card>
           );
         })}
-      </ul>
+      </div>
     </SimpleLayout>
   </>
 );

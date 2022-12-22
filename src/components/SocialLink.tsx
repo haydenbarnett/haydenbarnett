@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import Link from 'next/link';
 
 type SocialLinkProps = {
-  icon?: any;
+  icon: FC<{ className?: string }>;
   href: string;
 };
 

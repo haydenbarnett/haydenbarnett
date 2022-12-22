@@ -34,7 +34,7 @@ const DocumentRow: FC<{
   const hasCaseStudy = Boolean(body.raw.length);
   const link = hasCaseStudy ? slug : href;
 
-  const target = href ? '_blank' : undefined;
+  const target = href && !hasCaseStudy ? '_blank' : undefined;
   let cta = null;
 
   if (hasCaseStudy) {

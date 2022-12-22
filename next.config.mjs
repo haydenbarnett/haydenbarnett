@@ -1,4 +1,5 @@
 import { withContentlayer } from 'next-contentlayer';
+import { createSecureHeaders } from 'next-secure-headers';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,6 +10,7 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
+    formats: ['image/avif', 'image/webp'],
     domains: [
       'imagepup.com',
       'haydenandanna.com',
@@ -18,6 +20,21 @@ const nextConfig = {
       'stormhyde.com',
       'barnettsdeniliquin.com',
     ],
+  },
+  headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          ...createSecureHeaders(),
+          // https://haydenbleasel.com/blog/next-hsts-preload
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+        ],
+      },
+    ];
   },
 };
 

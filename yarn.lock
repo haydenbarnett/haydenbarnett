@@ -5068,6 +5068,11 @@ next-contentlayer@^0.2.9:
     "@contentlayer/core" "0.2.9"
     "@contentlayer/utils" "0.2.9"
 
+next-secure-headers@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/next-secure-headers/-/next-secure-headers-2.2.0.tgz#d4eb1b00a424f811c1455d1288990a4aad3026af"
+  integrity sha512-C7OfZ9JdSJyYMz2ZBMI/WwNbt0qNjlFWX9afUp8nEUzbz6ez3JbeopdyxSZJZJAzVLIAfyk6n73rFpd4e22jRg==
+
 next@^13.0.0:
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/next/-/next-13.0.0.tgz#6f07064a4f374562cf58677bef4dd06326ca648b"

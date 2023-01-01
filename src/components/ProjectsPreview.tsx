@@ -20,7 +20,7 @@ const ProjectRow: FC<{
         )}
         {!logo && link?.href && (
           <Image
-            src={`${link.href}/favicon.ico`}
+            src={new URL('/favicon.ico', link.href).href}
             alt=""
             width={24}
             height={24}

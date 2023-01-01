@@ -27,7 +27,7 @@ const nextConfig = {
         source: '/(.*)',
         headers: [
           ...createSecureHeaders(),
-          // https://haydenbleasel.com/blog/next-hsts-preload
+          // https://www.beskar.co/blog/next-hsts-preload
           {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload',
@@ -35,6 +35,24 @@ const nextConfig = {
         ],
       },
     ];
+  },
+
+  // Temporary
+  webpack: (config) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+    config.module.rules.push({
+      test: /\.svg$/iu,
+      issuer: /\.tsx?$/u,
+      use: ['@svgr/webpack'],
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    config.infrastructureLogging = {
+      level: 'error',
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return config;
   },
 };
 

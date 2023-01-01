@@ -1,4 +1,3 @@
-export * from './ArticleLayout';
 export * from './Avatar';
 export * from './BackButton';
 export * from './Button';

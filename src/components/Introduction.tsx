@@ -5,7 +5,6 @@ import { BriefcaseIcon, HomeIcon } from '@heroicons/react/20/solid';
 import { Container } from './Container';
 import { SocialLink } from './SocialLink';
 import { author, social } from '@/data';
-import wave from '@/images/wave.png';
 
 type IntroductionProps = {
   className?: string;
@@ -21,10 +20,12 @@ export const Introduction: FC<IntroductionProps> = ({ className }) => {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-200 sm:text-5xl">
             <span className="inline-flex flex-col items-center gap-4 sm:flex-row">
               <Image
-                src={wave}
+                src="/images/wave.png"
                 alt=""
                 className="inline-flex h-10 w-10 select-none sm:h-14 sm:w-14"
                 priority
+                width={112}
+                height={113}
               />
               <span>Hi, I&apos;m {name}</span>
             </span>

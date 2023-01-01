@@ -1,26 +1,20 @@
-import type { CSSProperties, FC, ReactNode } from 'react';
+import type { FC, HTMLProps } from 'react';
 import clsx from 'clsx';
 
-type ContainerProps = {
-  className?: string;
-  style?: CSSProperties;
-  children?: ReactNode;
-};
+type ContainerProps = HTMLProps<HTMLDivElement>;
 
 export const Container: FC<ContainerProps> = ({
   children,
   className,
   ...props
-}) => {
-  return (
-    <div
-      className={clsx(
-        'relative mx-auto w-full max-w-5xl px-4 sm:px-8',
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div
+    className={clsx(
+      'relative mx-auto w-full max-w-5xl px-4 sm:px-8',
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+);

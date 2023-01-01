@@ -1,33 +1,44 @@
-import { useEffect, useRef } from 'react';
-import { AppProps } from 'next/app';
-
+import type { FC } from 'react';
+import { useEffect } from 'react';
+import type { AppProps } from 'next/app';
+import clsx from 'clsx';
+import { useCommandBar } from '@haydenbleasel/command-bar';
+import useOnline from '@haydenbleasel/use-online';
+import { toast, Toaster } from 'react-hot-toast';
+import Router from 'next/router';
 import { Header, Footer } from '@/components';
-
 import '@/styles/tailwind.css';
 import 'focus-visible';
+import { inter } from '@/utils/font';
+import ShortcutBar from '@/components/ShortcutBar';
 
-const usePrevious = (value: string) => {
-  let ref = useRef<string>();
+const App: FC<AppProps> = ({ Component, pageProps }) => {
+  const commandBar = useCommandBar();
+  const isOnline = useOnline();
+
+  Router.events.on('routeChangeStart', () => {
+    commandBar.toggleOpen(false);
+  });
 
   useEffect(() => {
-    ref.current = value;
-  }, [value]);
-
-  return ref.current;
-};
-
-export default function App({ Component, pageProps, router }: AppProps) {
-  let previousPathname = usePrevious(router.pathname);
+    if (!isOnline) {
+      toast.error(
+        'You are offline, some features may not work as expected until you reconnect.'
+      );
+    }
+  }, [isOnline]);
 
   return (
-    <>
-      <div className="relative">
-        <Header />
-        <main>
-          <Component previousPathname={previousPathname} {...pageProps} />
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className="relative">
+      <Header />
+      <main className={clsx('font-sans', inter.className)}>
+        <Component {...pageProps} />
+      </main>
+      <ShortcutBar />
+      <Footer />
+      <Toaster />
+    </div>
   );
-}
+};
+
+export default App;

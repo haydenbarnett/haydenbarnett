@@ -30,6 +30,7 @@ export const CardLogoPanel: FC<CardLogoPanelProps> = ({
 type CardLinkProps = LinkProps & {
   children?: ReactNode;
   target?: string;
+  rel?: string;
   className?: string;
 };
 

@@ -44,7 +44,11 @@ const Projects: FC = () => (
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 {project.link?.href ? (
-                  <CardLink href={project.link.href} target="_blank">
+                  <CardLink
+                    href={project.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {project.name}
                   </CardLink>
                 ) : (

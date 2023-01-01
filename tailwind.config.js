@@ -2,7 +2,7 @@ const tailwindTypography = require('@tailwindcss/typography');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     fontSize: {

@@ -17,7 +17,7 @@ import {
 } from '@/components';
 import { getAllEntries } from '@/utils/entries';
 import { author } from '@/data';
-import { DocumentProps } from '@/types/documents';
+import type { DocumentProps } from '@/types/documents';
 
 type CaseStudyPreviewProps = {
   document: DocumentProps;

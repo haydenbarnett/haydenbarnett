@@ -16,8 +16,6 @@ export const BackButton: FC<BackButtonProps> = ({ previousPathname, href }) => {
     <ArrowLeftIcon className="h-4 w-4 text-zinc-500 transition group-hover:text-zinc-800 dark:group-hover:text-zinc-300" />
   );
 
-  console.log(previousPathname);
-
   if (previousPathname) {
     <button
       type="button"

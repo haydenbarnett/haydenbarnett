@@ -3,8 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { RocketLaunchIcon } from '@heroicons/react/20/solid';
 
+import type { ProjectDataProps } from '../data';
+import { projects } from '../data';
 import { Button } from './Button';
-import { ProjectDataProps, projects } from '../data';
 
 type ProjectRowProps = {
   project: ProjectDataProps;
@@ -50,23 +51,21 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
   return <>{row}</>;
 };
 
-export const ProjectsPreview: FC = () => {
-  return (
-    <div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-800">
-      <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
-        <RocketLaunchIcon className="h-5 w-5" />
-        Personal Projects
-      </h2>
-      <ol className="mt-6 space-y-4">
-        {projects.slice(0, 5).map((project, projectIndex) => (
-          <li key={projectIndex} className="flex gap-4">
-            <ProjectRow project={project} />
-          </li>
-        ))}
-      </ol>
-      <Button href="/projects" className="mt-6 w-full">
-        View all
-      </Button>
-    </div>
-  );
-};
+export const ProjectsPreview: FC = () => (
+  <div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-800">
+    <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+      <RocketLaunchIcon className="h-5 w-5" />
+      Personal Projects
+    </h2>
+    <ol className="mt-6 space-y-4">
+      {projects.slice(0, 5).map((project, projectIndex) => (
+        <li key={projectIndex} className="flex gap-4">
+          <ProjectRow project={project} />
+        </li>
+      ))}
+    </ol>
+    <Button href="/projects" className="mt-6 w-full">
+      View all
+    </Button>
+  </div>
+);

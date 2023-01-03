@@ -11,7 +11,7 @@ type ButtonProps = {
 
 export const Button: FC<ButtonProps> = ({ className, href, ...props }) => {
   // credit to https://codepen.io/Chokcoco/pen/dypaobm for inspiring this mess
-  className = clsx(
+  const buttonClassName = clsx(
     'relative inline-flex py-2 px-4 items-center justify-center gap-2 overflow-hidden rounded-md text-sm font-medium outline-offset-2 transition active:transition-none z-0',
     'ring-1 ring-zinc-300 text-zinc-800 ring-offset-zinc-200 dark:ring-offset-zinc-900 hover:ring-offset-2 hover:ring-zinc-400/50 dark:ring-zinc-800 dark:text-zinc-300 dark:hover:ring-zinc-700',
     "before:content-[''] before:transition-opacity before:duration-[2000ms] before:opacity-0 hover:before:opacity-100 before:aspect-square before:absolute before:-left-1/2 before:z-[-2] before:w-[200%] before:animate-rotate before:bg-zinc-200 dark:before:bg-zinc-900 dark:before:bg-gradient-gold-dark before:bg-gradient-gold-light before:bg-no-repeat",
@@ -20,8 +20,8 @@ export const Button: FC<ButtonProps> = ({ className, href, ...props }) => {
   );
 
   return href ? (
-    <Link href={href} className={className} {...props} />
+    <Link href={href} className={buttonClassName} {...props} />
   ) : (
-    <button className={className} {...props} />
+    <button type="button" className={buttonClassName} {...props} />
   );
 };

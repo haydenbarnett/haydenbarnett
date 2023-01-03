@@ -10,25 +10,23 @@ type AvatarProps = {
   style?: CSSProperties;
 };
 
-export const Avatar: FC<AvatarProps> = ({ className, ...props }) => {
-  return (
-    <Link
-      href="/"
-      aria-label="Home"
-      className={clsx(
-        className,
-        'pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-zinc-300 dark:ring-zinc-800'
-      )}
-      {...props}
-    >
-      <Image
-        src={avatarImage}
-        height="32"
-        width="32"
-        className="rounded-full"
-        alt=""
-        priority
-      />
-    </Link>
-  );
-};
+export const Avatar: FC<AvatarProps> = ({ className, ...props }) => (
+  <Link
+    href="/"
+    aria-label="Home"
+    className={clsx(
+      className,
+      'pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-zinc-300 dark:ring-zinc-800'
+    )}
+    {...props}
+  >
+    <Image
+      src={avatarImage}
+      height="32"
+      width="32"
+      className="rounded-full"
+      alt=""
+      priority
+    />
+  </Link>
+);

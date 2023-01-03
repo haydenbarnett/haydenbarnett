@@ -2,10 +2,10 @@ import type { FC } from 'react';
 import Image from 'next/image';
 import { BriefcaseIcon } from '@heroicons/react/20/solid';
 
+import { resume } from '../data';
 import { Button } from './Button';
 import { formatDateRange } from '@/utils/formatting';
-import { resume } from '../data';
-import { DocumentProps } from '@/types/documents';
+import type { DocumentProps } from '@/types/documents';
 
 type WorkRowProps = {
   document: DocumentProps;
@@ -38,23 +38,21 @@ type WorkPreviewProps = {
   documents?: DocumentProps[];
 };
 
-export const WorkPreview: FC<WorkPreviewProps> = ({ documents }) => {
-  return (
-    <div className="rounded-2xl p-6 ring-1 ring-zinc-300 dark:ring-zinc-800">
-      <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
-        <BriefcaseIcon className="h-5 w-5" />
-        Work
-      </h2>
-      <ol className="mt-6 space-y-4">
-        {documents?.slice(0, 5).map((document, index) => (
-          <li key={index} className="flex gap-4">
-            <WorkRow document={document} />
-          </li>
-        ))}
-      </ol>
-      <Button href={resume} className="mt-6 w-full">
-        Download Résumé
-      </Button>
-    </div>
-  );
-};
+export const WorkPreview: FC<WorkPreviewProps> = ({ documents }) => (
+  <div className="rounded-2xl p-6 ring-1 ring-zinc-300 dark:ring-zinc-800">
+    <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+      <BriefcaseIcon className="h-5 w-5" />
+      Work
+    </h2>
+    <ol className="mt-6 space-y-4">
+      {documents?.slice(0, 5).map((document, index) => (
+        <li key={index} className="flex gap-4">
+          <WorkRow document={document} />
+        </li>
+      ))}
+    </ol>
+    <Button href={resume} className="mt-6 w-full">
+      Download Résumé
+    </Button>
+  </div>
+);

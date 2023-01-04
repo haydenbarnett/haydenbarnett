@@ -29,7 +29,7 @@ export const ModeToggle: FC = () => {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group rounded-full px-3 py-2 ring-1 ring-zinc-300 transition hover:ring-zinc-400 dark:ring-zinc-800 dark:hover:ring-zinc-700"
+      className="gold-spiral group relative rounded-full px-3 py-2 after:rounded-full"
       onClick={toggleMode}
     >
       <SunIcon className="h-6 w-6 text-zinc-500 transition group-hover:text-zinc-800 dark:hidden" />

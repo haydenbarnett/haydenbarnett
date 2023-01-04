@@ -35,11 +35,11 @@ export const Introduction: FC<IntroductionProps> = ({ className }) => {
           </p>
           <div className="mt-6 flex flex-row flex-wrap items-center justify-center gap-6">
             <p className="flex flex-wrap items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-zinc-800 dark:text-zinc-300">
-              <BriefcaseIcon className="h-5 w-5" />
+              <BriefcaseIcon className="h-5 w-5 text-zinc-500" />
               Working at {company}
             </p>
             <p className="flex flex-wrap items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-zinc-800 dark:text-zinc-300">
-              <HomeIcon className="h-5 w-5" />
+              <HomeIcon className="h-5 w-5 text-zinc-500" />
               <span>Living in {location}</span>
             </p>
           </div>

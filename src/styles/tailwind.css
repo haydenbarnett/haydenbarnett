@@ -1,4 +1,8 @@
 @import url('tailwindcss/base');
 @import url('tailwindcss/components');
-@import url('./prism.css');
 @import url('tailwindcss/utilities');
+
+/* credit to https://codepen.io/Chokcoco/pen/dypaobm for inspiring this mess */
+.gold-spiral {
+  @apply inline-flex items-center justify-center overflow-hidden text-zinc-800 ring-1 ring-zinc-300 ring-offset-zinc-300 transition before:absolute before:-left-1/2 before:z-[-2] before:aspect-square before:w-[200%] before:animate-rotate before:bg-zinc-200 before:bg-gradient-gold-light before:bg-no-repeat before:opacity-0 before:transition-opacity before:duration-[2000ms] before:content-[''] after:absolute after:left-[2px] after:top-[2px] after:z-[-1] after:h-[calc(100%-4px)] after:w-[calc(100%-4px)] after:bg-zinc-200 after:content-[''] hover:ring-zinc-400/50 hover:ring-offset-2 hover:before:opacity-100 dark:text-zinc-300 dark:ring-zinc-800 dark:ring-offset-zinc-900 dark:before:bg-zinc-900 dark:before:bg-gradient-gold-dark dark:after:bg-zinc-900 dark:hover:ring-zinc-700;
+}

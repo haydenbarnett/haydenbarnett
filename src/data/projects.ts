@@ -41,7 +41,7 @@ export const projects: ProjectDataProps[] = [
   {
     name: 'Anna Ji',
     description:
-      'Short & sweet - straight to the point. Now am I talking about the website or my wife? :)',
+      'Short, sweet and straight to the point. Am I talking about the website or my wife? :)',
     link: { href: 'https://annaphase.com', label: 'annaphase.com' },
   },
   {

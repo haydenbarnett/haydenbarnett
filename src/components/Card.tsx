@@ -20,19 +20,16 @@ export const Card: FC<CardProps> = ({
   </Component>
 );
 
-type CardLogoPanelProps = {
+type CardImageProps = {
   children?: ReactNode;
   className?: string;
 };
 
-export const CardLogoPanel: FC<CardLogoPanelProps> = ({
-  children,
-  className,
-}) => (
+export const CardImage: FC<CardImageProps> = ({ children, className }) => (
   <div
     className={clsx(
       className,
-      'relative z-10 mb-4 flex h-32 w-full items-center justify-center rounded-lg ring-1 ring-zinc-300 dark:bg-zinc-800 dark:ring-zinc-800'
+      'relative z-10 mb-4 flex h-64 w-full items-center justify-center overflow-hidden rounded-lg'
     )}
   >
     {children}

@@ -14,7 +14,8 @@ import {
   CardDescription,
   CardTitle,
   ProjectsPreview,
-  CardLogoPanel,
+  CardImage,
+  WorkCard,
 } from '@/components';
 import { getAllEntries } from '@/utils/entries';
 import { author } from '@/data';
@@ -25,13 +26,15 @@ type CaseStudyPreviewProps = {
 };
 
 const CaseStudyPreview: FC<CaseStudyPreviewProps> = ({ document }) => {
-  const { logo, slug, company, description } = document;
+  const { preview, slug, company, description } = document;
 
   return (
     <Card>
-      <CardLogoPanel>
-        {logo && <Image src={logo} width="48" height="48" alt="" unoptimized />}
-      </CardLogoPanel>
+      {preview && (
+        <CardImage>
+          <Image src={preview} alt="" fill />
+        </CardImage>
+      )}
       <CardTitle href={`/work/${slug}`}>{company}</CardTitle>
       <CardDescription>{description}</CardDescription>
       <CardCta>
@@ -71,7 +74,7 @@ const Home: FC<HomeProps> = ({ documents }) => {
             .slice(0, 2)
             .map((document: DocumentProps) => (
               <div className="col-span-1" key={document.slug}>
-                <CaseStudyPreview document={document} />
+                <WorkCard document={document} />
               </div>
             ))}
         </div>

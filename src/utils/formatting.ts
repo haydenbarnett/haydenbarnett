@@ -10,5 +10,6 @@ export const formatDateRange = (
   if (typeof document.end === 'string') {
     return `${document.start} → ${document.end}`;
   }
+
   return `${document.start} → ${document.end.label}`;
 };

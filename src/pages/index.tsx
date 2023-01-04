@@ -50,7 +50,7 @@ const Home: FC<HomeProps> = ({ documents }) => {
         </div>
       </Container>
       <Container>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-48">
+        <div className="grid grid-cols-1 gap-24 md:grid-cols-2">
           <div className="col-span-1">
             <WorkPreview documents={documents} />
           </div>

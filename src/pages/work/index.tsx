@@ -18,7 +18,7 @@ const WorkPage: FC<WorkPageProps> = ({ documents }) => (
       <meta name="description" content="" />
     </Head>
     <SimpleLayout title="Work" intro="">
-      <div className="grid grid-cols-2 flex-col gap-24">
+      <div className="grid grid-cols-1 flex-col gap-24 sm:grid-cols-2">
         {documents.map((document) => {
           const { slug } = document;
 

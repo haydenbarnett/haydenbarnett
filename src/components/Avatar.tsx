@@ -14,7 +14,7 @@ export const Avatar: FC<AvatarProps> = ({ className, ...props }) => (
     aria-label="Home"
     className={clsx(
       className,
-      'pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-zinc-300 dark:ring-zinc-800'
+      'pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-zinc-300 ring-offset-zinc-200 transition-all hover:ring-offset-2 dark:ring-zinc-800 dark:ring-offset-zinc-900'
     )}
     {...props}
   >

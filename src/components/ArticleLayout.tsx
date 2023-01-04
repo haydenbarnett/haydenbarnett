@@ -15,14 +15,9 @@ import { author } from '@/data';
 type ArticleLayoutProps = {
   children?: ReactNode;
   meta: DocumentProps;
-  previousPathname?: string;
 };
 
-export const ArticleLayout: FC<ArticleLayoutProps> = ({
-  children,
-  meta,
-  previousPathname,
-}) => {
+export const ArticleLayout: FC<ArticleLayoutProps> = ({ children, meta }) => {
   const dateRange = formatDateRange(meta);
   const { company, description, logo, preview, href, tags } = meta;
 
@@ -35,7 +30,7 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
-            <BackButton previousPathname={previousPathname} href="/work" />
+            <BackButton href="/work" />
             <article>
               <header className="flex flex-col">
                 <div className="flex items-center justify-between">

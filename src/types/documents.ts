@@ -1,7 +1,7 @@
 export type DocumentProps = {
   slug: string;
-  logo?: any;
-  preview?: any;
+  logo?: string;
+  preview?: string;
   company: string;
   description: string;
   role: string;

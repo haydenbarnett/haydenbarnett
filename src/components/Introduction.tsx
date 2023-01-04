@@ -2,10 +2,9 @@ import type { FC } from 'react';
 import Image from 'next/image';
 import { BriefcaseIcon, HomeIcon } from '@heroicons/react/20/solid';
 
+import Link from 'next/link';
 import { Container } from './Container';
-import { SocialLink } from './SocialLink';
 import { author, social } from '@/data';
-import wave from '@/images/wave.png';
 
 type IntroductionProps = {
   className?: string;
@@ -21,9 +20,11 @@ export const Introduction: FC<IntroductionProps> = ({ className }) => {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-200 sm:text-5xl">
             <span className="inline-flex flex-col items-center gap-4 sm:flex-row">
               <Image
-                src={wave}
+                src="/wave.png"
                 alt=""
-                className="inline-flex h-10 w-10 select-none sm:h-14 sm:w-14"
+                className="inline-flex select-none sm:h-14 sm:w-14"
+                width="40"
+                height="40"
                 priority
               />
               <span>Hi, I&apos;m {name}</span>
@@ -43,13 +44,15 @@ export const Introduction: FC<IntroductionProps> = ({ className }) => {
             </p>
           </div>
           <div className="mt-8 flex justify-center gap-6">
-            {social.map(({ href, label, icon }) => (
-              <SocialLink
+            {social.map(({ href, label, icon: SocialIcon }) => (
+              <Link
+                className="h-5 w-5 p-0.5 text-zinc-500 transition hover:text-zinc-800 dark:hover:text-zinc-200"
                 key={href}
                 href={href}
                 aria-label={label}
-                icon={icon}
-              />
+              >
+                <SocialIcon />
+              </Link>
             ))}
           </div>
         </div>

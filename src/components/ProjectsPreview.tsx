@@ -17,14 +17,12 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
   const row = (
     <>
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-zinc-300 dark:bg-zinc-800 dark:text-white dark:ring-zinc-800">
-        {logo ? (
-          <Image src={logo} alt="" className="h-6 w-6" unoptimized />
-        ) : link?.href ? (
+        {logo || link?.href ? (
           <Image
-            src={`${link.href}/favicon.ico`}
+            src={logo ?? (link ? `${link.href}/favicon.ico` : '')}
             alt=""
-            width={24}
-            height={24}
+            width="24"
+            height="24"
             unoptimized
           />
         ) : null}
@@ -48,7 +46,7 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
     );
   }
 
-  return <>{row}</>;
+  return row;
 };
 
 export const ProjectsPreview: FC = () => (

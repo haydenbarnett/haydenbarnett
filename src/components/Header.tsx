@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-
 import { Container } from './Container';
 import { MobileNavigation } from './MobileNavigation';
 import { DesktopNavigation } from './DesktopNavigation';

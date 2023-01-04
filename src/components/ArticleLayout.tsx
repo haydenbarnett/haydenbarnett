@@ -55,7 +55,8 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
                       <Image
                         src={logo}
                         alt=""
-                        className="h-10 w-10"
+                        width="40"
+                        height="40"
                         unoptimized
                       />
                     </div>
@@ -74,7 +75,9 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({
                 </div>
               )}
               <Prose className="mt-8">
-                {preview && <Image src={preview} alt="" />}
+                {preview && (
+                  <Image src={preview} width="672" height="672" alt="" />
+                )}
                 {children}
               </Prose>
             </article>

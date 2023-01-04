@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 import type { AppProps } from 'next/app';
 
@@ -16,7 +17,7 @@ const usePrevious = (value: string) => {
   return ref.current;
 };
 
-export default function App({ Component, pageProps, router }: AppProps) {
+const App: FC<AppProps> = ({ Component, pageProps, router }) => {
   const previousPathname = usePrevious(router.pathname);
 
   return (
@@ -28,4 +29,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <Footer />
     </div>
   );
-}
+};
+
+export default App;

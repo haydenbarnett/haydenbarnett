@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
+import type { GetStaticProps } from 'next';
 import {
   Container,
   Button,
@@ -29,7 +30,7 @@ const CaseStudyPreview: FC<CaseStudyPreviewProps> = ({ document }) => {
   return (
     <Card>
       <CardLogoPanel>
-        {logo && <Image src={logo} alt="" className="h-12 w-12" unoptimized />}
+        {logo && <Image src={logo} width="48" height="48" alt="" unoptimized />}
       </CardLogoPanel>
       <CardTitle href={`/work/${slug}`}>{company}</CardTitle>
       <CardDescription>{description}</CardDescription>
@@ -89,14 +90,13 @@ const Home: FC<HomeProps> = ({ documents }) => {
   );
 };
 
-export async function getStaticProps() {
-  return {
-    props: {
-      documents: (await getAllEntries('work'))
-        .slice(0, 5)
-        .map(({ component, ...meta }) => meta),
-    },
-  };
-}
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {
+    documents: (await getAllEntries('work'))
+      .slice(0, 5)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .map(({ component, ...meta }) => meta as DocumentProps),
+  },
+});
 
 export default Home;

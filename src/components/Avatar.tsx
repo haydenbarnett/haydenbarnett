@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
 
-import avatarImage from '@/images/avatar.jpg';
-
 type AvatarProps = {
   className?: string;
   style?: CSSProperties;
@@ -21,7 +19,7 @@ export const Avatar: FC<AvatarProps> = ({ className, ...props }) => (
     {...props}
   >
     <Image
-      src={avatarImage}
+      src="/profile.jpg"
       height="32"
       width="32"
       className="rounded-full"

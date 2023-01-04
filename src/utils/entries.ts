@@ -1,3 +1,5 @@
+// disable all eslint rules for this file
+/* eslint-disable */
 import * as path from 'path';
 import glob from 'fast-glob';
 
@@ -13,7 +15,7 @@ const importEntry = async (filename: string, directory = 'work') => {
 };
 
 export const getAllEntries = async (directory = 'work') => {
-  const entryFilenames = await glob(['*.mdx', '*/index.mdx'], {
+  const entryFilenames = await glob(['*.mdx'], {
     cwd: path.join(process.cwd(), `src/pages/${directory}`),
   });
 

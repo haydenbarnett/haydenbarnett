@@ -1,10 +1,9 @@
 import type { FC, ReactNode } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 type CardProps = {
-  as?: any;
+  as?: 'div' | 'li';
   className?: string;
   children?: ReactNode;
 };
@@ -21,12 +20,15 @@ export const Card: FC<CardProps> = ({
   </Component>
 );
 
-type CardLogoPanel = {
+type CardLogoPanelProps = {
   children?: ReactNode;
   className?: string;
 };
 
-export const CardLogoPanel: FC<CardLogoPanel> = ({ children, className }) => (
+export const CardLogoPanel: FC<CardLogoPanelProps> = ({
+  children,
+  className,
+}) => (
   <div
     className={clsx(
       className,
@@ -37,14 +39,14 @@ export const CardLogoPanel: FC<CardLogoPanel> = ({ children, className }) => (
   </div>
 );
 
-type CardLink = {
+type CardLinkProps = {
   children?: ReactNode;
   href: string;
   target?: string;
   className?: string;
 };
 
-export const CardLink: FC<CardLink> = ({ children, href, ...props }) => (
+export const CardLink: FC<CardLinkProps> = ({ children, href, ...props }) => (
   <>
     <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 ring-1 ring-zinc-300 transition group-hover:scale-100 group-hover:opacity-100 dark:ring-zinc-800 sm:-inset-x-6 sm:rounded-2xl" />
     <Link href={href} {...props}>
@@ -55,7 +57,7 @@ export const CardLink: FC<CardLink> = ({ children, href, ...props }) => (
 );
 
 type CardTitleProps = {
-  as?: any;
+  as?: 'h1' | 'h2' | 'h3';
   children?: ReactNode;
   href?: string;
   target?: string;
@@ -78,11 +80,11 @@ export const CardTitle: FC<CardTitleProps> = ({
   </Component>
 );
 
-type CardDescription = {
+type CardDescriptionProps = {
   children?: ReactNode;
 };
 
-export const CardDescription: FC<CardTitleProps> = ({ children }) => (
+export const CardDescription: FC<CardDescriptionProps> = ({ children }) => (
   <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
     {children}
   </p>
@@ -99,18 +101,16 @@ export const CardCta: FC<CardCtaProps> = ({ children }) => (
 );
 
 type CardEyebrowProps = {
-  as?: any;
   className?: string;
   children?: ReactNode;
 };
 
 export const CardEyebrow: FC<CardEyebrowProps> = ({
-  as: Component = 'p',
   className,
   children,
   ...props
 }) => (
-  <Component
+  <p
     className={clsx(
       className,
       'relative z-10 mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500'
@@ -118,5 +118,5 @@ export const CardEyebrow: FC<CardEyebrowProps> = ({
     {...props}
   >
     {children}
-  </Component>
+  </p>
 );

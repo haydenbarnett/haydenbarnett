@@ -15,5 +15,4 @@ export * from './ProjectsPreview';
 export * from './Prose';
 export * from './WorkPreview';
 export * from './SimpleLayout';
-export * from './SocialLink';
 export * from './Tag';

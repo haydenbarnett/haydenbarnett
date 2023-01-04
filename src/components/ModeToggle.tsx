@@ -1,6 +1,7 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import type { FC } from 'react';
 
-export const ModeToggle = () => {
+export const ModeToggle: FC = () => {
   const disableTransitionsTemporarily = () => {
     document.documentElement.classList.add('[&_*]:!transition-none');
     window.setTimeout(() => {

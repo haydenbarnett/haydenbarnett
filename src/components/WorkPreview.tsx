@@ -17,7 +17,16 @@ const WorkRow: FC<WorkRowProps> = ({ document }) => {
   return (
     <>
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-zinc-300 dark:bg-zinc-800 dark:text-white dark:ring-zinc-800">
-        {logo && <Image src={logo} alt="" className="h-6 w-6" unoptimized />}
+        {logo && (
+          <Image
+            src={logo}
+            width="24"
+            height="24"
+            alt=""
+            className="h-6 w-6"
+            unoptimized
+          />
+        )}
       </div>
       <div className="flex flex-auto flex-wrap gap-x-2">
         <div className="flex w-full justify-between">

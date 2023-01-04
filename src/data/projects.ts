@@ -1,11 +1,7 @@
-import temploidLogo from '@/images/logos/temploid.svg';
-import themeinkLogo from '@/images/logos/themeink.svg';
-import imagepupLogo from '@/images/logos/imagepup.svg';
-
 export type ProjectDataProps = {
   name: string;
   description?: string;
-  logo?: any;
+  logo?: string;
   link?: {
     href: string;
     label: string;
@@ -16,17 +12,18 @@ export const projects: ProjectDataProps[] = [
   {
     name: 'Temploid',
     description: 'Coming soon.',
-    logo: temploidLogo,
+    logo: '/projects/temploid.svg',
   },
   {
     name: 'Theme.ink',
-    description: 'Coming soon.',
-    logo: themeinkLogo,
+    description: 'Development tools and resources for the modern web.',
+    logo: '/projects/themeink.svg',
+    link: { href: 'https://theme.ink', label: 'theme.ink' },
   },
   {
-    logo: imagepupLogo,
     name: 'Imagepup',
     description: 'My playground for AI generated imagery and associated tools.',
+    logo: '/projects/imagepup.svg',
     link: { href: 'https://www.imagepup.com', label: 'imagepup.com' },
   },
   {

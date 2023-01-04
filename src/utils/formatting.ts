@@ -1,20 +1,8 @@
 import type { DocumentProps } from '@/types/documents';
 
-export const slugify = (value: string) =>
-  value.toLowerCase().replace(/[\s_-]+/g, '-');
-
-export const formatDate = (dateString: string) =>
-  new Date(`${dateString}T00:00:00Z`).toLocaleDateString('en-AU', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'UTC',
-  });
-
-export const formatYear = (dateString: string) =>
-  new Date(`${dateString}T00:00:00Z`).getFullYear();
-
-export const formatDateRange = (document?: DocumentProps) => {
+export const formatDateRange = (
+  document?: DocumentProps
+): string | undefined => {
   if (!document) {
     return undefined;
   }

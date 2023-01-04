@@ -320,6 +320,9 @@ module.exports = {
       },
     }),
     extend: {
+      boxShadow: (theme) => ({
+        focus: `0 0 0 4px ${theme('colors.zinc.500/50')}`,
+      }),
       colors: {
         gold: {
           100: '#ffffff',

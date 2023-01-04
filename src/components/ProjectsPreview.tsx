@@ -40,7 +40,11 @@ const ProjectRow: FC<ProjectRowProps> = ({ project }) => {
 
   if (link?.href) {
     return (
-      <Link href={link.href} target="_blank" className="group flex gap-4">
+      <Link
+        href={link.href}
+        target="_blank"
+        className="group flex w-full gap-4 rounded-full outline-none focus-visible:shadow-focus"
+      >
         {row}
       </Link>
     );

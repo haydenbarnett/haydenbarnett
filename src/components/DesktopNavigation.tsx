@@ -19,7 +19,7 @@ const NavItem: FC<NavItemProps> = ({ href, target, children }) => {
       href={href}
       target={target}
       className={clsx(
-        'flex whitespace-nowrap px-3 py-2 transition',
+        'flex items-center whitespace-nowrap rounded-md px-3 py-1 outline-none transition focus-visible:shadow-focus',
         isActive
           ? 'text-zinc-800 dark:text-zinc-200'
           : 'text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200'

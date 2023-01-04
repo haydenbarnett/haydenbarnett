@@ -46,7 +46,7 @@ export const Introduction: FC<IntroductionProps> = ({ className }) => {
           <div className="mt-8 flex justify-center gap-6">
             {social.map(({ href, label, icon: SocialIcon }) => (
               <Link
-                className="h-5 w-5 p-0.5 text-zinc-500 transition hover:text-zinc-800 dark:hover:text-zinc-200"
+                className="h-5 w-5 rounded-md p-0.5 text-zinc-500 outline-none transition hover:text-zinc-800 focus-visible:shadow-focus dark:hover:text-zinc-200"
                 key={href}
                 href={href}
                 aria-label={label}

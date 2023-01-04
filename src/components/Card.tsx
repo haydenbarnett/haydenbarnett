@@ -43,10 +43,22 @@ type CardLinkProps = {
   className?: string;
 };
 
-export const CardLink: FC<CardLinkProps> = ({ children, href, ...props }) => (
+export const CardLink: FC<CardLinkProps> = ({
+  children,
+  href,
+  className,
+  ...props
+}) => (
   <>
     <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 ring-1 ring-zinc-300 transition group-hover:scale-100 group-hover:opacity-100 dark:ring-zinc-800 sm:-inset-x-6 sm:rounded-2xl" />
-    <Link href={href} {...props}>
+    <Link
+      href={href}
+      className={clsx(
+        'flex rounded-md outline-none focus-visible:shadow-focus',
+        className
+      )}
+      {...props}
+    >
       <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
       <span className="relative z-10 flex items-center gap-2">{children}</span>
     </Link>

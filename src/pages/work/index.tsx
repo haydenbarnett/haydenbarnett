@@ -18,14 +18,14 @@ const WorkPage: FC<WorkPageProps> = ({ documents }) => (
       <meta name="description" content="" />
     </Head>
     <SimpleLayout title="Work" intro="">
-      <div className="grid grid-cols-2 flex-col gap-16">
+      <div className="grid grid-cols-2 flex-col gap-24">
         {documents.map((document) => {
           const { slug } = document;
 
           return <WorkCard key={slug} document={document} />;
         })}
       </div>
-      <div className="mt-16 flex justify-center">
+      <div className="mt-24 flex justify-center">
         <Button href={resume} target="_blank">
           Download Résumé
         </Button>

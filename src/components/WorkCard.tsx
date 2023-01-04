@@ -31,7 +31,7 @@ export const WorkCard: FC<WorkCardProps> = ({ document }) => {
     <Card>
       {preview && (
         <CardImage>
-          <Image src={preview} alt="" fill />
+          <Image src={preview} alt="" fill className="object-cover" />
         </CardImage>
       )}
       <CardTitle href={link} target={target}>

@@ -1,7 +1,5 @@
 import type { FC } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 import type { GetStaticProps } from 'next';
 import {
@@ -9,40 +7,12 @@ import {
   Button,
   Introduction,
   WorkPreview,
-  Card,
-  CardCta,
-  CardDescription,
-  CardTitle,
   ProjectsPreview,
-  CardImage,
   WorkCard,
 } from '@/components';
 import { getAllEntries } from '@/utils/entries';
 import { author } from '@/data';
 import type { DocumentProps } from '@/types/documents';
-
-type CaseStudyPreviewProps = {
-  document: DocumentProps;
-};
-
-const CaseStudyPreview: FC<CaseStudyPreviewProps> = ({ document }) => {
-  const { preview, slug, company, description } = document;
-
-  return (
-    <Card>
-      {preview && (
-        <CardImage>
-          <Image src={preview} alt="" fill />
-        </CardImage>
-      )}
-      <CardTitle href={`/work/${slug}`}>{company}</CardTitle>
-      <CardDescription>{description}</CardDescription>
-      <CardCta>
-        View case study <ChevronRightIcon className="h-4 w-4" />
-      </CardCta>
-    </Card>
-  );
-};
 
 type HomeProps = {
   documents?: DocumentProps[];
@@ -68,7 +38,7 @@ const Home: FC<HomeProps> = ({ documents }) => {
           </h2>
           <Button href="/work">View all</Button>
         </div>
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-24 md:grid-cols-2">
           {documents
             ?.filter((document) => document.tags?.length)
             .slice(0, 2)

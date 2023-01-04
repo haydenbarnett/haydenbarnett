@@ -8,7 +8,7 @@ type BackButtonProps = {
 
 export const BackButton: FC<BackButtonProps> = ({ href }) => (
   <Link href={href}>
-    <div className="gold-spiral mb-8 h-10 w-10 rounded-full after:rounded-full lg:absolute lg:left-0 lg:mb-0 lg:mt-0">
+    <div className="gold-spiral relative mb-8 h-10 w-10 rounded-full after:rounded-full lg:absolute lg:left-0 lg:mb-0 lg:mt-0">
       <ArrowLeftIcon className="h-4 w-4" />
     </div>
   </Link>

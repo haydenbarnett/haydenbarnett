@@ -6,13 +6,13 @@ import { Header, Footer } from '@/components';
 import '@/styles/tailwind.css';
 import 'focus-visible';
 
-const App: FC<AppProps> = ({ Component, pageProps }) => (
+const App: FC<AppProps> = ({ Component, pageProps, router }) => (
   <div className="relative">
     <Header />
     <main>
       <Component {...pageProps} />
     </main>
-    <Footer />
+    {router.pathname !== '/404' && <Footer />}
   </div>
 );
 

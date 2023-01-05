@@ -351,6 +351,7 @@ module.exports = {
         rotate: 'rotate 4s linear infinite;',
         wave: 'wave 6s ease',
         thumbsup: 'thumbsup 0.8s ease infinite',
+        slideup: 'slideup 4s linear infinite',
       },
       keyframes: {
         rotate: {
@@ -366,6 +367,10 @@ module.exports = {
         thumbsup: {
           '0%, 100%': { transform: 'rotate(-3deg) scale(1)' },
           '50%': { transform: 'rotate(3deg) scale(1.2)' },
+        },
+        slideup: {
+          '0%': { transform: 'translate3d(0, 0%, 0)' },
+          '100%': { transform: 'translate3d(0, -100%, 0)' },
         },
       },
     },

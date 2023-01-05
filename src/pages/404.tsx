@@ -29,7 +29,7 @@ const NotFound: FC = () => {
           Page not found
         </h1>
       </div>
-      <div className="fixed -top-1/4 z-0 grid h-[150vh] w-full grid-cols-6 items-center justify-center overflow-hidden opacity-50">
+      <div className="fixed -top-1/4 z-0 grid h-[150vh] w-full grid-cols-6 items-center justify-center overflow-hidden">
         {thumbsUp}
       </div>
     </>

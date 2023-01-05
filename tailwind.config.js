@@ -349,10 +349,23 @@ module.exports = {
       }),
       animation: {
         rotate: 'rotate 4s linear infinite;',
+        wave: 'wave 6s ease',
+        thumbsup: 'thumbsup 0.8s ease infinite',
       },
       keyframes: {
         rotate: {
           '100%': { transform: 'rotate(1turn)' },
+        },
+        wave: {
+          '0%, 25%, 100%': { transform: 'rotate(0deg) translate3d(0, 0, 0)' },
+          '5%, 15%': { transform: 'rotate(30deg) translate3d(8px, -30px, 0)' },
+          '10%, 20%': {
+            transform: 'rotate(-30deg) translate3d(-30px, 8px, 0)',
+          },
+        },
+        thumbsup: {
+          '0%, 100%': { transform: 'rotate(-3deg) scale(1)' },
+          '50%': { transform: 'rotate(3deg) scale(1.2)' },
         },
       },
     },

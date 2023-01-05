@@ -22,7 +22,7 @@ export const Introduction: FC<IntroductionProps> = ({ className }) => {
               <Image
                 src="/wave.png"
                 alt=""
-                className="inline-flex select-none sm:h-14 sm:w-14"
+                className="inline-flex animate-wave select-none sm:h-14 sm:w-14"
                 width="40"
                 height="40"
                 priority

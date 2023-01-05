@@ -6,7 +6,7 @@ import { Avatar } from './Avatar';
 import { ModeToggle } from './ModeToggle';
 
 export const Header: FC = () => (
-  <header className="relative z-50 flex flex-col">
+  <header id="top" className="relative z-50 flex flex-col">
     <div className="top-0 z-10 h-16 pt-6">
       <Container>
         <div className="relative flex gap-4">

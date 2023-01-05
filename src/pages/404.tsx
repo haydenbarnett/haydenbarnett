@@ -3,7 +3,8 @@ import Image from 'next/image';
 import clsx from 'clsx';
 
 const NotFound: FC = () => {
-  const thumbsUp = new Array(18).fill(null).map((_, index) => (
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  const thumbsUp = new Array(18).fill(null).map((_empty, index) => (
     <div
       key={index}
       className={clsx(

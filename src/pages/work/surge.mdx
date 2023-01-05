@@ -7,9 +7,31 @@ export const meta = {
   role: 'Creative Director',
   href: 'https://surge.studio/',
   description:
-    'Co-founded growth marketing agency. Managing creative output - development, design & copywriting and video production. Clients include CSIRO/Data61, Waddle, TutorTime, Dysrupt Labs, Jellypepper.',
+    'Co-founded growth marketing agency. Managing creative output - development, design & copywriting and video production.',
   start: '2018',
   end: '2021',
+  clients: [
+    {
+      name: 'CSIRO',
+      logo: '/clients/csiro.svg',
+    },
+    {
+      name: 'Waddle',
+      logo: '/clients/waddle.svg',
+    },
+    {
+      name: 'TutorTime',
+      logo: '/clients/tutortime.svg',
+    },
+    {
+      name: 'Dysrupt Labs',
+      logo: '/clients/dysruptlabs.svg',
+    },
+    {
+      name: 'Jellypepper',
+      logo: '/clients/jellypepper.svg',
+    },
+  ],
 };
 
 export default (props) => <ArticleLayout meta={meta} {...props} />;

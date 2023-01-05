@@ -9,6 +9,7 @@ import {
   CardEyebrow,
   CardTitle,
   CardImage,
+  Tag,
 } from '@/components';
 import { formatDateRange } from '@/utils/formatting';
 import type { DocumentProps } from '@/types/documents';
@@ -20,7 +21,8 @@ type WorkCardProps = {
 };
 
 export const WorkCard: FC<WorkCardProps> = ({ document }) => {
-  const { preview, slug, href, company, role, description, tags } = document;
+  const { preview, slug, href, company, role, description, tags, clients } =
+    document;
   const title = `${company} ${role && '•'} ${role}`;
   const dateRange = formatDateRange(document);
   const hasCaseStudy = slug && tags?.length;
@@ -39,6 +41,15 @@ export const WorkCard: FC<WorkCardProps> = ({ document }) => {
       </CardTitle>
       <CardEyebrow>{dateRange}</CardEyebrow>
       <CardDescription>{description}</CardDescription>
+      {clients?.length && (
+        <CardDescription>
+          <span className="inline-flex flex-wrap gap-2">
+            {clients.map(({ name }) => (
+              <Tag key={name}>{name}</Tag>
+            ))}
+          </span>
+        </CardDescription>
+      )}
       {hasCaseStudy && (
         <CardCta>
           View case study <ChevronRightIcon className="h-4 w-4" />

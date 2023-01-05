@@ -7,9 +7,35 @@ export const meta = {
   role: 'Partner',
   href: 'https://gunmetal.com.au/',
   description:
-    'Co-founded a web design and development studio. We worked with a range of clients from startups to clothing brands and even big corporate and entertainment companies. Clients included National Geographic Channel, FX, Vimbra, Trekalo, Ryzer, Wild Animal Encounters.',
+    'Co-founded a web design and development studio. We worked with a range of clients from startups to clothing brands and even big corporate and entertainment companies.',
   start: '2013',
   end: '2014',
+  clients: [
+    {
+      name: 'National Geographic Channel',
+      logo: '/clients/natgeo.svg',
+    },
+    {
+      name: 'FX',
+      logo: '/clients/fx.svg',
+    },
+    {
+      name: 'Vimbra',
+      logo: '/clients/vimbra.svg',
+    },
+    {
+      name: 'Trekalo',
+      logo: '/clients/trekalo.svg',
+    },
+    {
+      name: 'Ryzer',
+      logo: '/clients/ryzer.svg',
+    },
+    {
+      name: 'Wild Animal Encounters',
+      logo: '/clients/wae.svg',
+    },
+  ],
 };
 
 export default (props) => <ArticleLayout meta={meta} {...props} />;

@@ -13,6 +13,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "strictNullChecks": true,
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
@@ -20,6 +21,6 @@
     },
     "plugins": [{ "name": "next" }]
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.mdx"],
+  "include": ["eslint.config.mjs", "**/*.ts", "**/*.tsx", "**/*.mdx"],
   "exclude": ["node_modules", "next-env.d.ts"]
 }

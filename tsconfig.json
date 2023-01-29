@@ -21,6 +21,6 @@
     },
     "plugins": [{ "name": "next" }]
   },
-  "include": ["eslint.config.mjs", "**/*.ts", "**/*.tsx", "**/*.mdx"],
+  "include": ["**/*.mjs", "**/*.ts", "**/*.tsx", "**/*.mdx"],
   "exclude": ["node_modules", "next-env.d.ts"]
 }

@@ -13,6 +13,7 @@ const nextConfig = {
 };
 
 const withMDX = nextMDX({
+  // eslint-disable-next-line require-unicode-regexp
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [remarkGfm],

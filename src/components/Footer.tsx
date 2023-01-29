@@ -9,7 +9,7 @@ export const Footer: FC = () => (
         src="/thumbsup.png"
         height="40"
         width="40"
-        alt=""
+        alt="Back to top"
         className="group-hover:animate-thumbsup"
       />
     </Link>

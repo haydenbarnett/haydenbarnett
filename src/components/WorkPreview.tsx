@@ -16,7 +16,7 @@ const WorkRow: FC<WorkRowProps> = ({ document }) => {
 
   return (
     <>
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-zinc-300 dark:bg-zinc-800 dark:text-white dark:ring-zinc-800">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 ring-zinc-200 dark:bg-zinc-800 dark:text-white dark:ring-zinc-800">
         {logo && (
           <Image
             src={logo}
@@ -33,7 +33,7 @@ const WorkRow: FC<WorkRowProps> = ({ document }) => {
           <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
             {company}
           </span>
-          <span className="text-xs text-zinc-500">
+          <span className="text-xs text-zinc-500 dark:text-zinc-400">
             <time>{formatDateRange(document)}</time>
           </span>
         </div>
@@ -48,9 +48,9 @@ type WorkPreviewProps = {
 };
 
 export const WorkPreview: FC<WorkPreviewProps> = ({ documents }) => (
-  <div className="rounded-2xl p-6 ring-1 ring-zinc-300 dark:ring-zinc-800">
+  <div className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800">
     <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
-      <BriefcaseIcon className="h-5 w-5" />
+      <BriefcaseIcon className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
       Work
     </h2>
     <ol className="mt-6 space-y-4">

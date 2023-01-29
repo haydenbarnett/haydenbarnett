@@ -36,7 +36,7 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({ children, meta }) => {
                 <div className="flex items-center justify-between">
                   <time
                     dateTime={dateRange}
-                    className="text-base text-zinc-500"
+                    className="text-base text-zinc-500 dark:text-zinc-400"
                   >
                     {dateRange}
                   </time>
@@ -46,7 +46,7 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({ children, meta }) => {
                 </div>
                 <h1 className="mt-12 flex items-center gap-5 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
                   {logo && (
-                    <div className="relative flex h-16 w-16 flex-none items-center justify-center rounded-full ring-1 ring-zinc-300 dark:bg-zinc-800 dark:text-white dark:ring-zinc-800">
+                    <div className="relative flex h-16 w-16 flex-none items-center justify-center rounded-full ring-1 ring-zinc-200 dark:bg-zinc-800 dark:text-white dark:ring-zinc-800">
                       <Image
                         src={logo}
                         alt=""

@@ -50,7 +50,7 @@ export const CardLink: FC<CardLinkProps> = ({
   ...props
 }) => (
   <>
-    <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 ring-1 ring-zinc-300 transition group-hover:scale-100 group-hover:opacity-100 dark:ring-zinc-800 sm:-inset-x-6 sm:rounded-2xl" />
+    <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 ring-1 ring-zinc-200 transition group-hover:scale-100 group-hover:opacity-100 dark:ring-zinc-800 sm:-inset-x-6 sm:rounded-2xl" />
     <Link
       href={href}
       className={clsx(
@@ -104,7 +104,7 @@ type CardCtaProps = {
 };
 
 export const CardCta: FC<CardCtaProps> = ({ children }) => (
-  <div className="relative z-10 mt-4 flex items-center gap-1 text-sm font-medium text-zinc-500 transition group-hover:text-zinc-800 dark:group-hover:text-zinc-200">
+  <div className="relative z-10 mt-4 flex items-center gap-1 text-sm font-medium text-zinc-500 transition group-hover:text-zinc-800 dark:text-zinc-400 dark:group-hover:text-zinc-200">
     {children}
   </div>
 );
@@ -122,7 +122,7 @@ export const CardEyebrow: FC<CardEyebrowProps> = ({
   <p
     className={clsx(
       className,
-      'relative z-10 mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500'
+      'relative z-10 mb-3 flex items-center text-sm text-zinc-500 dark:text-zinc-400'
     )}
     {...props}
   >

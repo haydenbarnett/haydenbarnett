@@ -33,7 +33,7 @@ export const ModeToggle: FC = () => {
       onClick={toggleMode}
     >
       <SunIcon className="h-6 w-6 text-zinc-500 transition group-hover:text-zinc-800 dark:hidden" />
-      <MoonIcon className="hidden h-6 w-6 text-zinc-500 transition group-hover:text-zinc-200 dark:block" />
+      <MoonIcon className="hidden h-6 w-6 text-zinc-400 transition group-hover:text-zinc-200 dark:block" />
     </button>
   );
 };

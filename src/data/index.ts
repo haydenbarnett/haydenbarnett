@@ -1,4 +1,4 @@
-export * from './author';
+export * from './config';
 export * from './navigation';
 export * from './projects';
 export * from './resume';

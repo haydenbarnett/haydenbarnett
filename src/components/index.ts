@@ -12,6 +12,7 @@ export * from './MobileNavigation';
 export * from './ModeToggle';
 export * from './ProjectsPreview';
 export * from './Prose';
+export * from './Seo';
 export * from './SimpleLayout';
 export * from './SocialIcons';
 export * from './Tag';

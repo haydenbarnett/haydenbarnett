@@ -10,7 +10,7 @@ import { Button } from './Button';
 import { BackButton } from './BackButton';
 import { formatDateRange } from '@/utils/formatting';
 import type { DocumentProps } from '@/types/documents';
-import { author } from '@/data';
+import { config } from '@/data';
 
 type ArticleLayoutProps = {
   children?: ReactNode;
@@ -24,7 +24,7 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({ children, meta }) => {
   return (
     <>
       <Head>
-        <title>{`${company} - ${author.name}`}</title>
+        <title>{`${company} - ${config.name}`}</title>
         <meta name="description" content={description} />
       </Head>
       <Container className="mt-16 lg:mt-32">

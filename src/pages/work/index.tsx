@@ -1,10 +1,9 @@
 import type { FC } from 'react';
-import Head from 'next/head';
 
 import type { GetStaticProps } from 'next';
-import { SimpleLayout, Button, WorkCard } from '@/components';
+import { SimpleLayout, Button, WorkCard, Seo } from '@/components';
 import { getAllEntries } from '@/utils/entries';
-import { author, resume } from '@/data';
+import { resume } from '@/data';
 import type { DocumentProps } from '@/types/documents';
 
 type WorkPageProps = {
@@ -13,10 +12,7 @@ type WorkPageProps = {
 
 const WorkPage: FC<WorkPageProps> = ({ documents }) => (
   <>
-    <Head>
-      <title>{`Work - ${author.name}`}</title>
-      <meta name="description" content="" />
-    </Head>
+    <Seo title="Work" />
     <SimpleLayout title="Work" intro="">
       <div className="grid grid-cols-1 flex-col gap-24 sm:grid-cols-2">
         {documents.map((document) => {

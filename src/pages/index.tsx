@@ -1,7 +1,6 @@
 import type { FC } from 'react';
-import Head from 'next/head';
-
 import type { GetStaticProps } from 'next';
+
 import {
   Container,
   Button,
@@ -9,27 +8,19 @@ import {
   WorkPreview,
   ProjectsPreview,
   WorkCard,
+  Seo,
 } from '@/components';
 import { getAllEntries } from '@/utils/entries';
-import { author } from '@/data';
 import type { DocumentProps } from '@/types/documents';
 
 type HomeProps = {
   documents?: DocumentProps[];
 };
 
-const Home: FC<HomeProps> = ({ documents }) => {
-  const { name, company, location } = author;
-
-  return (
+const Home: FC<HomeProps> = ({ documents }) => (
+  <>
+    <Seo />
     <div className="flex flex-col gap-32 md:gap-48">
-      <Head>
-        <title>{`${name} - Frontend Engineer`}</title>
-        <meta
-          name="description"
-          content={`I'm ${name}, a frontend engineer and digital designer currently working at ${company} and living in ${location}.`}
-        />
-      </Head>
       <Introduction className="mt-12 md:mt-32" />
       <Container>
         <div className="mb-16 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
@@ -60,8 +51,8 @@ const Home: FC<HomeProps> = ({ documents }) => {
         </div>
       </Container>
     </div>
-  );
-};
+  </>
+);
 
 export const getStaticProps: GetStaticProps = async () => ({
   props: {

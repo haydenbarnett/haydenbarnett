@@ -4,14 +4,14 @@ import { BriefcaseIcon, HomeIcon } from '@heroicons/react/20/solid';
 
 import Link from 'next/link';
 import { Container } from './Container';
-import { author, social } from '@/data';
+import { config, social } from '@/data';
 
 type IntroductionProps = {
   className?: string;
 };
 
 export const Introduction: FC<IntroductionProps> = ({ className }) => {
-  const { name, description, company, location } = author;
+  const { name, description, company, location } = config;
 
   return (
     <Container className={className}>

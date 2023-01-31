@@ -1,10 +1,9 @@
 import type { FC, ReactNode } from 'react';
-import Head from 'next/head';
-
 import Image from 'next/image';
-import { Card, CardTitle, SimpleLayout } from '@/components';
+
 import type { ToolsInstanceProps } from '@/data';
-import { author, tools } from '@/data';
+import { tools } from '@/data';
+import { Card, CardTitle, SimpleLayout, Seo } from '@/components';
 
 type ToolsSectionProps = {
   title?: string;
@@ -33,13 +32,7 @@ const Tool: FC<ToolsInstanceProps> = ({ logo, name, href }) => (
 
 const Tools: FC = () => (
   <>
-    <Head>
-      <title>{`Tools - ${author.name}`}</title>
-      <meta
-        name="description"
-        content="Tools, apps, solutions &amp; services."
-      />
-    </Head>
+    <Seo title="Tools" description="Tools, apps, solutions &amp; services." />
     <SimpleLayout title="Tools, apps, solutions &amp; services.">
       <div className="divide-y divide-zinc-300 dark:divide-zinc-800">
         {tools.map((category) => (

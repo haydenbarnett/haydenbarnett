@@ -1,20 +1,22 @@
 import type { FC } from 'react';
 import Image from 'next/image';
-import Head from 'next/head';
 
 import { LinkIcon } from '@heroicons/react/20/solid';
-import { Card, CardDescription, CardLink, SimpleLayout } from '@/components';
-import { author, projects } from '@/data';
+import {
+  Card,
+  CardDescription,
+  CardLink,
+  Seo,
+  SimpleLayout,
+} from '@/components';
+import { projects } from '@/data';
 
 const Projects: FC = () => (
   <>
-    <Head>
-      <title>{`Projects - ${author.name}`}</title>
-      <meta
-        name="description"
-        content="Things I've made to help others or just for fun."
-      />
-    </Head>
+    <Seo
+      title="Projects"
+      description="Things I've made to help others or just for fun."
+    />
     <SimpleLayout title="Things I've made to help others or just for fun.">
       <ul className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => {

@@ -1,16 +1,14 @@
 import type { FC, ReactNode } from 'react';
-import Head from 'next/head';
 import Image from 'next/image';
 
+import { Seo } from './Seo';
 import { Container } from './Container';
 import { Prose } from './Prose';
-
 import { Tag } from './Tag';
 import { Button } from './Button';
 import { BackButton } from './BackButton';
 import { formatDateRange } from '@/utils/formatting';
 import type { DocumentProps } from '@/types/documents';
-import { config } from '@/data';
 
 type ArticleLayoutProps = {
   children?: ReactNode;
@@ -23,10 +21,7 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({ children, meta }) => {
 
   return (
     <>
-      <Head>
-        <title>{`${company} - ${config.name}`}</title>
-        <meta name="description" content={description} />
-      </Head>
+      <Seo title={company} description={description} image={preview} />
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">

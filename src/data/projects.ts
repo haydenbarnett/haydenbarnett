@@ -10,15 +10,16 @@ export type ProjectDataProps = {
 
 export const projects: ProjectDataProps[] = [
   {
-    name: 'Temploid',
-    description: 'Coming soon.',
-    logo: '/projects/temploid.svg',
-  },
-  {
-    name: 'Theme.ink',
+    name: 'Theme.ink (WIP)',
     description: 'Development tools and resources for the modern web.',
     logo: '/projects/themeink.svg',
     link: { href: 'https://theme.ink', label: 'theme.ink' },
+  },
+  {
+    name: 'Evalyn AI',
+    description: 'Say hello to Evalyn, your new AI companion.',
+    logo: '/projects/evalyn.svg',
+    link: { href: 'https://evalyn.ai', label: 'evalyn.ai' },
   },
   {
     name: 'Imagepup',

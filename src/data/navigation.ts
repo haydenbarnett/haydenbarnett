@@ -21,10 +21,6 @@ export const navigation: NavigationDataProps[] = [
     label: 'Personal Projects',
   },
   {
-    href: '/tools',
-    label: 'Tools',
-  },
-  {
     id: 'resume',
     href: resume,
     label: 'Résumé',

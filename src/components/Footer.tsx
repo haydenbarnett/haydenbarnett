@@ -1,17 +1,21 @@
-import type { FC } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import { social } from '@/data';
+import { LinkIcon } from './Icons';
+import type { FC } from 'react';
 
 export const Footer: FC = () => (
-  <footer className="my-48 flex justify-center">
-    <Link href="#top" className="group select-none">
-      <Image
-        src="/thumbsup.png"
-        height="40"
-        width="40"
-        alt="Back to top"
-        className="group-hover:animate-thumbsup"
-      />
-    </Link>
+  <footer className="pl-10">
+    <div className="-ml-10 flex items-center gap-4">
+      <LinkIcon />
+      {social.map(({ href, label }) => (
+        <Link
+          className="rounded-md text-sm text-zinc-400 outline-none transition hover:text-white focus-visible:shadow-focus"
+          key={href}
+          href={href}
+        >
+          {label}
+        </Link>
+      ))}
+    </div>
   </footer>
 );

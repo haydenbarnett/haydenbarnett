@@ -2,38 +2,29 @@ import { ArticleLayout } from '@/components';
 import Image from 'next/image';
 
 export const meta = {
-  logo: '/work/surge/surge.svg',
   company: 'Surge',
   role: 'Creative Director',
   href: 'https://surge.studio/',
-  description:
-    'Co-founded growth marketing agency. Managing creative output - development, design & copywriting and video production.',
+  description: 'Details coming soon.',
   start: '2018',
-  end: '2021',
+  end: 'Present',
   clients: [
     {
       name: 'CSIRO',
-      logo: '/clients/csiro.svg',
     },
     {
       name: 'Waddle',
-      logo: '/clients/waddle.svg',
     },
     {
       name: 'TutorTime',
-      logo: '/clients/tutortime.svg',
     },
     {
       name: 'Dysrupt Labs',
-      logo: '/clients/dysruptlabs.svg',
     },
     {
       name: 'Jellypepper',
-      logo: '/clients/jellypepper.svg',
     },
   ],
 };
 
 export default (props) => <ArticleLayout meta={meta} {...props} />;
-
-export const getStaticProps = async () => ({ notFound: true });

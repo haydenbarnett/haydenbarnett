@@ -1,5 +1,5 @@
-import type { FC, ReactNode } from 'react';
 import clsx from 'clsx';
+import type { FC, ReactNode } from 'react';
 
 type TagProps = {
   children?: ReactNode;
@@ -7,12 +7,5 @@ type TagProps = {
 };
 
 export const Tag: FC<TagProps> = ({ children, className }) => (
-  <span
-    className={clsx(
-      className,
-      'flex-grow-0 rounded-full px-2 py-1 text-xs leading-none text-zinc-500 ring-1 ring-zinc-200 dark:text-zinc-400 dark:ring-zinc-800'
-    )}
-  >
-    {children}
-  </span>
+  <span className={clsx(className, 'text-xs leading-none')}>{children}</span>
 );

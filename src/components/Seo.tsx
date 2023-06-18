@@ -1,21 +1,16 @@
-import type { NextSeoProps } from 'next-seo';
 import { NextSeo } from 'next-seo';
-import type { MetaTag, OpenGraphMedia } from 'next-seo/lib/types';
-import type { FC } from 'react';
 import { useRouter } from 'next/router';
 import { config } from '@/data/config';
+import type { NextSeoProps } from 'next-seo';
+import type { MetaTag, OpenGraphMedia } from 'next-seo/lib/types';
+import type { FC } from 'react';
 
 type SeoProps = NextSeoProps & {
   path?: string;
   image?: string;
 };
 
-const {
-  name,
-  shortDescription,
-  description: defaultDescription,
-  color,
-} = config;
+const { name, description: defaultDescription, color } = config;
 
 export const Seo: FC<SeoProps> = (props) => {
   const router = useRouter();
@@ -50,7 +45,7 @@ export const Seo: FC<SeoProps> = (props) => {
 
   return (
     <NextSeo
-      defaultTitle={`${name} - ${shortDescription}`}
+      defaultTitle={`${name} - Frontend Engineer`}
       titleTemplate={`%s — ${name}`}
       canonical={pathname}
       openGraph={{

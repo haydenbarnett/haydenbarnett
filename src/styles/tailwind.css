@@ -8,7 +8,6 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* credit to https://codepen.io/Chokcoco/pen/dypaobm for inspiring this mess */
-.gold-spiral {
-  @apply inline-flex items-center justify-center overflow-hidden text-zinc-800 shadow-md outline-none ring-1 ring-zinc-200 ring-offset-zinc-100 transition before:absolute before:-left-1/2 before:z-[-2] before:aspect-square before:w-[200%] before:animate-rotate before:bg-white before:bg-gradient-gold-light before:bg-no-repeat before:opacity-0 before:transition-opacity before:duration-[2000ms] before:content-[''] after:absolute after:left-[2px] after:top-[2px] after:z-[-1] after:h-[calc(100%-4px)] after:w-[calc(100%-4px)] after:bg-white after:content-[''] hover:ring-zinc-200 hover:ring-offset-2 hover:before:opacity-100 focus-visible:shadow-focus dark:text-zinc-300 dark:ring-zinc-800 dark:ring-offset-zinc-900 dark:before:bg-zinc-900 dark:before:bg-gradient-gold-dark dark:after:bg-zinc-900 dark:hover:ring-zinc-700;
+body {
+  font-size: 14px;
 }

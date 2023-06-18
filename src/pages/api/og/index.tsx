@@ -1,8 +1,8 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from '@vercel/og';
-import type { NextRequest } from 'next/server';
-
 import { config as data } from '@/data';
+import type { NextRequest } from 'next/server';
 
 export const config = {
   runtime: 'experimental-edge',
@@ -35,8 +35,6 @@ const handler = async (req: NextRequest): Promise<ImageResponse> => {
     new URL('public/Inter-Bold.otf', import.meta.url)
   ).then(async (res) => res.arrayBuffer());
 
-  const logo = new URL('/profile.png', process.env.NEXT_PUBLIC_SITE_URL).href;
-
   const title = createString(searchParams.get('title'), data.name);
   const description = createString(searchParams.get('description'), '');
   const path = createString(searchParams.get('path'), '/');
@@ -48,7 +46,6 @@ const handler = async (req: NextRequest): Promise<ImageResponse> => {
       (
         <div tw="flex bg-zinc-900 flex-1 w-full h-full justify-center flex-col py-12 px-48">
           <div tw="flex flex-col relative z-10">
-            <img width={128} height={128} src={logo} alt="" />
             <p tw="text-6xl tracking-tight leading-[1.1] font-bold mt-8 text-white">
               {title}
             </p>

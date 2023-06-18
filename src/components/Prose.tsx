@@ -1,5 +1,5 @@
-import type { FC, ReactNode } from 'react';
 import clsx from 'clsx';
+import type { FC, ReactNode } from 'react';
 
 type ProseProps = {
   children?: ReactNode;
@@ -7,5 +7,5 @@ type ProseProps = {
 };
 
 export const Prose: FC<ProseProps> = ({ children, className }) => (
-  <div className={clsx(className, 'prose dark:prose-invert')}>{children}</div>
+  <div className={clsx(className, 'prose-invert prose')}>{children}</div>
 );

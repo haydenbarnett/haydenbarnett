@@ -17,9 +17,7 @@
     "editor.wordWrapColumn": 80
   },
   "editor.wordWrap": "on",
-  "eslint.experimental": {
-    "useFlatConfig": true
-  },
+  "eslint.experimental.useFlatConfig": true,
   "eslint.options": {
     "overrideConfigFile": "eslint.config.mjs"
   }

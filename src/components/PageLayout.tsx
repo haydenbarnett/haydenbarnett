@@ -8,9 +8,7 @@ type PageLayoutProps = {
 export const PageLayout: FC<PageLayoutProps> = ({ title, children }) => (
   <div className="flex max-w-3xl flex-col gap-4 px-6 pb-12 md:pb-24">
     {title ? (
-      <div>
-        <h1 className="text-base font-medium text-white">{title}</h1>
-      </div>
+      <h1 className="text-base font-medium text-white">{title}</h1>
     ) : null}
     <div>{children}</div>
   </div>

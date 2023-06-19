@@ -1,7 +1,6 @@
-import { PageLayout, ProjectsList, Row, Seo } from '@/components';
+import { PageLayout, ProjectsList, Seo, WorkList } from '@/components';
 import { getAllEntries } from '@/utils/entries';
 import { config } from '@/data';
-import { formatDateRange } from '@/utils/formatting';
 import type { GetStaticProps } from 'next';
 import type { FC } from 'react';
 import type { DocumentProps } from '@/types/documents';
@@ -17,21 +16,7 @@ const AboutPage: FC<AboutPageProps> = ({ documents }) => (
       <div className="flex flex-col gap-4">
         <p>{config.description}</p>
         <h2 className="mt-6 text-base font-medium text-white">Work History</h2>
-        <div className="flex flex-col">
-          {documents.map((document) => {
-            const { slug, company, link } = document;
-            const dateRange = formatDateRange(document);
-            return (
-              <Row
-                key={slug}
-                href={link?.href}
-                hrefLabel={link?.label}
-                title={company}
-                date={dateRange}
-              />
-            );
-          })}
-        </div>
+        <WorkList documents={documents} />
         <h2 className="mt-6 text-base font-medium text-white">
           Personal Projects
         </h2>

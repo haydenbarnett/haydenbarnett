@@ -8,3 +8,4 @@ export * from './Prose';
 export * from './Row';
 export * from './Seo';
 export * from './Tag';
+export * from './WorkList';

@@ -1,17 +1,17 @@
 import { formatDateRange } from '@/utils/formatting';
 import { Row } from './Row';
-import type { DocumentProps } from '@/types/documents';
+import type { WorkProps } from '@/types/work';
 import type { FC } from 'react';
 
 type WorkListProps = {
-  documents: DocumentProps[];
+  work: WorkProps[];
 };
 
-export const WorkList: FC<WorkListProps> = ({ documents }) => (
+export const WorkList: FC<WorkListProps> = ({ work }) => (
   <div className="flex flex-col">
-    {documents.map((document) => {
-      const { slug, company, link } = document;
-      const dateRange = formatDateRange(document);
+    {work.map((instance) => {
+      const { slug, company, link } = instance;
+      const dateRange = formatDateRange(instance);
       return (
         <Row
           key={slug}

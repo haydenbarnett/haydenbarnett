@@ -2,26 +2,26 @@ import { PageLayout, Seo, WorkList } from '@/components';
 import { getAllEntries } from '@/utils/entries';
 import type { GetStaticProps } from 'next';
 import type { FC } from 'react';
-import type { DocumentProps } from '@/types/documents';
+import type { WorkProps } from '@/types/work';
 
 type WorkPageProps = {
-  documents: DocumentProps[];
+  work: WorkProps[];
 };
 
-const WorkPage: FC<WorkPageProps> = ({ documents }) => (
+const WorkPage: FC<WorkPageProps> = ({ work }) => (
   <>
     <Seo title="Work" />
     <PageLayout title="Work">
-      <WorkList documents={documents} />
+      <WorkList work={work} />
     </PageLayout>
   </>
 );
 
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
-    documents: (await getAllEntries('work')).map(
+    work: (await getAllEntries('work')).map(
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      ({ component, ...meta }) => meta as DocumentProps
+      ({ component, ...meta }) => meta as WorkProps
     ),
   },
 });

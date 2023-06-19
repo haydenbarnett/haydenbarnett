@@ -1,4 +1,3 @@
-// disable all eslint rules for this file
 /* eslint-disable */
 import * as path from 'path';
 import glob from 'fast-glob';

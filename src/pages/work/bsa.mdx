@@ -1,4 +1,4 @@
-import { ArticleLayout } from '@/components';
+import { WorkLayout } from '@/components';
 import Image from 'next/image';
 
 export const meta = {
@@ -14,6 +14,6 @@ export const meta = {
   end: '2012',
 };
 
-export default (props) => <ArticleLayout meta={meta} {...props} />;
+export default (props) => <WorkLayout meta={meta} {...props} />;
 
 export const getStaticProps = async () => ({ notFound: true });

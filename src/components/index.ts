@@ -1,4 +1,3 @@
-export * from './ArticleLayout';
 export * from './Footer';
 export * from './Header';
 export * from './Icons';
@@ -8,4 +7,5 @@ export * from './Prose';
 export * from './Row';
 export * from './Seo';
 export * from './Tag';
+export * from './WorkLayout';
 export * from './WorkList';

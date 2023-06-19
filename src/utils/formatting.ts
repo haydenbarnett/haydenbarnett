@@ -1,15 +1,13 @@
-import type { DocumentProps } from '@/types/documents';
+import type { WorkProps } from '@/types/work';
 
-export const formatDateRange = (
-  document?: DocumentProps
-): string | undefined => {
-  if (!document) {
+export const formatDateRange = (work?: WorkProps): string | undefined => {
+  if (!work) {
     return undefined;
   }
 
-  if (typeof document.end === 'string') {
-    return `${document.start} → ${document.end}`;
+  if (typeof work.end === 'string') {
+    return `${work.start} → ${work.end}`;
   }
 
-  return `${document.start} → ${document.end.label}`;
+  return `${work.start} → ${work.end.label}`;
 };

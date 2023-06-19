@@ -1,5 +1,4 @@
-import { ArticleLayout } from '@/components';
-import Image from 'next/image';
+import { WorkLayout } from '@/components';
 
 export const meta = {
   company: 'Redpin Design',
@@ -43,6 +42,6 @@ export const meta = {
   ],
 };
 
-export default (props) => <ArticleLayout meta={meta} {...props} />;
+export default (props) => <WorkLayout meta={meta} {...props} />;
 
 export const getStaticProps = async () => ({ notFound: true });

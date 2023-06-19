@@ -5,14 +5,14 @@ import { Prose } from './Prose';
 import { Tag } from './Tag';
 import { LinkIcon } from './Icons';
 import type { FC, ReactNode } from 'react';
-import type { DocumentProps } from '@/types/documents';
+import type { WorkProps } from '@/types/work';
 
-type ArticleLayoutProps = {
+type WorkLayoutProps = {
   children?: ReactNode;
-  meta: DocumentProps;
+  meta: WorkProps;
 };
 
-export const ArticleLayout: FC<ArticleLayoutProps> = ({ children, meta }) => {
+export const WorkLayout: FC<WorkLayoutProps> = ({ children, meta }) => {
   const dateRange = formatDateRange(meta);
   const { company, description, preview, link, tags } = meta;
 
@@ -40,7 +40,7 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({ children, meta }) => {
           )}
         </h1>
         <time className="text-sm">{dateRange}</time>
-        <p className="text-sm">{description}</p>
+        <p className="text-sm leading-7">{description}</p>
         {tags?.length ? (
           <div className="flex flex-wrap gap-4 pt-8">
             {tags.map((instance, index) => (

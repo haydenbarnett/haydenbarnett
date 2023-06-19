@@ -1,9 +1,4 @@
-type Client = {
-  name: string;
-  logo: string;
-};
-
-export type DocumentProps = {
+export type WorkProps = {
   slug: string;
   logo?: string;
   preview?: string;
@@ -17,5 +12,8 @@ export type DocumentProps = {
   start: string;
   end: string | { label: string; dateTime?: number };
   tags?: string[];
-  clients?: Client[];
+  clients?: {
+    name: string;
+    logo: string;
+  }[];
 };

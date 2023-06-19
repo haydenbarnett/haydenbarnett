@@ -8,16 +8,16 @@ import '@/styles/tailwind.css';
 const App: FC<AppProps> = ({ Component, pageProps }) => (
   <>
     <div className="relative md:flex">
-      <div className="w-full pt-8 md:pt-24">
-        <div className="px-6 md:sticky md:top-24 md:pl-24 md:pr-0">
+      <div className="w-full pt-8 md:pt-12 lg:pt-24">
+        <div className="px-6 md:sticky md:top-12 md:pl-12 md:pr-0 lg:top-24 lg:pl-24">
           <Header />
         </div>
       </div>
-      <main className="w-full pt-24">
+      <main className="w-full pt-12 lg:pt-24">
         <Component {...pageProps} />
       </main>
     </div>
-    <div className="px-6 pb-8 pt-12 md:fixed md:bottom-24 md:left-24 md:p-0">
+    <div className="px-6 pb-8 pt-12 md:fixed md:bottom-12 md:left-12 md:p-0 lg:bottom-24 lg:left-24">
       <Footer />
     </div>
     <Analytics />

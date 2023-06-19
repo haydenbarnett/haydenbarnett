@@ -19,10 +19,16 @@ const AboutPage: FC<AboutPageProps> = ({ documents }) => (
         <h2 className="mt-6 text-base font-medium text-white">Work History</h2>
         <div className="flex flex-col">
           {documents.map((document) => {
-            const { slug, company, href } = document;
+            const { slug, company, link } = document;
             const dateRange = formatDateRange(document);
             return (
-              <Row key={slug} href={href} title={company} date={dateRange} />
+              <Row
+                key={slug}
+                href={link?.href}
+                hrefLabel={link?.label}
+                title={company}
+                date={dateRange}
+              />
             );
           })}
         </div>

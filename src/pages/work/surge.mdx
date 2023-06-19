@@ -4,8 +4,12 @@ import Image from 'next/image';
 export const meta = {
   company: 'Surge',
   role: 'Creative Director',
-  href: 'https://surge.studio/',
-  description: 'Details coming soon.',
+  link: {
+    href: 'https://surge.studio/',
+    label: 'surge.studio',
+  },
+  description:
+    'My digital studio and corner of the internet to design, build and experiment with new technologies and applications.',
   start: '2018',
   end: 'Present',
   clients: [
@@ -25,6 +29,19 @@ export const meta = {
       name: 'Jellypepper',
     },
   ],
+  tags: [
+    'Design',
+    'Development',
+    'Product Strategy',
+    'Content Production',
+    'SEO',
+    'Marketing',
+    'Analytics',
+  ],
 };
+
+Surge was initially formed as a digital studio to help startups and scaleups clients grow their business through a range of services including design, development and business strategy. We were fortunate enough to work with some amazing clients and interesting projects.
+
+Since then the client-serving portion of the business was scaled down and focus shifted to internal experimentation and application development.
 
 export default (props) => <ArticleLayout meta={meta} {...props} />;

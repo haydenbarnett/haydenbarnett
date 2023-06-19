@@ -10,7 +10,10 @@ export type DocumentProps = {
   company: string;
   description: string;
   role: string;
-  href?: string;
+  link?: {
+    href: string;
+    label: string;
+  };
   start: string;
   end: string | { label: string; dateTime?: number };
   tags?: string[];

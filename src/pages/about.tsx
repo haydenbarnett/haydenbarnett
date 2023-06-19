@@ -1,7 +1,6 @@
-import Link from 'next/link';
-import { PageLayout, Seo } from '@/components';
+import { PageLayout, ProjectsList, Row, Seo } from '@/components';
 import { getAllEntries } from '@/utils/entries';
-import { config, projects } from '@/data';
+import { config } from '@/data';
 import { formatDateRange } from '@/utils/formatting';
 import type { GetStaticProps } from 'next';
 import type { FC } from 'react';
@@ -17,41 +16,20 @@ const AboutPage: FC<AboutPageProps> = ({ documents }) => (
     <PageLayout title="About">
       <div className="flex flex-col gap-4">
         <p>{config.description}</p>
-        <h1 className="mt-6 text-base font-medium text-white">History</h1>
-        {documents.map((document) => {
-          const { slug, company } = document;
-          const dateRange = formatDateRange(document);
-          return (
-            <div key={slug} className="flex w-96 items-center justify-between">
-              <div>
-                <span>{company}</span>
-              </div>
-              <div>{dateRange}</div>
-            </div>
-          );
-        })}
-        <h1 className="mt-6 text-base font-medium text-white">
+        <h2 className="mt-6 text-base font-medium text-white">Work History</h2>
+        <div className="flex flex-col">
+          {documents.map((document) => {
+            const { slug, company, href } = document;
+            const dateRange = formatDateRange(document);
+            return (
+              <Row key={slug} href={href} title={company} date={dateRange} />
+            );
+          })}
+        </div>
+        <h2 className="mt-6 text-base font-medium text-white">
           Personal Projects
-        </h1>
-        {projects.map((project) => {
-          const { name, link, date } = project;
-          return (
-            <div key={name} className="flex w-96 items-center justify-between">
-              {link?.href ? (
-                <Link
-                  href={link.href}
-                  className="hover:text-white"
-                  target="_blank"
-                >
-                  <span>{name}</span>
-                </Link>
-              ) : (
-                <div>{name}</div>
-              )}
-              <div>{date}</div>
-            </div>
-          );
-        })}
+        </h2>
+        <ProjectsList />
       </div>
     </PageLayout>
   </>

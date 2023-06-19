@@ -18,7 +18,7 @@ export const ArticleLayout: FC<ArticleLayoutProps> = ({ children, meta }) => {
   return (
     <>
       <Seo title={company} description={description} image={preview} />
-      <article className="flex max-w-3xl flex-col gap-4 px-6 pb-24">
+      <article className="flex max-w-3xl flex-col gap-4 px-6 pb-12 md:pb-24">
         <h1 className="text-base font-medium text-white">
           {href ? (
             <Link href={href} target="_blank">

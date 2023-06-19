@@ -9,7 +9,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => (
   <>
     <div className="relative md:flex">
       <div className="w-full pt-8 md:pt-24">
-        <div className="px-4 md:sticky md:top-24 md:pl-24 md:pr-0">
+        <div className="px-6 md:sticky md:top-24 md:pl-24 md:pr-0">
           <Header />
         </div>
       </div>
@@ -17,7 +17,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => (
         <Component {...pageProps} />
       </main>
     </div>
-    <div className="px-4 pb-8 pt-24 md:fixed md:bottom-24 md:left-24 md:p-0">
+    <div className="px-6 pb-8 pt-12 md:fixed md:bottom-24 md:left-24 md:p-0">
       <Footer />
     </div>
     <Analytics />

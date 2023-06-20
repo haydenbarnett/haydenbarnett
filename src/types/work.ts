@@ -1,4 +1,5 @@
 export type WorkProps = {
+  published?: boolean;
   slug: string;
   logo?: string;
   company: string;

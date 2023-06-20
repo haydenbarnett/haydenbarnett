@@ -78,6 +78,52 @@ module.exports = {
           ':is(h2, h3) + *': {
             marginTop: 0,
           },
+          a: {
+            color: 'var(--tw-prose-links)',
+            fontWeight: theme('fontWeight.normal'),
+            textDecoration: 'underline',
+            textDecorationColor: 'var(--tw-prose-underline)',
+            transitionProperty: 'color, text-decoration-color',
+            transitionDuration: theme('transitionDuration.150'),
+            transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+          },
+          'a:hover': {
+            color: 'var(--tw-prose-links-hover)',
+            textDecorationColor: 'var(--tw-prose-underline-hover)',
+          },
+          // Lists
+          ul: {
+            listStyleType: 'circle',
+          },
+          ol: {
+            listStyleType: 'decimal',
+          },
+          'ul, ol': {
+            paddingLeft: theme('spacing.4'),
+          },
+          li: {
+            marginTop: theme('spacing.2'),
+            marginBottom: theme('spacing.2'),
+            paddingLeft: theme('spacing.2'),
+          },
+          'li::marker': {
+            fontSize: theme('fontSize.sm')[0],
+            fontWeight: theme('fontWeight.medium'),
+          },
+          'ol > li::marker': {
+            color: 'var(--tw-prose-counters)',
+          },
+          'ul > li::marker': {
+            color: 'var(--tw-prose-bullets)',
+          },
+          'li :is(ol, ul)': {
+            marginTop: theme('spacing.4'),
+            marginBottom: theme('spacing.4'),
+          },
+          'li :is(li, p)': {
+            marginTop: theme('spacing.2'),
+            marginBottom: theme('spacing.2'),
+          },
         },
       },
     }),

@@ -7,9 +7,16 @@ type RowProps = {
   hrefLabel?: string;
   title: string;
   date?: string;
+  isExternal?: boolean;
 };
 
-export const Row: FC<RowProps> = ({ href, hrefLabel, title, date }) => {
+export const Row: FC<RowProps> = ({
+  href,
+  hrefLabel,
+  title,
+  date,
+  isExternal,
+}) => {
   const content = (
     <>
       <span className="group-hover:text-white group-focus-visible:text-white">
@@ -31,7 +38,7 @@ export const Row: FC<RowProps> = ({ href, hrefLabel, title, date }) => {
       <Link
         href={href}
         className="group relative inline-flex w-full max-w-[420px] items-center gap-2 outline-0"
-        target="_blank"
+        target={isExternal ? '_blank' : undefined}
       >
         <ChevronRightIcon className="absolute right-full mr-1 shrink-0 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" />
         <div className="-ml-2 flex w-full items-center justify-between px-2 py-1.5">

@@ -46,11 +46,11 @@ const handler = async (req: NextRequest): Promise<ImageResponse> => {
       (
         <div tw="flex bg-zinc-900 flex-1 w-full h-full justify-center flex-col py-12 px-48">
           <div tw="flex flex-col relative z-10">
-            <p tw="text-6xl tracking-tight leading-[1.1] font-bold mt-8 text-white">
+            <p tw="text-4xl leading-[1.1] font-medium mt-8 text-white">
               {title}
             </p>
             <p tw="text-2xl mt-0 mb-8 text-zinc-400">{description}</p>
-            <p tw="text-md m-0 text-zinc-500">{url}</p>
+            <p tw="text-md m-0 text-zinc-400">{url}</p>
           </div>
         </div>
       ),

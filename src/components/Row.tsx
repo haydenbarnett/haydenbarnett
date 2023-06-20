@@ -12,12 +12,14 @@ type RowProps = {
 export const Row: FC<RowProps> = ({ href, hrefLabel, title, date }) => {
   const content = (
     <>
-      <span>{title}</span>
+      <span className="group-hover:text-white group-focus-visible:text-white">
+        {title}
+      </span>
       <span className="relative w-1/2 text-right">
-        <span className="group-hover:opacity-0 group-focus-visible:opacity-0">
+        <span className="transition group-hover:opacity-0 group-focus-visible:opacity-0">
           {date}
         </span>
-        <span className="absolute right-0 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">
+        <span className="absolute right-0 opacity-0 transition group-hover:text-white group-hover:opacity-100 group-focus-visible:text-white  group-focus-visible:opacity-100">
           {hrefLabel ?? 'Visit website'}
         </span>
       </span>
@@ -32,7 +34,7 @@ export const Row: FC<RowProps> = ({ href, hrefLabel, title, date }) => {
         target="_blank"
       >
         <ChevronRightIcon className="absolute right-full mr-1 shrink-0 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" />
-        <div className="-ml-2 flex w-full items-center justify-between px-2 py-1.5 transition-colors group-hover:text-white  group-focus-visible:text-white">
+        <div className="-ml-2 flex w-full items-center justify-between px-2 py-1.5">
           {content}
         </div>
       </Link>

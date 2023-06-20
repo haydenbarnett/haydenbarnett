@@ -14,24 +14,24 @@ type WorkLayoutProps = {
 
 export const WorkLayout: FC<WorkLayoutProps> = ({ children, meta }) => {
   const dateRange = formatDateRange(meta);
-  const { company, description, preview, link, tags } = meta;
+  const { company, description, link, tags } = meta;
 
   return (
     <>
-      <Seo title={company} description={description} image={preview} />
-      <article className="flex max-w-3xl flex-col gap-4 px-6 pb-12 lg:pb-24">
+      <Seo title={company} description={description} />
+      <div className="flex max-w-3xl flex-col gap-4 px-6 pb-12 lg:pb-24">
         <h1 className="text-base font-medium text-white">
           {link?.href ? (
             <Link
               href={link.href}
               target="_blank"
-              className="group relative flex flex-col gap-1 md:flex-row md:items-center md:gap-0"
+              className="group relative inline-flex flex-col-reverse gap-1 md:flex-row md:items-center md:gap-0"
             >
               <LinkIcon className="transition-opacity group-hover:opacity-100 md:absolute md:right-full md:mr-4 md:opacity-0" />
-              <span className="transition-opacity group-hover:opacity-0">
+              <span className="transition-opacity md:group-hover:opacity-0">
                 {company}
               </span>
-              <span className="absolute left-0 text-sm font-normal opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="absolute left-8 text-sm font-normal leading-[24px] text-zinc-400 transition group-hover:text-white group-hover:opacity-100 md:left-0 md:opacity-0">
                 {link.label}
               </span>
             </Link>
@@ -49,7 +49,7 @@ export const WorkLayout: FC<WorkLayoutProps> = ({ children, meta }) => {
           </div>
         ) : null}
         <Prose>{children}</Prose>
-      </article>
+      </div>
     </>
   );
 };

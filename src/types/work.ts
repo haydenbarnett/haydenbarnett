@@ -1,7 +1,6 @@
 export type WorkProps = {
   slug: string;
   logo?: string;
-  preview?: string;
   company: string;
   description: string;
   role: string;

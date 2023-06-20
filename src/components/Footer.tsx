@@ -9,7 +9,7 @@ export const Footer: FC = () => (
       <LinkIcon className="hidden md:flex" />
       {social.map(({ href, label }) => (
         <Link
-          className="rounded-md text-sm text-zinc-400 outline-none transition hover:text-white focus-visible:shadow-focus"
+          className="rounded-md text-sm text-zinc-400 outline-none transition hover:text-white focus-visible:text-white"
           key={href}
           href={href}
         >

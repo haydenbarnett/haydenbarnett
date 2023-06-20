@@ -2,15 +2,14 @@ import Image from 'next/image';
 import { WorkLayout } from '@/components';
 
 export const meta = {
-  preview: '/work/corellium/preview.jpg',
   company: 'Corellium',
-  description:
-    "I'm still working at Corellium, and while I've only been there for one year, my time has been packed full of shipping new projects and features.",
   role: 'Senior Frontend Engineer',
   link: {
-    label: 'corellium.com',
     href: 'https://corellium.com/',
+    label: 'corellium.com',
   },
+  description:
+    'I currently lead the frontend engineering team at Corellium, a virtual hardware lab for security researchers, pen-testers, IoT developers and government defense contractors.',
   start: '2021',
   end: {
     label: 'Present',
@@ -39,34 +38,40 @@ Corellium are pioneers of a unique Arm-based device virtualisation platform, wor
 
 I was one of the first dedicated Frontend Engineering hires brought on board to help the company as it moves to scale up its growth. Our team had a large number of future projects planned, so we quickly identified the need for a comprehensive design system.
 
-Our goals were to create a system to allow us to quickly build new interfaces, introduce a consistent visual style and improve developer experience. We called it <em>Magic</em>.
+Our goals were to create a system to allow us to quickly build new interfaces, introduce a consistent visual style and improve developer experience.
 
-It was built out as a Storybook-based design system on React, Next, Typescript, CSS Modules (w/ PostCSS), Tailwind, and deployed for preview on Vercel. This stack formed the base for all future frontend projects.
+It was built out as a Storybook-based design system on React, Next, Typescript, Tailwind, and deployed for preview on Vercel. This stack formed the base for all future frontend projects.
 
 ## Corellium.com
 
-Once our design system was ready we moved onto rebuilding the marketing website as our first build test. The majority of the website content is loaded from Prismic.
+Once our design system was ready we moved onto rebuilding the marketing website as our first build test. Prismic was selected as our headless CMS.
+
+About a year after its first build the marketing team took ownership of the website and rebuilt it again using HubSpot as the base platform.
 
 ## Trial Request Flow
 
-Next up was the trial request flow which website visitors can fill out to get their hands on Corellium. This has had many iterations and features including Stripe billing integration with 3DS, email validation, automatic geolocation lookup and of course a neat transition animation.
+Next up was the trial request flow which website visitors can fill out to get their hands on Corellium. This has had many iterations of varying complexity and features including Stripe billing integration with 3DS, email validation, automatic geolocation lookup and of course a neat transition and progress indication animation.
+
+The process now is much simpler and represented as a regular form but this project was a great second build test for our design system.
 
 ## Cloud Administration Platform
 
-Managing our customers was originally an admin-only view built into the app frontend. Another prime candidate for rebuilding with our design system.
+Managing our customers was originally an admin-only view built into the primary application frontend. This was another prime candidate for rebuild.
 
-From here our team of administrators can review trial requests, send trial invites, manage existing accounts and the status of each of our server deployments.
-
-## Corellium App
-
-Outside of our greenfield projects my primary role has been to maintain the frontend of the Corellium app. We started by working in fortnightly sprints, usually prioritising bugs and the features for upcoming releases. Across hundreds of tickets I've implemented new device interaction features, administration features, enterprise features such as whitelabelling, and supported the launch of multiple Android, iPhone and IoT devices.
-
-The codebase is quite large and complex and has some areas for improvement that we're still working hard at to make it on-par with our design system and other frontend applications.
-
-One of the first big cleanup items was converting all stylesheets to make use of design tokens and bring about greater consistency, improved accessibility and introduce a more modern UI. I manually reviewed hundreds of our CSS files and found that we were using 35 shades of gray and were missing consistency in our application of primary and secondary status colours. All colours were identified and converted into a 100's system.
-
-The team is also currently in the process of converting the existing library to functional TypeScript components. We're also taking this opportunity to evolve the design and accessibility of each component.
+The new Cloud Administration Platform was built as a standalone application using a modern stack and our new design system. Now our team of administrators can review trial requests, send trial invites, manage existing accounts and the status of each of our server deployments from a central location that can be quickly iterated on.
 
 ## Analytics
 
-I worked with the product, data and marketing teams to implement tracking across the website, the trial request flow, and the app using GTM, GA and Segment. Segment was used to recieve events via our custom data proxy which was setup to handle some of the data processing logic and make the event tracking a little more solution agnositic.
+I worked with the product, data and marketing teams to implement tracking across the website, the trial request flow, and the primary app using GTM, GA and Segment. Segment was used to recieve events via our custom data proxy which was setup to handle some of the data processing logic and make the event tracking a little more solution agnositic.
+
+## Corellium App
+
+Outside of our greenfield projects my primary role has been to maintain the frontend of the primary Corellium app. Across hundreds of tickets I've implemented new device interaction features, administration features, enterprise features such as whitelabelling for Arm, and supported the launch of multiple Android, iPhone and IoT devices.
+
+The codebase is quite large and complex and has some areas for improvement that we're still working hard at to make it on-par with our design system and other frontend applications.
+
+One of the first big cleanup pieces of work was converting all plain CSS to use reusable design tokens and bring the UI to alignment with our other custom touchpoints, implement greater UI consistency, and improved accessibility. Using Tailwind as our new basis we have almost completed a full conversion of styles framework within the app.
+
+In early 2023 I was promoted from Senior Frontend Engineer to Frontend Engineering Manager. I now lead frontend at Corellium and continue to work with the product, design and other engineering teams to continue to rollout new features and improvements to our customers.
+
+The frontend team is also currently in the process of getting the design system ready for implementation into the primary app to replace existing components. We'll also be finishing the conversion of remaining files to functional components and TypeScript while implementing a sorely needed testing framework.

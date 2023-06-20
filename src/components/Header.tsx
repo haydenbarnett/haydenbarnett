@@ -62,7 +62,11 @@ export const Header: FC = () => {
         <UserIcon className="lg:hidden" />
         <h1
           className={clsx(
-            pathname === PATH.home && 'text-white',
+            (pathname === PATH.home ||
+              (pathname !== PATH.work &&
+                pathname !== PATH.studio &&
+                pathname !== PATH.about)) &&
+              'text-white',
             'text-base font-medium transition-colors hover:text-white'
           )}
         >
@@ -107,14 +111,18 @@ export const Header: FC = () => {
       <UserIcon
         className={clsx(
           iconClassName,
-          pathname !== PATH.home && 'opacity-0 peer-hover/home:opacity-100',
-          'peer-hover/about:opacity-0 peer-hover/studio:opacity-0 peer-hover/work:opacity-0'
+          pathname !== PATH.home && 'opacity-0',
+          'peer-hover/about:opacity-0 peer-hover/home:opacity-100 peer-hover/studio:opacity-0 peer-hover/work:opacity-0'
         )}
       />
       <ChevronRightIcon
         className={clsx(
           iconClassName,
-          pathname === PATH.home && 'opacity-0',
+          (pathname === PATH.home ||
+            (pathname !== PATH.work &&
+              pathname !== PATH.studio &&
+              pathname !== PATH.about)) &&
+            'opacity-0',
           'peer-hover/about:opacity-100 peer-hover/home:opacity-0 peer-hover/studio:opacity-100 peer-hover/work:opacity-100'
         )}
       />

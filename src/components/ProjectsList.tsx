@@ -13,6 +13,7 @@ export const ProjectsList: FC = () => (
           hrefLabel={link?.label}
           title={name}
           date={date}
+          isExternal
         />
       );
     })}

@@ -15,6 +15,7 @@ const AboutPage: FC<AboutPageProps> = ({ work }) => (
     <PageLayout title="About">
       <div className="flex flex-col gap-4">
         <p className="text-sm leading-7">{config.description}</p>
+        <p className="text-sm leading-7">{config.location}.</p>
         <h2 className="mt-6 text-base font-medium text-white">Work History</h2>
         <WorkList work={work} />
         <h2 className="mt-6 text-base font-medium text-white">

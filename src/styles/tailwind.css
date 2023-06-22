@@ -22,6 +22,16 @@
   background-color: rgb(255 255 255 / 10%);
 }
 
+::selection {
+  color: #000;
+  background: #aaa;
+}
+
+::-moz-selection {
+  color: #000;
+  background: #aaa;
+}
+
 html,
 body {
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);

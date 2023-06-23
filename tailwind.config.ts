@@ -1,27 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import typography from '@tailwindcss/typography';
+import defaultTheme from 'tailwindcss/defaultTheme';
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      sans: [
-        'Inter',
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Roboto',
-        'Helvetica Neue',
-        'Arial',
-        'Noto Sans',
-        'sans-serif',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji',
-      ],
+      sans: ['Inter', ...defaultTheme.fontFamily.serif],
     },
-    typography: (theme) => ({
+    typography: (theme: (str: string) => string) => ({
       DEFAULT: {
         css: {
           '--tw-prose-body': theme('colors.zinc.400'),
@@ -126,5 +113,7 @@ module.exports = {
       },
     }),
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [typography],
 };
+
+export default config;

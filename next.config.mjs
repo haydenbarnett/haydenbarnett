@@ -5,12 +5,8 @@ import { createSecureHeaders } from 'next-secure-headers';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['jsx', 'mdx', 'tsx'],
+  pageExtensions: ['mdx', 'tsx'],
   reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    scrollRestoration: true,
-  },
   headers() {
     return [
       {

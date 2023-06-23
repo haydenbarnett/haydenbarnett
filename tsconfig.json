@@ -22,11 +22,11 @@
     "plugins": [{ "name": "next" }]
   },
   "include": [
-    "**/*.mjs",
+    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mdx",
-    "tailwind.config.js"
+    "**/*.mjs",
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "next-env.d.ts"]
+  "exclude": ["node_modules"]
 }

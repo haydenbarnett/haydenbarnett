@@ -1,5 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -127,24 +125,6 @@ module.exports = {
         },
       },
     }),
-    extend: {
-      boxShadow: (theme) => ({
-        focus: `0 0 0 4px ${theme('colors.zinc.500/50')}`,
-      }),
-      animation: {
-        rotate: 'rotate 4s linear infinite;',
-        slideup: 'slideup 4s linear infinite',
-      },
-      keyframes: {
-        rotate: {
-          '100%': { transform: 'rotate(1turn)' },
-        },
-        slideup: {
-          '0%': { transform: 'translate3d(0, 0%, 0)' },
-          '100%': { transform: 'translate3d(0, -100%, 0)' },
-        },
-      },
-    },
   },
   plugins: [require('@tailwindcss/typography')],
 };

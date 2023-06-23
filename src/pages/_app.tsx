@@ -29,7 +29,7 @@ const App: FC<AppProps> = ({ Component, pageProps, router }) => (
           </AnimatePresence>
         </main>
       </div>
-      <div className="px-6 pb-8 pt-12 md:fixed md:bottom-12 md:left-12 md:p-0 lg:bottom-24 lg:left-24">
+      <div className="px-6 py-12 md:fixed md:bottom-12 md:left-12 md:p-0 lg:bottom-24 lg:left-24">
         <Footer />
       </div>
     </div>

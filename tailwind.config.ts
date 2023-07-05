@@ -63,6 +63,9 @@ const config: Config = {
           ':is(h2, h3) + *': {
             marginTop: 0,
           },
+
+          // Links
+          // eslint-disable-next-line id-length
           a: {
             color: 'var(--tw-prose-links)',
             fontWeight: theme('fontWeight.normal'),
@@ -76,6 +79,7 @@ const config: Config = {
             color: 'var(--tw-prose-links-hover)',
             textDecorationColor: 'var(--tw-prose-underline-hover)',
           },
+
           // Lists
           ul: {
             listStyleType: 'circle',

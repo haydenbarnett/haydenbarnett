@@ -1,4 +1,4 @@
-export type ProjectDataProps = {
+type ProjectDataProps = {
   date: string;
   name: string;
   description?: string;

@@ -10,7 +10,9 @@ type SeoProps = NextSeoProps & {
   image?: string;
 };
 
-const { name, description: defaultDescription, color } = config;
+const { personal, meta } = config;
+const { name } = personal;
+const { title: workTitle, description: defaultDescription, color } = meta;
 
 export const Seo: FC<SeoProps> = (props) => {
   const router = useRouter();
@@ -45,7 +47,7 @@ export const Seo: FC<SeoProps> = (props) => {
 
   return (
     <NextSeo
-      defaultTitle={`${name} - Frontend Engineer`}
+      defaultTitle={`${name} - ${workTitle}`}
       titleTemplate={`%s — ${name}`}
       canonical={pathname}
       openGraph={{

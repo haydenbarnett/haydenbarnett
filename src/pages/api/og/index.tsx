@@ -35,7 +35,7 @@ const handler = async (req: NextRequest): Promise<ImageResponse> => {
     new URL('public/Inter-Bold.otf', import.meta.url)
   ).then(async (res) => res.arrayBuffer());
 
-  const title = createString(searchParams.get('title'), data.name);
+  const title = createString(searchParams.get('title'), data.personal.name);
   const description = createString(searchParams.get('description'), '');
   const path = createString(searchParams.get('path'), '/');
   const { hostname } = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? '');

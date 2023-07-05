@@ -12,24 +12,19 @@
 }
 
 *::-webkit-scrollbar-track {
-  border-radius: 0px;
+  border-radius: 0;
   background: rgb(255 255 255 / 0%);
 }
 
 *::-webkit-scrollbar-thumb {
   border: 4px solid rgb(255 255 255 / 0%);
-  border-radius: 0px;
+  border-radius: 0;
   background-color: rgb(255 255 255 / 10%);
 }
 
 ::selection {
-  color: #000;
   background: #aaa;
-}
-
-::-moz-selection {
   color: #000;
-  background: #aaa;
 }
 
 html,
@@ -43,6 +38,7 @@ body {
   overflow-y: scroll;
 }
 
+/* stylelint-disable-next-line selector-id-pattern */
 #__next {
   height: 100%;
 }

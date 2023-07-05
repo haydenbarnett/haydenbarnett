@@ -27,11 +27,11 @@ export const WorkLayout: FC<WorkLayoutProps> = ({ children, meta }) => {
               target="_blank"
               className="group relative inline-flex flex-col-reverse gap-1 md:flex-row md:items-center md:gap-0"
             >
-              <LinkIcon className="transition-opacity group-hover:opacity-100 md:absolute md:right-full md:mr-4 md:opacity-0" />
+              <LinkIcon className="h-5 w-5 transition-opacity group-hover:opacity-100 md:absolute md:right-full md:mr-4 md:opacity-0" />
               <span className="transition-opacity md:group-hover:opacity-0">
                 {company}
               </span>
-              <span className="absolute left-8 text-sm font-normal leading-[24px] text-zinc-400 transition group-hover:text-white group-hover:opacity-100 md:left-0 md:opacity-0">
+              <span className="absolute left-8 text-sm font-normal leading-[20px] text-zinc-400 transition group-hover:text-white group-hover:opacity-100 md:left-0 md:opacity-0">
                 {link.label}
               </span>
             </Link>
@@ -42,7 +42,7 @@ export const WorkLayout: FC<WorkLayoutProps> = ({ children, meta }) => {
         <time className="text-sm">{dateRange}</time>
         <p className="text-sm leading-7">{description}</p>
         {tags?.length ? (
-          <div className="flex flex-wrap gap-4 pt-8">
+          <div className="flex flex-wrap gap-2 pt-8">
             {tags.map((instance, index) => (
               <Tag key={index}>{instance}</Tag>
             ))}

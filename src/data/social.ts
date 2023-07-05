@@ -1,4 +1,4 @@
-export type SocialDataProps = {
+type SocialDataProps = {
   href: string;
   label: string;
 };

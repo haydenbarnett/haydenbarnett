@@ -167,7 +167,7 @@ export const Header: FC = () => {
       </header>
       <div
         className={clsx(
-          'pointer-events-none fixed bottom-[10vh] right-0 w-full transition-opacity sm:pointer-events-auto md:bottom-0 md:max-w-[600px] lg:max-w-[800px]',
+          'pointer-events-none fixed -right-24 top-[25vh] w-full transition-opacity sm:pointer-events-auto md:-bottom-48 md:-right-48 md:max-w-[768px] lg:max-w-[1024px]',
           pathname !== PATH.home && 'z-[-1] opacity-30'
         )}
       >

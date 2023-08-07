@@ -31,7 +31,7 @@ export const WorkLayout: FC<WorkLayoutProps> = ({ children, meta }) => {
               <span className="transition-opacity md:group-hover:opacity-0">
                 {company}
               </span>
-              <span className="absolute left-8 text-sm font-normal leading-[20px] text-zinc-400 transition group-hover:text-white group-hover:opacity-100 md:left-0 md:opacity-0">
+              <span className="absolute left-8 text-sm font-normal leading-[20px] text-gray-400 transition group-hover:text-white group-hover:opacity-100 md:left-0 md:opacity-0">
                 {link.label}
               </span>
             </Link>

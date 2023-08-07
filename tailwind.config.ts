@@ -1,5 +1,6 @@
 import typography from '@tailwindcss/typography';
 import defaultTheme from 'tailwindcss/defaultTheme';
+import colors from 'tailwindcss/colors';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -8,28 +9,33 @@ const config: Config = {
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.serif],
     },
+    extend: {
+      colors: {
+        gray: { DEFAULT: colors.zinc[600], ...colors.zinc },
+      },
+    },
     typography: (theme: (str: string) => string) => ({
       DEFAULT: {
         css: {
-          '--tw-prose-body': theme('colors.zinc.400'),
-          '--tw-prose-headings': theme('colors.zinc.200'),
-          '--tw-prose-links': theme('colors.zinc.200'),
-          '--tw-prose-links-hover': theme('colors.zinc.50'),
-          '--tw-prose-underline': theme('colors.zinc.400 / 0.3'),
-          '--tw-prose-underline-hover': theme('colors.zinc.400'),
-          '--tw-prose-bold': theme('colors.zinc.200'),
-          '--tw-prose-counters': theme('colors.zinc.200'),
-          '--tw-prose-bullets': theme('colors.zinc.200'),
-          '--tw-prose-hr': theme('colors.zinc.700 / 0.4'),
-          '--tw-prose-quote-borders': theme('colors.zinc.500'),
-          '--tw-prose-captions': theme('colors.zinc.500'),
-          '--tw-prose-code': theme('colors.zinc.300'),
-          '--tw-prose-code-bg': theme('colors.zinc.200 / 0.05'),
-          '--tw-prose-pre-code': theme('colors.zinc.100'),
+          '--tw-prose-body': theme('colors.gray.400'),
+          '--tw-prose-headings': theme('colors.gray.200'),
+          '--tw-prose-links': theme('colors.gray.200'),
+          '--tw-prose-links-hover': theme('colors.gray.50'),
+          '--tw-prose-underline': theme('colors.gray.400 / 0.3'),
+          '--tw-prose-underline-hover': theme('colors.gray.400'),
+          '--tw-prose-bold': theme('colors.gray.200'),
+          '--tw-prose-counters': theme('colors.gray.200'),
+          '--tw-prose-bullets': theme('colors.gray.200'),
+          '--tw-prose-hr': theme('colors.gray.700 / 0.4'),
+          '--tw-prose-quote-borders': theme('colors.gray.500'),
+          '--tw-prose-captions': theme('colors.gray.500'),
+          '--tw-prose-code': theme('colors.gray.300'),
+          '--tw-prose-code-bg': theme('colors.gray.200 / 0.05'),
+          '--tw-prose-pre-code': theme('colors.gray.100'),
           '--tw-prose-pre-bg': 'rgb(0 0 0 / 0.4)',
-          '--tw-prose-pre-border': theme('colors.zinc.200 / 0.1'),
-          '--tw-prose-th-borders': theme('colors.zinc.700'),
-          '--tw-prose-td-borders': theme('colors.zinc.800'),
+          '--tw-prose-pre-border': theme('colors.gray.200 / 0.1'),
+          '--tw-prose-th-borders': theme('colors.gray.700'),
+          '--tw-prose-td-borders': theme('colors.gray.800'),
 
           // Base
           color: 'var(--tw-prose-body)',

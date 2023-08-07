@@ -9,7 +9,7 @@ type TagProps = {
 export const Tag: FC<TagProps> = ({ children, className }) => (
   <span
     className={clsx(
-      'rounded-sm bg-zinc-800 px-2 py-1 text-xs leading-none',
+      'rounded-sm bg-gray-800 px-2 py-1 text-xs leading-none',
       className
     )}
   >

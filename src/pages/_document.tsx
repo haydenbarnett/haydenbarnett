@@ -11,7 +11,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="flex h-full flex-col bg-zinc-900 text-zinc-400">
+        <body className="flex h-full flex-col bg-gray-900 text-gray-400">
           <Main />
           <NextScript />
         </body>

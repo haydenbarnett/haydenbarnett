@@ -17,13 +17,12 @@ const { title: workTitle, description: defaultDescription, color } = meta;
 export const Seo: FC<SeoProps> = (props) => {
   const router = useRouter();
   const { pathname } = router;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? '';
 
   const { title, description, image } = props;
-  const url = pathname
-    ? new URL(pathname, process.env.NEXT_PUBLIC_SITE_URL).href
-    : process.env.NEXT_PUBLIC_SITE_URL;
+  const url = pathname ? new URL(pathname, siteUrl).href : siteUrl;
 
-  const imageUrl = new URL('/api/og', process.env.NEXT_PUBLIC_SITE_URL);
+  const imageUrl = new URL('/api/og', siteUrl);
   imageUrl.searchParams.set('title', title ?? '');
   imageUrl.searchParams.set('description', description ?? defaultDescription);
   imageUrl.searchParams.set('path', pathname);
@@ -40,7 +39,7 @@ export const Seo: FC<SeoProps> = (props) => {
   if (image) {
     images = [
       {
-        url: new URL(image, process.env.NEXT_PUBLIC_SITE_URL).href,
+        url: new URL(image, siteUrl).href,
       },
     ];
   }
@@ -48,8 +47,9 @@ export const Seo: FC<SeoProps> = (props) => {
   return (
     <NextSeo
       defaultTitle={`${name} - ${workTitle}`}
+      description={description ?? defaultDescription}
       titleTemplate={`%s — ${name}`}
-      canonical={pathname}
+      canonical={url}
       openGraph={{
         title,
         description,

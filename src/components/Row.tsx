@@ -49,8 +49,8 @@ export const Row: FC<RowProps> = ({
   }
 
   return (
-    <div className="flex w-full max-w-[420px] items-center">
-      <div className="flex w-full items-center justify-between py-1.5">
+    <div className="relative flex w-full max-w-[420px] items-center">
+      <div className="-ml-2 flex w-full items-center justify-between px-2 py-1.5">
         {content}
       </div>
     </div>

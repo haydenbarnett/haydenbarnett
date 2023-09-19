@@ -6,6 +6,7 @@ type ProjectDataProps = {
     href: string;
     label: string;
   };
+  studio?: boolean;
 };
 
 export const projects: ProjectDataProps[] = [
@@ -14,24 +15,28 @@ export const projects: ProjectDataProps[] = [
     name: 'Theme.ink',
     description: 'Development tools and resources for the modern web.',
     link: { href: 'https://theme.ink', label: 'theme.ink' },
+    studio: true,
   },
   {
     date: '2023',
     name: 'Spark',
-    description: 'Design System.',
+    description: 'An open source design system for all studio projects.',
     link: { href: 'https://spark.surge.studio', label: 'spark.surge.studio' },
+    studio: true,
   },
   {
     date: '2023',
     name: 'Evalyn AI',
     description: 'Say hello to Evalyn, your new AI companion.',
     link: { href: 'https://evalyn.ai', label: 'evalyn.ai' },
+    studio: true,
   },
   {
     date: '2023',
     name: 'Imagepup',
-    description: 'My playground for AI generated imagery and associated tools.',
+    description: 'Playground for AI generated imagery and associated tools.',
     link: { href: 'https://www.imagepup.com', label: 'imagepup.com' },
+    studio: true,
   },
   {
     date: '2022',

@@ -1,4 +1,4 @@
-import { WorkLayout } from '@/components';
+import { WorkLayout, PageLayout, ProjectsList } from '@/components';
 
 export const meta = {
   published: true,
@@ -44,4 +44,17 @@ Surge was initially formed as a digital studio to help startups and scaleups cli
 
 Since then the client-serving portion of the business was scaled down and focus shifted to internal experimentation and application development.
 
-export default (props) => <WorkLayout meta={meta} {...props} />;
+export default (props) => (
+  <>
+    <WorkLayout
+      meta={meta}
+      additionalContent={
+        <>
+          <h2 className="mb-4 text-base font-medium text-white">Projects</h2>
+          <ProjectsList studioOnly />
+        </>
+      }
+      {...props}
+    />
+  </>
+);

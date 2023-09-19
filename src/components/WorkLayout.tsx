@@ -10,9 +10,14 @@ import type { WorkProps } from '@/types/work';
 type WorkLayoutProps = {
   children?: ReactNode;
   meta: WorkProps;
+  additionalContent?: ReactNode;
 };
 
-export const WorkLayout: FC<WorkLayoutProps> = ({ children, meta }) => {
+export const WorkLayout: FC<WorkLayoutProps> = ({
+  children,
+  meta,
+  additionalContent,
+}) => {
   const dateRange = formatDateRange(meta);
   const { company, description, link, tags } = meta;
 
@@ -49,6 +54,7 @@ export const WorkLayout: FC<WorkLayoutProps> = ({ children, meta }) => {
           </div>
         ) : null}
         <Prose>{children}</Prose>
+        {additionalContent}
       </div>
     </>
   );

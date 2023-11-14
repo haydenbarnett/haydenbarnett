@@ -11,7 +11,7 @@ type ProjectDataProps = {
 
 export const projects: ProjectDataProps[] = [
   {
-    date: 'Coming soon',
+    date: '2023',
     name: 'Theme.ink',
     description: 'Development tools and resources for the modern web.',
     link: { href: 'https://theme.ink', label: 'theme.ink' },

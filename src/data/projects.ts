@@ -11,6 +11,16 @@ type ProjectDataProps = {
 
 export const projects: ProjectDataProps[] = [
   {
+    date: '2024',
+    name: 'Elements',
+    description: 'Animated AI visuals for your next project. Powered by Rive.',
+    link: {
+      href: 'https://elements.surge.studio',
+      label: 'elements.surge.studio',
+    },
+    studio: true,
+  },
+  {
     date: '2023',
     name: 'Theme.ink',
     description: 'Development tools and resources for the modern web.',
@@ -36,6 +46,13 @@ export const projects: ProjectDataProps[] = [
     name: 'Imagepup',
     description: 'Playground for AI generated imagery and associated tools.',
     link: { href: 'https://www.imagepup.com', label: 'imagepup.com' },
+    studio: true,
+  },
+  {
+    date: '2022',
+    name: 'Temploid',
+    description: 'Play games for free online.',
+    link: { href: 'https://www.temploid.com', label: 'temploid.com' },
     studio: true,
   },
   {

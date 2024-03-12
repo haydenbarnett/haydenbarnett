@@ -17,7 +17,7 @@ export const social: SocialDataProps[] = [
     label: 'Email',
   },
   {
-    href: '/HaydenBarnett-Resume-2022-12.pdf',
+    href: '/HaydenBarnett-Resume-2024-03.pdf',
     label: 'Resume',
   },
 ];

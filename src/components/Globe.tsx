@@ -129,6 +129,7 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
           if (pointerInteracting.current !== null) {
             const delta = e.clientX - pointerInteracting.current;
             pointerInteractionMovement.current = delta;
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
             api.start({
               r: delta / 200,
             });
@@ -138,6 +139,7 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
           if (pointerInteracting.current !== null) {
             const delta = event.touches[0].clientX - pointerInteracting.current;
             pointerInteractionMovement.current = delta;
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
             api.start({
               r: delta / 100,
             });

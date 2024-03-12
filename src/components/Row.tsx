@@ -3,11 +3,11 @@ import { ChevronRightIcon } from './Icons';
 import type { FC } from 'react';
 
 type RowProps = {
-  href?: string;
-  hrefLabel?: string;
-  title: string;
-  date?: string;
-  isExternal?: boolean;
+  readonly href?: string;
+  readonly hrefLabel?: string;
+  readonly title: string;
+  readonly date?: string;
+  readonly isExternal?: boolean;
 };
 
 export const Row: FC<RowProps> = ({

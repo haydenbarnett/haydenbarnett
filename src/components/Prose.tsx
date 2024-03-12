@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import type { FC, ReactNode } from 'react';
 
 type ProseProps = {
-  children?: ReactNode;
-  className?: string;
+  readonly children?: ReactNode;
+  readonly className?: string;
 };
 
 export const Prose: FC<ProseProps> = ({ children, className }) => (

@@ -4,7 +4,7 @@ import type { WorkProps } from '@/types/work';
 import type { FC } from 'react';
 
 type WorkListProps = {
-  work: WorkProps[];
+  readonly work: WorkProps[];
 };
 
 export const WorkList: FC<WorkListProps> = ({ work }) => (

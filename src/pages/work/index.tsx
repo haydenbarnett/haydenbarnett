@@ -5,7 +5,7 @@ import type { FC } from 'react';
 import type { WorkProps } from '@/types/work';
 
 type WorkPageProps = {
-  work: WorkProps[];
+  readonly work: WorkProps[];
 };
 
 const WorkPage: FC<WorkPageProps> = ({ work }) => (
@@ -20,7 +20,7 @@ const WorkPage: FC<WorkPageProps> = ({ work }) => (
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
     work: (await getAllEntries('work')).map(
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line
       ({ component, ...meta }) => meta as WorkProps
     ),
   },

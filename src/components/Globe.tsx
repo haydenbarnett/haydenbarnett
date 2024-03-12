@@ -5,8 +5,8 @@ import { useSpring } from 'react-spring';
 import type { FC } from 'react';
 
 type GlobeProps = {
-  lat?: number;
-  long?: number;
+  readonly lat?: number;
+  readonly long?: number;
 };
 
 const locationToAngles = (lat: number, long: number) => [

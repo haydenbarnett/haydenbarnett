@@ -6,8 +6,8 @@ import type { MetaTag, OpenGraphMedia } from 'next-seo/lib/types';
 import type { FC } from 'react';
 
 type SeoProps = NextSeoProps & {
-  path?: string;
-  image?: string;
+  readonly path?: string;
+  readonly image?: string;
 };
 
 const { personal, meta } = config;

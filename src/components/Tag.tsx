@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import type { FC, ReactNode } from 'react';
 
 type TagProps = {
-  children?: ReactNode;
-  className?: string;
+  readonly children?: ReactNode;
+  readonly className?: string;
 };
 
 export const Tag: FC<TagProps> = ({ children, className }) => (

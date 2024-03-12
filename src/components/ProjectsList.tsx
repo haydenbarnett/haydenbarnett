@@ -3,7 +3,7 @@ import { Row } from './Row';
 import type { FC } from 'react';
 
 type ProjectsListProps = {
-  studioOnly?: boolean;
+  readonly studioOnly?: boolean;
 };
 
 export const ProjectsList: FC<ProjectsListProps> = ({ studioOnly }) => (

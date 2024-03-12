@@ -8,13 +8,13 @@ import { Globe } from './Globe';
 import type { FC } from 'react';
 
 type HeaderLinkProps = {
-  href: string;
-  title?: string;
-  entity?: string;
-  className?: string;
-  isActive?: boolean;
-  onMouseOver?: () => void;
-  onMouseOut?: () => void;
+  readonly href: string;
+  readonly title?: string;
+  readonly entity?: string;
+  readonly className?: string;
+  readonly isActive?: boolean;
+  readonly onMouseOver?: () => void;
+  readonly onMouseOut?: () => void;
 };
 
 const HeaderLink: FC<HeaderLinkProps> = ({

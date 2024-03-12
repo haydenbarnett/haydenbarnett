@@ -1,8 +1,8 @@
 import type { FC, ReactNode } from 'react';
 
 type PageLayoutProps = {
-  title?: string;
-  children?: ReactNode;
+  readonly title?: string;
+  readonly children?: ReactNode;
 };
 
 export const PageLayout: FC<PageLayoutProps> = ({ title, children }) => (

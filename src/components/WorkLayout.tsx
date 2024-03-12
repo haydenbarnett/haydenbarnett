@@ -8,9 +8,9 @@ import type { FC, ReactNode } from 'react';
 import type { WorkProps } from '@/types/work';
 
 type WorkLayoutProps = {
-  children?: ReactNode;
-  meta: WorkProps;
-  additionalContent?: ReactNode;
+  readonly children?: ReactNode;
+  readonly meta: WorkProps;
+  readonly additionalContent?: ReactNode;
 };
 
 export const WorkLayout: FC<WorkLayoutProps> = ({

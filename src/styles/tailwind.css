@@ -29,6 +29,7 @@
 
 html,
 body {
+  overscroll-behavior: none;
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
   -webkit-tap-highlight-color: transparent;
 }

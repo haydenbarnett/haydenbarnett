@@ -1,11 +1,10 @@
 /* eslint-disable react/no-unknown-property */
-/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from '@vercel/og';
 import { config as data } from '@/data';
 import type { NextRequest } from 'next/server';
 
 export const config = {
-  runtime: 'experimental-edge',
+  runtime: 'edge',
 };
 
 const parseError = (error: unknown): string => {
@@ -26,15 +25,8 @@ const createString = (str: string | null, fallback: string): string => {
   return str;
 };
 
-const handler = async (req: NextRequest): Promise<ImageResponse> => {
+const handler = (req: NextRequest): ImageResponse | Response => {
   const { searchParams } = new URL(req.url);
-  const InterRegular = await fetch(
-    new URL('public/Inter-Regular.otf', import.meta.url)
-  ).then(async (res) => res.arrayBuffer());
-  const InterBold = await fetch(
-    new URL('public/Inter-Bold.otf', import.meta.url)
-  ).then(async (res) => res.arrayBuffer());
-
   const title = createString(searchParams.get('title'), data.personal.name);
   const description = createString(searchParams.get('description'), '');
   const path = createString(searchParams.get('path'), '/');
@@ -46,10 +38,8 @@ const handler = async (req: NextRequest): Promise<ImageResponse> => {
       (
         <div tw="flex bg-gray-900 flex-1 w-full h-full justify-center flex-col py-12 px-48">
           <div tw="flex flex-col relative z-10">
-            <p tw="text-4xl leading-[1.1] font-medium mt-8 text-white">
-              {title}
-            </p>
-            <p tw="text-2xl mt-0 mb-8 text-gray-400">{description}</p>
+            <p tw="text-4xl leading-[1.1] mt-8 text-white">{title}</p>
+            <p tw="text-2xl mt-0 mb-8 text-gray-300">{description}</p>
             <p tw="text-md m-0 text-gray-400">{url}</p>
           </div>
         </div>
@@ -57,26 +47,12 @@ const handler = async (req: NextRequest): Promise<ImageResponse> => {
       {
         width: 1200,
         height: 630,
-        fonts: [
-          {
-            name: 'Inter',
-            data: InterRegular,
-            weight: 400,
-            style: 'normal',
-          },
-          {
-            name: 'Inter',
-            data: InterBold,
-            weight: 700,
-            style: 'normal',
-          },
-        ],
       }
     );
   } catch (error) {
     const message = parseError(error);
 
-    return new Response(`Failed to generate the image: ${message}`, {
+    return new Response(`Failed to generate image: ${message}`, {
       status: 500,
     });
   }

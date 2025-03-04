@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import { formatDateRange } from '@/utils/formatting';
-import { Seo } from './Seo';
-import { Prose } from './Prose';
-import { Tag } from './Tag';
-import { LinkIcon } from './Icons';
-import type { FC, ReactNode } from 'react';
 import type { WorkProps } from '@/types/work';
+import { formatDateRange } from '@/utils/formatting';
+import Link from 'next/link';
+import type { FC, ReactNode } from 'react';
+import { LinkIcon } from './Icons';
+import { Prose } from './Prose';
+import { Seo } from './Seo';
+import { Tag } from './Tag';
 
 type WorkLayoutProps = {
   readonly children?: ReactNode;
@@ -25,7 +25,7 @@ export const WorkLayout: FC<WorkLayoutProps> = ({
     <>
       <Seo title={company} description={description} />
       <div className="relative flex max-w-3xl flex-col gap-4 px-6 pb-12 lg:pb-24">
-        <h1 className="text-base font-medium text-white">
+        <h1 className="font-medium text-base text-white">
           {link?.href ? (
             <Link
               href={link.href}
@@ -36,7 +36,7 @@ export const WorkLayout: FC<WorkLayoutProps> = ({
               <span className="transition-opacity md:group-hover:opacity-0">
                 {company}
               </span>
-              <span className="absolute left-8 text-sm font-normal leading-[20px] text-gray-400 transition group-hover:text-white group-hover:opacity-100 md:left-0 md:opacity-0">
+              <span className="absolute left-8 font-normal text-gray-400 text-sm leading-[20px] transition group-hover:text-white group-hover:opacity-100 md:left-0 md:opacity-0">
                 {link.label}
               </span>
             </Link>

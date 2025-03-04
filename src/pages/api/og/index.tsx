@@ -1,6 +1,5 @@
-/* eslint-disable react/no-unknown-property */
-import { ImageResponse } from '@vercel/og';
 import { config as data } from '@/data';
+import { ImageResponse } from '@vercel/og';
 import type { NextRequest } from 'next/server';
 
 export const config = {
@@ -35,15 +34,13 @@ const handler = (req: NextRequest): ImageResponse | Response => {
 
   try {
     return new ImageResponse(
-      (
-        <div tw="flex bg-gray-900 flex-1 w-full h-full justify-center flex-col py-12 px-48">
-          <div tw="flex flex-col relative z-10">
-            <p tw="text-4xl leading-[1.1] mt-8 text-white">{title}</p>
-            <p tw="text-2xl mt-0 mb-8 text-gray-300">{description}</p>
-            <p tw="text-md m-0 text-gray-400">{url}</p>
-          </div>
+      <div tw="flex bg-gray-900 flex-1 w-full h-full justify-center flex-col py-12 px-48">
+        <div tw="flex flex-col relative z-10">
+          <p tw="text-4xl leading-[1.1] mt-8 text-white">{title}</p>
+          <p tw="text-2xl mt-0 mb-8 text-gray-300">{description}</p>
+          <p tw="text-md m-0 text-gray-400">{url}</p>
         </div>
-      ),
+      </div>,
       {
         width: 1200,
         height: 630,

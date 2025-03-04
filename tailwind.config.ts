@@ -1,7 +1,7 @@
 import typography from '@tailwindcss/typography';
-import defaultTheme from 'tailwindcss/defaultTheme';
-import colors from 'tailwindcss/colors';
 import type { Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -71,7 +71,6 @@ const config: Config = {
           },
 
           // Links
-          // eslint-disable-next-line id-length
           a: {
             color: 'var(--tw-prose-links)',
             fontWeight: theme('fontWeight.normal'),

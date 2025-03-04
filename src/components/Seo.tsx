@@ -1,8 +1,8 @@
-import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/router';
 import { config } from '@/data/config';
+import { NextSeo } from 'next-seo';
 import type { NextSeoProps } from 'next-seo';
 import type { MetaTag, OpenGraphMedia } from 'next-seo/lib/types';
+import { useRouter } from 'next/router';
 import type { FC } from 'react';
 
 type SeoProps = NextSeoProps & {

@@ -1,4 +1,4 @@
-import { Seo, PageLayout, ProjectsList } from '@/components';
+import { PageLayout, ProjectsList, Seo } from '@/components';
 import type { FC } from 'react';
 
 const Projects: FC = () => (

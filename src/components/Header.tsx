@@ -1,11 +1,11 @@
-import Link from 'next/link';
+import { config } from '@/data/config';
 import clsx from 'clsx';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { config } from '@/data/config';
-import { ChevronRightIcon, HorizontalDotsIcon, UserIcon } from './Icons';
-import { Globe } from './Globe';
 import type { FC } from 'react';
+import { Globe } from './Globe';
+import { ChevronRightIcon, HorizontalDotsIcon, UserIcon } from './Icons';
 
 type HeaderLinkProps = {
   readonly href: string;
@@ -59,8 +59,8 @@ export const Header: FC = () => {
   };
 
   const iconClassName = clsx(
-    'pointer-events-none absolute left-0 top-0 hidden shrink-0 transition lg:inline-flex',
-    'peer-hover/home:translate-y-0 peer-hover/about:translate-y-[108px] peer-hover/studio:translate-y-[72px] peer-hover/work:translate-y-[36px]',
+    'pointer-events-none absolute top-0 left-0 hidden shrink-0 transition lg:inline-flex',
+    'peer-hover/about:translate-y-[108px] peer-hover/home:translate-y-0 peer-hover/studio:translate-y-[72px] peer-hover/work:translate-y-[36px]',
     pathname === PATH.work && 'translate-y-[36px]',
     pathname === PATH.studio && 'translate-y-[72px]',
     pathname === PATH.about && 'translate-y-[108px]'
@@ -89,7 +89,7 @@ export const Header: FC = () => {
                   pathname !== PATH.studio &&
                   pathname !== PATH.about)) &&
                 'text-white',
-              'text-base font-medium transition-colors hover:text-white'
+              'font-medium text-base transition-colors hover:text-white'
             )}
           >
             {config.personal.name}
@@ -167,7 +167,7 @@ export const Header: FC = () => {
       </header>
       <div
         className={clsx(
-          'pointer-events-none fixed -right-24 top-[25vh] w-full transition-opacity sm:pointer-events-auto md:-bottom-48 md:-right-48 md:max-w-[768px] lg:max-w-[1024px]',
+          '-right-24 md:-bottom-48 md:-right-48 pointer-events-none fixed top-[25vh] w-full transition-opacity sm:pointer-events-auto md:max-w-[768px] lg:max-w-[1024px]',
           pathname !== PATH.home && 'z-[-1] opacity-30'
         )}
       >

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { ChevronRightIcon } from './Icons';
 import type { FC } from 'react';
+import { ChevronRightIcon } from './Icons';
 
 type RowProps = {
   readonly href?: string;
@@ -26,7 +26,7 @@ export const Row: FC<RowProps> = ({
         <span className="transition group-hover:opacity-0 group-focus-visible:opacity-0">
           {date}
         </span>
-        <span className="absolute right-0 opacity-0 transition group-hover:text-white group-hover:opacity-100 group-focus-visible:text-white  group-focus-visible:opacity-100">
+        <span className="absolute right-0 opacity-0 transition group-hover:text-white group-hover:opacity-100 group-focus-visible:text-white group-focus-visible:opacity-100">
           {hrefLabel ?? 'Visit website'}
         </span>
       </span>

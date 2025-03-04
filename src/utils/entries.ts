@@ -1,5 +1,4 @@
-/* eslint-disable */
-import * as path from 'path';
+import * as path from 'node:path';
 import glob from 'fast-glob';
 
 const importEntry = async (filename: string, directory = 'work') => {
@@ -7,6 +6,7 @@ const importEntry = async (filename: string, directory = 'work') => {
     `../pages/${directory}/${filename}`
   );
   return {
+    // biome-ignore lint/performance/useTopLevelRegex: migration exception
     slug: filename.replace(/(\/index)?\.mdx$/, ''),
     ...meta,
     component,
@@ -22,5 +22,7 @@ export const getAllEntries = async (directory = 'work') => {
     entryFilenames.map(async (filename) => importEntry(filename, directory))
   );
 
-  return entries.sort((a, z) => parseInt(z.start) - parseInt(a.start));
+  return entries.sort(
+    (a, z) => Number.parseInt(z.start) - Number.parseInt(a.start)
+  );
 };

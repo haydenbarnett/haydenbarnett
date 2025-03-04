@@ -1,8 +1,7 @@
-/* eslint-disable id-length */
 import createGlobe from 'cobe';
 import { useEffect, useRef } from 'react';
-import { useSpring } from 'react-spring';
 import type { FC } from 'react';
+import { useSpring } from 'react-spring';
 
 type GlobeProps = {
   readonly lat?: number;
@@ -42,12 +41,17 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
     let currentPhi = 0;
     let currentTheta = 0;
 
-    const onResize = () =>
-      canvasRef.current && (width = canvasRef.current.offsetWidth);
+    const onResize = () => {
+      if (canvasRef.current) {
+        width = canvasRef.current.offsetWidth;
+      }
+    };
     window.addEventListener('resize', onResize);
 
     onResize();
-    if (!canvasRef.current) return undefined;
+    if (!canvasRef.current) {
+      return undefined;
+    }
 
     const globe = createGlobe(canvasRef.current, {
       devicePixelRatio: 2,
@@ -94,7 +98,9 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
     });
 
     setTimeout(() => {
-      if (!canvasRef.current) return;
+      if (!canvasRef.current) {
+        return;
+      }
       canvasRef.current.style.opacity = '0.5';
     }, 200);
 
@@ -129,7 +135,6 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
           if (pointerInteracting.current !== null) {
             const delta = e.clientX - pointerInteracting.current;
             pointerInteractionMovement.current = delta;
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
             api.start({
               r: delta / 200,
             });
@@ -139,7 +144,6 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
           if (pointerInteracting.current !== null) {
             const delta = event.touches[0].clientX - pointerInteracting.current;
             pointerInteractionMovement.current = delta;
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
             api.start({
               r: delta / 100,
             });

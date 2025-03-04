@@ -1,7 +1,7 @@
-import { formatDateRange } from '@/utils/formatting';
-import { Row } from './Row';
 import type { WorkProps } from '@/types/work';
+import { formatDateRange } from '@/utils/formatting';
 import type { FC } from 'react';
+import { Row } from './Row';
 
 type WorkListProps = {
   readonly work: WorkProps[];
@@ -16,7 +16,7 @@ export const WorkList: FC<WorkListProps> = ({ work }) => (
         <Row
           key={slug}
           href={published ? `/work/${slug}` : link?.href}
-          hrefLabel={published ? `View case study` : link?.label}
+          hrefLabel={published ? 'View case study' : link?.label}
           title={company}
           date={dateRange}
           isExternal={!published}

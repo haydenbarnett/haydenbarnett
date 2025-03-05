@@ -36,9 +36,9 @@ export const projects: ProjectDataProps[] = [
   },
   {
     date: '2023',
-    name: 'Evalyn AI',
-    description: 'Say hello to Evalyn, your new AI companion.',
-    link: { href: 'https://evalyn.ai', label: 'evalyn.ai' },
+    name: 'Eva AI',
+    description: 'Say hello to Eva, your new AI companion.',
+    link: { href: 'https://eva.surge.studio', label: 'eva.surge.studio' },
     studio: true,
   },
   {
@@ -60,7 +60,10 @@ export const projects: ProjectDataProps[] = [
     name: 'Anna & Hayden',
     description:
       'A simple website to share our photos and videos from our wedding event.',
-    link: { href: 'https://haydenandanna.com', label: 'haydenandanna.com' },
+    link: {
+      href: 'https://wedding.haydenbarnett.com',
+      label: 'wedding.haydenbarnett.com',
+    },
   },
   {
     date: '2021',

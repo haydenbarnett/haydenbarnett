@@ -1,4 +1,6 @@
-import { PageLayout, Seo, WorkList } from '@/components';
+import { PageLayout } from '@/components/page-layout';
+import { Seo } from '@/components/seo';
+import { WorkList } from '@/components/work-list';
 import type { WorkProps } from '@/types/work';
 import { getAllEntries } from '@/utils/entries';
 import type { GetStaticProps } from 'next';

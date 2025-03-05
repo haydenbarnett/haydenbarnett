@@ -1,6 +1,6 @@
-import { projects } from '@/data';
+import { projects } from '@/data/projects';
 import type { FC } from 'react';
-import { Row } from './Row';
+import { Row } from './row';
 
 type ProjectsListProps = {
   readonly studioOnly?: boolean;

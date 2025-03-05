@@ -1,4 +1,4 @@
-import { Seo } from '@/components';
+import { Seo } from '@/components/seo';
 import type { FC } from 'react';
 
 const Home: FC = () => <Seo />;

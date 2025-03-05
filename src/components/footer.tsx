@@ -1,7 +1,7 @@
-import { social } from '@/data';
+import { social } from '@/data/social';
 import Link from 'next/link';
 import type { FC } from 'react';
-import { LinkIcon } from './Icons';
+import { LinkIcon } from './icons';
 
 export const Footer: FC = () => (
   <footer className="md:pl-10">

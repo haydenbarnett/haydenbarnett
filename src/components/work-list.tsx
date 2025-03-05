@@ -1,7 +1,7 @@
 import type { WorkProps } from '@/types/work';
 import { formatDateRange } from '@/utils/formatting';
 import type { FC } from 'react';
-import { Row } from './Row';
+import { Row } from './row';
 
 type WorkListProps = {
   readonly work: WorkProps[];

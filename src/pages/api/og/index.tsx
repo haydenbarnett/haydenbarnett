@@ -1,4 +1,4 @@
-import { config as data } from '@/data';
+import { config as data } from '@/data/config';
 import { ImageResponse } from '@vercel/og';
 import type { NextRequest } from 'next/server';
 

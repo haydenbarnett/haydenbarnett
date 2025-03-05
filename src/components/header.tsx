@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import type { FC } from 'react';
-import { Globe } from './Globe';
-import { ChevronRightIcon, HorizontalDotsIcon, UserIcon } from './Icons';
+import { Globe } from './globe';
+import { ChevronRightIcon, HorizontalDotsIcon, UserIcon } from './icons';
 
 type HeaderLinkProps = {
   readonly href: string;

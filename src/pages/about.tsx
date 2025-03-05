@@ -1,5 +1,8 @@
-import { PageLayout, ProjectsList, Seo, WorkList } from '@/components';
-import { config } from '@/data';
+import { PageLayout } from '@/components/page-layout';
+import { ProjectsList } from '@/components/projects-list';
+import { Seo } from '@/components/seo';
+import { WorkList } from '@/components/work-list';
+import { config } from '@/data/config';
 import type { WorkProps } from '@/types/work';
 import { getAllEntries } from '@/utils/entries';
 import type { GetStaticProps } from 'next';

@@ -2,10 +2,10 @@ import type { WorkProps } from '@/types/work';
 import { formatDateRange } from '@/utils/formatting';
 import Link from 'next/link';
 import type { FC, ReactNode } from 'react';
-import { LinkIcon } from './Icons';
-import { Prose } from './Prose';
-import { Seo } from './Seo';
-import { Tag } from './Tag';
+import { LinkIcon } from './icons';
+import { Prose } from './prose';
+import { Seo } from './seo';
+import { Tag } from './tag';
 
 type WorkLayoutProps = {
   readonly children?: ReactNode;

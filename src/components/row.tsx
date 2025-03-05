@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { FC } from 'react';
-import { ChevronRightIcon } from './Icons';
+import { ChevronRightIcon } from './icons';
 
 type RowProps = {
   readonly href?: string;

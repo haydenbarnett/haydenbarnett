@@ -1,4 +1,5 @@
-import { Footer, Header } from '@/components';
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
 import { Analytics } from '@vercel/analytics/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { AppProps } from 'next/app';

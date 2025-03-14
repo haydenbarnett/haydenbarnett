@@ -36,9 +36,9 @@ export const projects: ProjectDataProps[] = [
   },
   {
     date: '2023',
-    name: 'Eva AI',
-    description: 'Say hello to Eva, your new AI companion.',
-    link: { href: 'https://eva.surge.studio', label: 'eva.surge.studio' },
+    name: 'Eval AI',
+    description: 'Say hello to Eval, your new AI companion.',
+    link: { href: 'https://eval.surge.studio', label: 'eval.surge.studio' },
     studio: true,
   },
   {

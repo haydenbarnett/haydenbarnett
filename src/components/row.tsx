@@ -7,6 +7,7 @@ type RowProps = {
   readonly hrefLabel?: string;
   readonly title: string;
   readonly date?: string;
+  readonly badge?: string;
   readonly isExternal?: boolean;
 };
 
@@ -14,13 +15,14 @@ export const Row: FC<RowProps> = ({
   href,
   hrefLabel,
   title,
+  badge,
   date,
   isExternal,
 }) => {
   const content = (
     <>
       <span className="group-hover:text-white group-focus-visible:text-white">
-        {title}
+        {title} {badge && <span className="font-mono">({badge})</span>}
       </span>
       <span className="relative w-1/2 text-right">
         <span className="transition group-hover:opacity-0 group-focus-visible:opacity-0">

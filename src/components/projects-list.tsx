@@ -5,7 +5,7 @@ import { Row } from './row';
 export const ProjectsList: FC = () => (
   <div className="flex flex-col">
     {projects.map((project) => {
-      const { name, link, date } = project;
+      const { name, link, date, badge } = project;
       return (
         <Row
           key={name}
@@ -13,6 +13,7 @@ export const ProjectsList: FC = () => (
           hrefLabel={link?.label}
           title={name}
           date={date}
+          badge={badge}
           isExternal
         />
       );

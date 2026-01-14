@@ -2,6 +2,7 @@ type ProjectDataProps = {
   date: string;
   name: string;
   description?: string;
+  badge?: string;
   link?: {
     href: string;
     label: string;
@@ -13,6 +14,7 @@ export const projects: ProjectDataProps[] = [
     date: '2024',
     name: 'Elements',
     description: 'Animated AI visuals for your next project. Powered by Rive.',
+    badge: 'Acquired',
     link: {
       href: 'https://elements.surge.studio',
       label: 'elements.surge.studio',

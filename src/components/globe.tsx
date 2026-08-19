@@ -1,7 +1,7 @@
 import createGlobe from 'cobe';
+import { useMotionValue, useSpring } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import type { FC } from 'react';
-import { useSpring } from 'react-spring';
 
 type GlobeProps = {
   readonly lat?: number;
@@ -18,15 +18,13 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
   const focusRef = useRef([0, 0]);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
-  const [{ r }, api] = useSpring(() => ({
-    r: 0,
-    config: {
-      mass: 1,
-      tension: 80,
-      friction: 50,
-      precision: 0.001,
-    },
-  }));
+  const rotationTarget = useMotionValue(0);
+  const rotation = useSpring(rotationTarget, {
+    mass: 1,
+    stiffness: 80,
+    damping: 50,
+    restDelta: 0.001,
+  });
 
   useEffect(() => {
     if (!lat && !long) {
@@ -76,7 +74,7 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
         if (!pointerInteracting.current || !focusRef.current[0]) {
           currentPhi += 0.003;
         }
-        const newPhi = currentPhi + r.get();
+        const newPhi = currentPhi + rotation.get();
         state.phi = newPhi;
         state.theta = currentTheta;
         state.width = width * 2;
@@ -105,7 +103,7 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
     }, 200);
 
     return () => globe.destroy();
-  }, [r]);
+  }, [rotation]);
 
   return (
     <div className="relative aspect-square w-full">
@@ -135,18 +133,14 @@ export const Globe: FC<GlobeProps> = ({ lat, long }) => {
           if (pointerInteracting.current !== null) {
             const delta = e.clientX - pointerInteracting.current;
             pointerInteractionMovement.current = delta;
-            api.start({
-              r: delta / 200,
-            });
+            rotationTarget.set(delta / 200);
           }
         }}
         onTouchMove={(event) => {
           if (pointerInteracting.current !== null) {
             const delta = event.touches[0].clientX - pointerInteracting.current;
             pointerInteractionMovement.current = delta;
-            api.start({
-              r: delta / 100,
-            });
+            rotationTarget.set(delta / 100);
           }
         }}
         className="h-full w-full cursor-grab opacity-0 transition duration-1000"
